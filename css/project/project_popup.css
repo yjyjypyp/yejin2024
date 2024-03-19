@@ -1,0 +1,246 @@
+input[id*="popup"] {
+	display: none;
+}
+input[id*="popup"] + label {
+	display: flex;
+	height: 100%;
+	align-items:flex-start;
+	text-align: left;
+	line-height: 2.2em;
+	margin-top: -0.25em;
+	margin-right: 3em; /*안쪽 간격*/
+	background: rgba(100, 100, 100, 0);
+	color: #000000;
+	/*border: 1px solid purple;*/
+	z-index: 70;
+	cursor: pointer;
+}
+input[id*="popup"] + label h0 {
+	/*border: 1px solid purple;*/
+	font-size: 2em;
+	line-height: 1.2em;
+	font-style: normal;
+	text-align: left;
+	margin-top: .2em;
+}
+input[id*="popup"] + label h0:hover {
+	/*border: 1px solid purple;*/
+	font-style:oblique;
+}
+input[id*="popup"] + label .circle {
+	/*black circle in front of the title*/
+	display: none;
+	width: 1.5em;
+	height: 1.5em;
+	background-color: #000000;
+	border-radius: 50%;
+	margin-right: 0.5em;
+}
+input[id*="popup"] + label .arrow {
+	/*arrow next to the title*/
+	display: flex;
+	position: relative;
+	width: 2.1em;
+	  height: 2.1em;
+	animation: vertical 1s ease-in-out infinite;
+}
+@keyframes vertical {
+	0% {
+		margin-top: 3px;
+	}
+	50% {
+		margin-top: 5.5px;
+	}
+	100% {
+		margin-top: 3px;
+	}
+	
+}
+input[id*="popup"] + label .arrow.up {
+	transform: translateY(-5px);
+}
+input[id*="popup"] + label .arrow.down {
+	transform: translateY(5px);
+}
+input[id*="popup"] + label .arrow::after {
+	position: absolute;
+    right: 0; 
+    top: 20%; 
+    content: '';
+    width: 10px; /* 사이즈 */
+    height: 10px; /* 사이즈 */
+    border-top: .2em solid #000000; /* 선 두께 */
+    border-right: .2em solid #000000; /* 선 두께 */
+    transform: rotate(135deg); /* 각도 */
+}
+input[id*="popup"] + label + div {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.4s;
+	overflow: auto;
+}
+input[id*="popup"]:checked + label + div {
+	display: block;
+	opacity: 1;
+	visibility: visible;
+}
+input[id*="popup"] + label + div > div {
+	/*contents*/
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 8em;
+	right: 12em;
+	padding: 20px;
+	transform: translate(0%, 0%);
+	width: 28vw;
+	height: auto;
+	max-height: 80vh;
+	background: rgba(255, 255, 255, 0);
+	z-index: 3;
+	text-decoration-color: black;
+	text-shadow: 0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 10px rgba(255, 255, 255, 1);
+	border: 1px solid black;
+	box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, .3);
+}
+input[id*="popup"] + label + div > div > label {
+	/*close button on the pop up*/
+	position: absolute;
+	top: 0;
+	right: 0%;
+	transform: translate(-20%, 10%);
+	padding: 15px;
+	background: rgba(0, 0, 0, 0);
+	border-radius: 25%;
+	z-index: 1;
+	cursor: pointer;
+}
+input[id*="popup"] + label + div > div > label > div {
+	/*line in close button on the pop up*/
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 60%;
+	height: 0.15em;
+	background: rgba(0, 0, 0, 1);
+	z-index: 1;
+}
+
+input[id*="popup"] + label + div > label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0);
+	z-index: 2;
+	cursor:alias;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+	/*--tablet css--*/
+	input[id*="popup"] + label + div > div {
+	/*contents*/
+	top: 0;
+	right: 0;
+	transform: translate(-5%, 15%);
+	width: 60vw;
+	height: 60vh;
+}
+}
+@media (max-width: 767px) {
+	/*-mobile css-*/
+	.head {
+	display: flex;
+	position: fixed;
+	flex-direction: row;
+	align-items:flex-start;
+	top: 1.2em;
+	right: 0em;
+		left: 0;
+	h
+eight: 5em;
+	z-index: 100;
+}
+	input[id*="popup"] + label {
+	display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		width: 100%;
+	height: 100%;
+	text-align: left;
+	margin-right: 0em; /*안쪽 간격*/
+}
+	input[id*="popup"] + label h0 {
+		/*--title text--*/
+	font-size: 2em;
+	line-height: 1.2em;
+	font-style: normal;
+	text-align: left;
+	margin-top: .2em;
+		margin-right: 15vw;
+		margin-left: .5em;
+}
+	input[id*="popup"] + label .arrow {
+	/*arrow next to the title*/
+		padding-top: 3vh;
+		padding-left: 51vw;
+}
+	input[id*="popup"] + label + div > div > label {
+	/*close button on the pop up*/
+	position: absolute;
+	top: 0%;
+	right: 50%;
+	transform: translate(50%, 50%);
+	padding: 12px;
+	background: rgba(0, 0, 0, 0);
+	border-radius: 25%;
+	z-index: 1;
+	cursor: crosshair;
+		border: 0.5px solid #ffffff;
+		/*border: 1px solid black;*/
+}
+	input[id*="popup"] + label + div > div > label > div {
+	/*line in close button on the pop up*/
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 40%;
+	height: 0.1em;
+	background: rgba(255, 255, 255, 1);
+	z-index: 1;
+}
+	input[id*="popup"] + label + div > div {
+	/*contents*/
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 90vw;
+	height: 70vh;
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-top: 80px;
+		padding-bottom: 35px;
+		background-color: rgba(0, 0, 0, 20%);
+		text-shadow: 0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 10px rgba(255, 255, 255, 1);
+		box-shadow: 0px 0px 20px 20px rgba(255, 255, 255, .3);
+	}
+	input[id*="popup"] + label + div > label {
+		/*배경 터치해서 닫기*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 2;
+	cursor:alias;
+}
+}

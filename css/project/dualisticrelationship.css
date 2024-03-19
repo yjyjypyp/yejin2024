@@ -7,7 +7,7 @@
 	justify-content: center;
 	width: 100%;
 	height: 100%;
-	background-image: url("../../img/betweenyourmemories/015.png");
+	background-image: url("../../img/dualisticrelationship/silkscreen_ori_poster_square.jpg");
 	background-repeat: no-repeat;
 	background-size:cover;
 }
@@ -18,7 +18,7 @@
 	justify-content: center;
 	width: 100%;
 	height: 100%;
-	background-image: url("../../img/movement/001.png");
+	background-image: url("../../img/dualisticrelationship/color_04_re.jpg");
 	background-repeat: no-repeat;
 	background-size:cover;
 }
@@ -29,11 +29,11 @@
 	justify-content: center;
 	width: 100%;
 	height: 100%;
-	background-image: url("../../img/movement/002.png");
+	background-image: url("../../img/dualisticrelationship/IMG_0555_bw.jpg");
 	background-repeat: no-repeat;
 	background-size:cover;
 }
-.bgimg::before {
+.bgimg3::before {
 	content: "";
 	filter: blur(5px);
 	-webkit-filter: blur(5px);
@@ -41,20 +41,4 @@
     -o-filter: blur(5px); 
     -ms-filter: blur(5px); 
 	transform: scale(1.1);
-}
-.bgwhite2 {
-	background-color: white;
-	width: 75%;
-}
-.video-image-grid {
-	width: 100%;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr 1fr;
-	grid-column-gap: 0.5vw;
-	justify-content: center;
-	align-items: center;
-}
-.video-image-grid img{
-	width: 100%;
 }

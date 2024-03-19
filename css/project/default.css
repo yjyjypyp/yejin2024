@@ -1,0 +1,435 @@
+@charset "UTF-8";
+/* CSS Document */
+body {
+	font-family: 'Junction', sans-serif;
+	font-size: 12px;
+}
+.slide_wrapper {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	/*border: 1px solid blue;*/
+	overflow: hidden;
+}
+.slides {
+	position: absolute;
+	left: 0; top:0;
+}
+.slides .animated {
+	transition: 0.5s ease-out;
+}
+.slides li {
+	width: 100vw;
+	height: 100vh;
+	float: left;
+}
+.slides li:not(:last-child){
+	margin: 0px;	
+}
+.slidenumber {
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: flex-end;
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	z-index: 10;
+	font-size: 2em;
+	/*border: 1px solid green;*/
+}
+.slidenumber p {
+	margin-right: 0.65em;
+	margin-bottom: 6em;
+}
+.slide_images {
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+}
+.bgblack {
+	background-color: black;
+}
+.bgwhite {
+	background-color: white;
+}
+.responsive-box {
+	position: relative;
+	box-shadow: 0px 0px 20px #000000;
+	z-index: 2;
+}
+.responsive-box img {
+	width: 75vw;
+	height: auto;
+}
+.responsive-box video {
+	width: 75vw;
+	height: auto;
+}
+.responsive-box2 {
+	position: relative;
+	box-shadow: 0px 0px 20px #000000;
+	z-index: 2;
+}
+.responsive-box2 img {
+	width: 100vw;
+	height: auto;
+}
+.responsive-box3 {
+	position: relative;
+	box-shadow: 0px 0px 20px #000000;
+	z-index: 2;
+}
+.responsive-box3 img {
+	height: 80vh;
+	width: auto;
+}
+.responsive-box4 {
+	display: none;
+}
+.controls {
+	display: flex;
+	justify-content: space-between;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 10;
+	/*border: 1px solid purple;*/
+}
+.prev {
+	width: 50%;
+	cursor: w-resize;
+	/*cursor: url('custom-cursor.png'), auto;*/
+}
+.next {
+	width: 50%;
+	cursor: e-resize;
+}
+.head {
+	display: flex;
+	position: fixed;
+	flex-direction: row;
+	align-items:flex-start;
+	top: 1.2em;
+	right: 3em;
+	height: 5em;
+	z-index: 100;
+	/*border: 1px solid green;*/
+}
+
+.head .close {
+	position: fixed;
+	display: flex;
+	right: 1em;
+	width: 2em;
+	height: 2em;
+	background-color: rgba(255, 255, 255, 0);
+	border: 0;
+	/*border: 1px solid blue;*/
+	cursor: pointer;
+	z-index: 100;
+	transform: rotateZ(45deg);
+	transition: 0.5s;
+}
+.head .close:hover {
+	transform: rotateZ(135deg);
+}
+.close .line-hori {
+	position: absolute;
+	top: 47.5%;
+	left: 0;
+	width: 100%;
+	border: 1px solid black;
+}
+.close .line-verti {
+	position: absolute;
+	top: 0;
+	left: 45%;
+	height: 100%;
+	border: 1px solid black;
+	background-color: rgba(0, 0, 0, 0);
+	z-index: 1;
+}
+.info {	
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	overflow: auto;
+}
+.info::-webkit-scrollbar {
+	display: none;
+}
+-moz-::selection {color: #E5B2FF; background: #ff351a;}
+::selection {color: #E5B2FF; background: #ff351a;}
+.info a {
+	color: blueviolet;
+	text-decoration: none;
+}
+.info a:hover {
+	color: cadetblue;
+	text-decoration: underline;
+}
+.info a:active {
+	color: blueviolet;
+	text-decoration: none;
+}
+.info a:visited {
+	color: blueviolet;
+	text-decoration: none;
+}
+.category {
+	font-size: 1.3em;
+	line-height: 1.2em;
+	padding-bottom: 2em;
+}
+.discription {
+}
+.ENG {
+	/*text-shadow: 0px 0px 8px #000000;*/
+}
+pENG {
+	font-family: "junction", sans-serif;
+	font-weight: normal;
+	font-size: 1.3em;
+	line-height: 1.15em;
+	padding-bottom: 1em;
+	color: #000000;
+}
+pKOR {
+	font-family: "IBM Plex Sans KR", sans-serif;
+	font-weight: 300;
+	font-size: 1.26em;
+	line-height: 1.2em;
+}
+.credit {
+	padding-top: 3em;
+	font-family: 'Montserrat', san-serif;
+	font-weight: normal;
+	font-size: 1.15em;
+	line-height: 1.25em;
+}
+.bottom {
+	display: flex;
+	flex-direction: row;
+	justify-content:space-between;
+	position: fixed;
+	width: 100vw;
+	left: 0.8em;
+	bottom: 0.45em;
+	padding: 5px;
+	z-index: 99;
+	/*border: 1px solid blue;*/
+}
+.bottom .footnote {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items:flex-end;
+	width: 92vw;
+	/*border: 1px solid blue;*/
+}
+.bottom .footnote .footnote-title {
+	display: flex;
+	flex-direction: row;
+	font-size: 2em;
+	cursor: pointer;
+	color: #000000;
+	/*border: 1px solid green;*/
+}
+.bottom .footnote .footnote-title:hover {
+	font-style: italic;
+	text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.8), 0px 0px 8px rgba(255, 255, 255, 0.8), 0px 0px 8px rgba(255, 255, 255, 0.8), 0px 0px 8px rgba(255, 255, 255, 0.8);
+}
+.bottom .footnote .footnote-title:hover .circle {
+	box-shadow:0px 0px 10px rgba(255, 255, 255, 0.8), 0px 0px 10px rgba(255, 255, 255, 0.8);
+}
+.bottom .footnote .footnote-title .circle {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: .7em;
+	height: .7em;
+	background-color: #000000;
+	border-radius: 50%;
+	margin-right: 0.3em;
+}
+.bottom .footnote .footnote-list {
+	display: none;/*none으로 하면 처음에 안보이게할 수 잇음*/
+	flex-direction: column;
+	margin-left: 2em;
+	margin-bottom: 0.2em;
+	width: 100%;
+	font-size: 1.3em;
+	line-height: 0.85em;
+}
+.bottom .footnote .footnote-list .footnote-list-one {
+	display: flex;
+	width: 100vw;
+	flex-direction: row;
+	align-items: center;
+	margin-top: 0em;
+	vertical-align: bottom;
+	font-family: "Hubballi", sans-serif;
+}
+.bottom .footnote .footnote-list .circle {
+	display: flex;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+	width: 12px;
+	height: 12px;
+	background-color: #000000;
+	border-radius: 50%;
+	margin-right:0.5vw;
+}
+.bottom .footnote .footnote-list .text {
+	width: 70%;
+	margin-bottom: 0.25em;
+}
+.bottom .footnote .footnote-list .footnote-list-one p0 {
+	color: #ffffff;
+	font-size: 0.82em;
+}
+.bottom .footnote .footnote-list .footnote-list-one p1 {
+	vertical-align: bottom;
+}
+.homepagelink {
+  display: flex;
+  flex-direction: column-reverse; /* 버튼을 맨 밑에 위치하도록 열의 순서를 뒤집습니다. */
+  align-items: flex-end;
+  position: fixed;
+  right: 0; /*브라우저 오른쪽 모서리에 맞춥니다. */
+  z-index: 99;
+	 transform: rotate(90deg);
+    transform-origin: top right;
+  /*border: 1px solid blue;*/
+}
+
+.homepagelink .btn { /* 버튼을 오른쪽으로 90도 회전시킵니다. */
+  display: inline-block;
+	background-color: rgba(255, 255, 255, 0);
+	border: 0;
+	padding-right: 1em;
+	padding-top: 1em;
+	font-family: "Junction", sans-serif;
+	font-size: 1.2em;
+	cursor: pointer;
+	/*border: 1px solid green;*/
+}
+.homepagelink .btn:hover {
+	text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.8), 0px 0px 8px rgba(255, 255, 255, 0.8), 0px 0px 8px rgba(255, 255, 255, 0.8), 0px 0px 8px rgba(255, 255, 255, 0.8);
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+	/*--tablet css--*/
+}
+@media (max-width: 767px) {
+	/*-mobile css-*/
+	.slide_wrapper {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	/*border: 1px solid blue;*/
+	overflow: auto;
+}
+	.slides {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+		padding-top: 10vh;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto; /* 세로 스크롤 가능하도록 설정 */
+    scroll-behavior: smooth; /* 부드러운 스크롤 효과 적용 */
+}
+	.slides li {
+    width: 100%;
+		padding: 10px;
+    height: auto;
+	}
+
+/* 슬라이드 내부 컨텐츠를 가운데 정렬하는 스타일 */
+	.slides li > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+	}
+
+	.slide_images img,
+	.responsive-box2 video {
+    max-width: 100%;
+    height: auto;
+	}
+
+	.slidenumber {
+    display: none;
+	}
+	/*footnotes*/
+	.bottom {
+	display: flex;
+	flex-direction: row;
+	justify-content:space-between;
+	position: fixed;
+	width: 100vw;
+		left: 0;
+	padding-left: 0.8em;
+		padding-right: 0.8em;
+	bottom: 0.45em;
+	padding: 5px;
+	z-index: 99;
+}
+	.bottom .footnote {
+	display: flex;
+	flex-direction: column-reverse;
+	justify-content: flex-start;
+	align-items:flex-start;
+}
+	.bottom .footnote .footnote-list {
+	display: none;/*none으로 하면 처음에 안보이게할 수 잇음*/
+	flex-direction: column;
+	align-items: center;
+	width: 86vw;;
+	padding: 2vw;
+	margin-bottom: 2vh;
+		margin-left: 3vw;
+	font-size: 1.3em;
+	line-height: 0.85em;
+		background-color: rgba(0, 0, 0, 90%);
+		border: 0.5px solid #ffffff;
+}
+	.bottom .footnote .footnote-list p, p0, p1 {
+		color: #ffffff;
+	}
+	.bottom .footnote .footnote-list .circle {
+	margin-right: 3vw;
+	border: 1px solid #ffffff;
+}
+	.controls {
+		display: none;
+	}
+	
+.responsive-box {
+	position: relative;
+	box-shadow: 0px 0px 20px #000000;
+	z-index: 2;
+}
+.responsive-box img {
+	width: 100vw;
+}
+.responsive-box video {
+	width: 100vw;
+}
+.responsive-box2 img {
+	width: 100vw;
+	height: auto;
+}
+.responsive-box3 img {
+	height: 100vh;
+}
+}

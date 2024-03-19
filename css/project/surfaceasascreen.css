@@ -7,7 +7,7 @@
 	justify-content: center;
 	width: 100%;
 	height: 100%;
-	background-image: url("../../img/betweenyourmemories/015.png");
+	background-image: url("../../img/surfaceasascreen/IMG_0583.jpg");
 	background-repeat: no-repeat;
 	background-size:cover;
 }
@@ -18,7 +18,7 @@
 	justify-content: center;
 	width: 100%;
 	height: 100%;
-	background-image: url("../../img/movement/001.png");
+	background-image: url("../../img/dualisticrelationship/color_04_re.jpg");
 	background-repeat: no-repeat;
 	background-size:cover;
 }
@@ -29,11 +29,11 @@
 	justify-content: center;
 	width: 100%;
 	height: 100%;
-	background-image: url("../../img/movement/002.png");
+	background-image: url("../../img/csmidentity/PATTERNS_GATHERED_MA_Material Future.png");
 	background-repeat: no-repeat;
 	background-size:cover;
 }
-.bgimg::before {
+.bgimg3::before {
 	content: "";
 	filter: blur(5px);
 	-webkit-filter: blur(5px);
@@ -42,8 +42,7 @@
     -ms-filter: blur(5px); 
 	transform: scale(1.1);
 }
-.bgwhite2 {
-	background-color: white;
+.bgblack {
 	width: 75%;
 }
 .video-image-grid {

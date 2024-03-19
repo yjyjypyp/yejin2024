@@ -1,0 +1,243 @@
+@charset "UTF-8";
+/* CSS Document */
+/*about popup*/
+input[id*="popup"] {
+	display: none;
+}
+input[id*="popup"] + label {
+	display: inline-block;
+	padding: 20px;
+	background: rgba(255, 255, 255, 0%);
+	color: #000000;
+}
+input[id*="popup"] + label + div {
+	/*close*/
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+input[id*="popup"]:checked + label + div {
+	display: block;
+}
+input[id*="popup"]:checked ~ ul li .list {
+	display: none;
+}
+input[id*="popup"] + label + div > div {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 95vw;
+	height: 90vh;
+	padding-left: 5vw;
+	padding-right: 5vw;
+	padding-top: 8vh;
+	padding-bottom: 8vh;
+	background:#fffbc7;
+	border: 1.5px solid #0506f5;
+	z-index: 12;
+	border-radius: 100px 100px 100px 100px;
+}
+input[id*="popup"] + label + div > div > label {
+	display: none;
+	position: absolute;
+	top: 0%;
+	right: 0%;
+	transform: translate(40%, -40%);
+	background: #000000;
+	border-radius: 100%;
+	z-index: 11;
+}
+input[id*="popup"] + label + div > label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 11;
+}
+.about_grid {
+	display: grid;
+	width: 100%;
+	height: 100%;
+	grid-template-columns: repeat(9, 2fr);
+	grid-row-gap: 0vw;
+	grid-column-gap: 5vw 5vw 5vw 5vw 5vw 5vw 3vw 3vw;
+  	flex-direction: row;
+ 	 justify-content: center;
+ 	 align-items: flex-start;
+	/*border: 2px solid blue;*/
+	font-family: "Junction", sans-serif;
+	font-size: 0.19em;
+	line-height: 1.1em;
+	text-shadow: 0 0 0;
+	overflow: auto;
+	  grid-template-areas:
+ 	 'a a a a a a z b b'
+	'a a a a a a z b b'
+}
+.about_grid::-webkit-scrollbar {
+	display: none;
+}
+.item {
+	color: #000000;
+	text-align: left;
+}
+.item a {
+	text-decoration: none;
+	color: #000000;
+}
+.item plink {
+	color: #000000;
+}
+.item a:hover {
+	text-decoration: none;
+	background-color: #000000;
+	border: 1.5px solid #000000;
+	color: #ff351a;
+	cursor: pointer;
+}
+.item a:hover plink {
+	color: #ff351a;
+}
+.about1 {
+	grid-area: a
+}
+.about2 {
+	/*--예진최는 하는 설명부분--*/
+	grid-area: b
+}
+.menu .about2 a:link {
+	color: #000000;
+}
+.menu .about2 a:visited {
+	color: #000000;
+}
+.about3 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	/*border: 1px solid blue;*/
+	grid-area: z
+}
+.aboutline {
+	display: flex;
+	justify-content: space-between;
+	width: 50%;
+	height: 50%;
+	/*border: 1px solid green;*/
+}
+.heart {
+	padding-top: 2vh;
+	padding-bottom: 1.5vh;
+}
+.lineA {
+	height: 100%;
+	border-right: 1px solid black;
+}
+.about4 {
+	grid-area: d
+}
+p5 {
+	
+}
+pbody {
+}
+.innerpassage {
+	display: inline-block;
+	flex-direction: column;
+	/*border: 1px solid green;*/
+}
+.line {
+	/*display: flex;*/
+	padding-bottom: 2.5vh;
+	display: none;
+}
+.line2 {
+	/*display: flex;*/
+	display: none;
+	padding-top: 2.5vh;
+}
+@media (max-width: 767px) {
+	/*-mobile css-*/
+		input[id="popup"] + label + div > div {
+	/*--오렌지 전체 팝업--*/
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: touch;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 90vw;
+	height: 85vh;
+	padding-left: 5vw;
+	padding-right: 5vw;
+	padding-top: 8vh;
+	padding-bottom: 8vh;
+	opacity: 95%;
+	border-radius: 100px 100px 100px 100px;
+	z-index: 20;
+}
+	.about_grid {
+	display: grid;
+	width: 100%;
+	height: 100%;
+	grid-template-columns: repeat(1, 2fr);
+	grid-gap: 5vw;
+  	flex-direction: row;
+ 	 justify-content: center;
+ 	 align-items: left;
+		/*border: 1px solid blue;*/
+	  grid-template-areas:
+ 	 'b'
+	'a'	
+	}
+	.about {
+		display: flex;
+		flex-direction: row;
+	}
+	.innerpassage {
+	display: inline-block;
+	flex-direction: column;
+	margin-left: 3vw;
+	/*border: 1px solid green;*/
+}
+	.line {
+		display: flex;
+		height: 5vh;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 2vh;
+		/*border: 1px solid blue;*/
+	}
+	.aboutline {
+		height: 100%;
+	}
+	.heart {
+		height: 100%;
+	}
+	.lineB {
+		width: 100%;
+		border-bottom: 1px solid black;
+	}
+	.about1 {
+		margin-left: 7vw;
+		margin-right: 7vw;
+	}
+	.about2 {
+		margin-left: 7vw;
+		margin-right: 7vw;
+	}
+	.about3 {
+		display: none;
+	}
+}
