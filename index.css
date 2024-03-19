@@ -1,0 +1,283 @@
+@charset "UTF-8";
+/* CSS Document */
+html, body {
+	font-family: 'Junction', sans-serif;
+	font-size: 12px;
+}
+body {
+	width: 100vw;
+	height: 300vh;
+	overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+	width: 0px;	
+}
+body::webkit-scrollbar-thumb {
+	width: 0px;
+	border: 1px solid #ffffff;
+}
+body::webkit-scrollbar-track {
+	width: 0px;
+}
+.section {
+	display: flex;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-image:url("../img/index/main_bg_photo_05.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.container {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	height: auto;
+	object-fit: cover;
+	border: 1px solid green;
+}
+h1 {
+	display: flex;
+	position: fixed;
+	top: 85vh;
+	padding-left: 2vw;
+	font-size: 12em;
+	z-index: 10;
+	background: url("../img/index/main_bg_photo_05_inverted_02.png");
+	background-size: cover;
+	background-position: center;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.square {
+	display: none;
+}
+.content{
+	display: flex;
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	z-index: 10;
+}
+.copyright {
+	display: flex;
+	position: fixed;
+	padding-top: 1.5vh;
+	padding-left: 10vw;
+}
+.copyright .circle {
+	width: 1em;
+	height: 1em;
+	border-radius: 50%;
+	background-color: #000000;
+	margin-right: .2vw;
+}
+.copyright p{
+	font-size: 1em;
+	line-height: 1.2em;
+	font-weight: 300;
+	text-shadow: 0px 0px 10px #ffffff, 0px 0px 10px #ffffff, 0px 0px 10px #ffffff, 0px 0px 10px #ffffff, 0px 0px 10px #ffffff, 0px 0px 10px #ffffff, 0px 0px 10px #ffffff, 0px 0px 10px #ffffff, 0px 0px 10px #ffffff, 0px 0px 10px #ffffff;
+}
+.volumn {
+	display: flex;
+	position: fixed;
+	top: 60vh;
+	left: 87vw;
+	font-family: "VPPixelPro";
+	font-size: 10em;
+	z-index: 1;
+	/*text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;*/
+}
+.volumn a {
+	color: #000000;
+	text-decoration: none;
+	cursor: pointer;
+}
+.volumn a:hover {
+	color: #000000;
+	text-decoration: none;
+	padding-top: 0.5vh;
+	padding-left: 0.3vw;
+}
+.volumn a:active {
+	color: #000000;
+	text-decoration: none;
+}
+.volumn a:checked {
+	color: #000000;
+	text-decoration: none;
+}
+.volumn-info a {
+	color: #000000;
+	text-decoration: none;
+}
+.volumn-info a:hover {
+	color: #000000;
+	text-decoration: none;
+	padding-top: 0.5vh;
+	padding-left: 0.3vw;
+}
+.volumn-info a:active {
+	color: #000000;
+	text-decoration: none;
+}
+.volumn-info a:checked {
+	color: #000000;
+	text-decoration: none;
+}
+.volumn p {
+	z-index: 1;
+}
+.volumn-img {
+	display: flex;
+	position: fixed;
+	justify-content: center;
+	align-items:center;
+	top: 64vh;
+	left: 87.4vw;
+	width: 10%;
+	heigth: 10%;
+	z-index: -1;
+}
+.volumn-info {
+	display: flex;
+	position: fixed;
+	justify-content: center;
+	align-items:center;
+	top: 73vh;
+	left: 82vw;
+	z-index: 1;
+}
+.volumn-info:hover {
+	cursor: pointer;
+}
+.volumn-info:hover .volumn a {
+	padding-top: 0.5vh;
+	padding-left: 0.3vw;
+}
+.volumn-info p{
+	font-size: 1.5em;
+	line-height: 1.2em;
+	background-color: #ffffff;
+	padding: 1vw;
+}
+.content ul {
+	display: flex;
+	position: fixed;
+		flex-direction:column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	font-family: 'Srisakdi', sans-serif;
+	font-size: 6.5em;
+	/*text-shadow: 0px 0px 10px #d858f7, 0px 0px 10px #d858f7, 0px 0px 10px #d858f7, 0px 0px 10px #ffffa4, 0px 0px 10px #ffffa4;*/
+	text-shadow: 0px 0px 10px #d858f7, 0px 0px 10px #d858f7, 0px 0px 10px #d858f7, 0px 0px 10px #000000, 0px 0px 10px #000000;
+	/*border: 1px solid red;*/
+}
+.content ul li {
+	display: flex;
+	align-items: center;
+	width: 100vw;
+	height: 12vh;
+	margin-bottom: 4vh;
+	background-color: rgba(255, 255, 255, 0%);
+	position: relative;
+	
+}
+ul li:nth-child(1) {
+	left: 20vw;
+}
+ul li:nth-child(2) {
+	left: 60vw;
+}
+ul li:nth-child(3) {
+	left: 70vw;
+}
+ul li:nth-child(4) {
+	left: 50%;
+}
+.list {
+	display: flex;
+	position: relative;
+	width: 100%;
+	color: #ffffff;
+	z-index: 1;
+	cursor: pointer;
+}
+.list img {
+	display: none;
+	position: absolute;
+	transform: translate(-50%, -40%);
+	z-index: -2;
+	width: 4em;
+}
+.list .p1 {
+	display: flex;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+}
+.list .p2 {
+	display: flex;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	z-index: 2;
+	color: #ffffff;
+	text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000
+}
+.hidden-list {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 0%;
+	color: #000000;
+	transform: translate(-50%, -50%);
+	text-shadow: 0px 0px 10px #ffffff, 0px 0px 10px #ffffff, 0px 0px 10px #ffffff, 0px 0px 10px #ffffff, 0px 0px 10px #ffffff;
+}
+ul li .list:hover {
+	display: none;
+}
+ul li .list:hover + .hidden-list {
+	display: block;
+	color: #000000;
+	text-decoration: none;
+}
+ul li .list:visited + .hidden-list {
+	color: #000000;
+	text-decoration: none;
+}
+.homepagelink {
+	display: flex;
+  flex-direction: column-reverse; /* 버튼을 맨 밑에 위치하도록 열의 순서를 뒤집습니다. */
+  align-items: flex-end;
+  position: fixed;
+	top: 91.5vh;
+  right: -2.5vw; /*브라우저 오른쪽 모서리에 맞춥니다. */
+  z-index: 99;
+	 transform: rotate(90deg);
+  /*border: 1px solid blue;*/
+}
+.homepagelink .btn { /* 버튼을 오른쪽으로 90도 회전시킵니다. */
+  display: inline-block;
+	background-color: rgba(255, 255, 255, 0);
+	border: 0;
+	padding-right: 1em;
+	padding-top: 1em;
+	font-family: "Junction", sans-serif;
+	font-size: 1.2em;
+	cursor: pointer;
+	color: #ffffff;
+	text-shadow: 0px 0px 12px #3100ff,  0px 0px 12px #3100ff,  0px 0px 12px #3100ff,  0px 0px 12px #3100ff,  0px 0px 12px #3100ff,  0px 0px 12px #3100ff,  0px 0px 12px #3100ff,  0px 0px 12px #3100ff,  0px 0px 12px #3100ff;
+	/*border: 1px solid green;*/
+}
+.homepagelink .btn:hover {
+	color: #000000;
+	text-shadow: 0px 0px 12px #ffffff, 0px 0px 12px #ffffff, 0px 0px 12px #ffffff, 0px 0px 12px #ffffff, 0px 0px 12px #ffffff, 0px 0px 12px #ffffff, 0px 0px 12px #ffffff, 0px 0px 12px #ffffff, 0px 0px 12px #ffffff;
+}
+@media (max-width: 767px) {
+	/*-mobile css-*/
+}
