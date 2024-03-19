@@ -1,0 +1,178 @@
+@charset "UTF-8";
+/* CSS Document */
+html, body {
+	font-family: 'Junction', sans-serif;
+	font-size: 12px;
+	overflow: auto;
+}
+-moz-::selection {color: #A1FFFE; background: #e600ff;}
+::selection {color:#A1FFFE; background: #e600ff;}
+.projecttitle {
+	position: fixed;
+	font-size: 6em;
+	color: #000000;
+	top: 0;
+	right: 0;
+	margin-top: 2vh;
+	margin-right: 2vw;
+}
+.projecttitle h0 {
+	text-shadow: -1px 0 #ffffff, 0 1px #ffffff, 1px 0 #ffffff, 0 -1px #ffffff;
+}
+.close {
+	display: flex;
+	position: fixed;
+	width: 2em;
+	height: 2em;
+	top: 2%;
+	left: 2em;
+	background-color: rgba(255, 255, 255, 0);
+	border: 0;
+	/*border: 1px solid blue;*/
+	cursor: pointer;
+	z-index: 70;
+	transform: rotateZ(45deg);
+	transition: 0.5s;
+	/*border: 1px solid green;*/
+	z-index: 50;
+}
+.close:hover {
+	transform: rotateZ(135deg);
+}
+.close .line-hori {
+	position: absolute;
+	top: 47.5%;
+	left: 0;
+	width: 100%;
+	border: 1px solid #ffffff;
+}
+.close .line-verti {
+	position: absolute;
+	top: 0;
+	left: 45%;
+	height: 100%;
+	border: 1px solid #ffffff;
+	background-color: rgba(0, 0, 0, 0);
+	z-index: 2;
+}
+@media (min-width: 1024px) {
+	/*--pc css--*/
+.container {
+	display: flex;
+	flex-direction: row-reverse;
+	width: 100vw;
+	height: auto;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	padding-right: 1vw;
+	padding-left: 1vw;
+	background-image: url("../img/wallpaperproject/main_bg_photo_03_inverted.jpg");
+	background-repeat: repeat;
+	background-size: cover;
+	z-index: -1;
+}
+.projectimg {
+	display: flex;
+	flex-direction: column;
+	width: 70vw;
+}
+.projectimg img {
+	margin-bottom: 1vh;
+	margin-left: 1vw;
+}
+.projectinfo {
+	position: fixed;
+	width: 28vw;
+	left: 1vw;
+	margin-top: 20vh;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+.projectinfo p {
+	padding: 1.5vw;
+	font-size: 1.3em;
+	line-height: 1.2em;
+	color: #ffffff;
+}
+.info {
+	position: fixed;
+	z-index: 1;
+}
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+	/*--tablet css--*/
+.container {
+	display: flex;
+	flex-direction: row-reverse;
+	width: 100vw;
+	height: auto;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	padding-right: 1vw;
+	padding-left: 1vw;
+	background-image: url("../img/wallpaperproject/main_bg_photo_03_inverted.jpg");
+	background-repeat: repeat;
+	background-size: cover;
+	z-index: -1;
+}
+.projectimg {
+	display: flex;
+	flex-direction: column;
+	width: 70vw;
+}
+.projectimg img {
+	margin-bottom: 1vh;
+	margin-left: 1vw;
+}
+.projectinfo {
+	position: fixed;
+	width: 28vw;
+	left: 0;
+	margin-top: 20vh;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+.projectinfo p {
+	left: 1vw;
+	padding: 1.5vw;
+	font-size: 1.3em;
+	line-height: 1.2em;
+	color: #ffffff;
+}
+.info {
+	position: fixed;
+	z-index: 1;
+}
+}
+@media (max-width: 767px) {
+	/*-mobile css-*/
+	.container {
+		width: 100vw;
+	height: auto;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	padding-right: 2vw;
+	padding-left: 2vw;
+	background-image: url("../img/wallpaperproject/main_bg_photo_03_inverted.jpg");
+	background-repeat: repeat;
+	background-size: cover;
+	}
+	.projectinfo {
+		width: 96vw;
+		margin-top: 8vh;
+		margin-bottom: 2vh;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+	.projectinfo p {
+		padding: 2vw;
+		color: #ffffff;
+		font-size: 1.3em;
+		line-height: 1.2em;
+	}
+	.projectimg {
+		display: flex;
+	flex-direction: column;
+		width: 96vw;
+	}
+	.projectimg img {
+		margin-bottom: 1vh;
+	}
+}

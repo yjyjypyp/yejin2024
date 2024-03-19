@@ -1,0 +1,127 @@
+@charset "UTF-8";
+/* CSS Document */
+body {
+	background-color:#000000;
+}
+.bg {
+	display: flex;
+	position: relative;
+	flex-direction: row;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	object-fit: cover;
+	background-image:url("../img/index/main_bg_photo_05_inverted_02.png");
+	background-blend-mode:multiply;
+	background-
+}
+.bg img {
+	position: absolute;
+	width: 75%;
+	height: auto;
+	z-index: 1;
+	padding-left: 5vw;
+}
+.black {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+}
+.black img {
+	width: 80%;
+}
+.colophon {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 10vw;
+	grid-row-gap: 5vh;
+	z-index: 5;
+	color: #ffffff;
+	font-weight: normal;
+	text-shadow: 0 0 10px #9534f4, 0 0 10px #9534f4, 0 0 10px #9534f4, 0 0 10px #9534f4, 0 0 10px #9534f4, 0 0 10px #9534f4, 0 0 10px #9534f4, 0 0 10px #9534f4, 0 0 10px #9534f4, 0 0 10px #9534f4, 0 0 10px #000000, 0 0 10px #000000, 0 0 10px #000000, 0 0 10px #000000;
+	padding-left: 20vw;
+	justify-content: center;
+	grid-template-areas: 
+		'a b'
+		'c c'
+}
+.colophon .left {
+	grid-area: a;
+}
+.colophon .right {
+	grid-area: b;
+}
+.colophon .bottom {
+	grid-area: c;
+}
+.close {
+	display: flex;
+	position: fixed;
+	width: 2em;
+	height: 2em;
+	top: 50%;
+	right: 8vw;
+	background-color: rgba(255, 255, 255, 0);
+	border: 0;
+	/*border: 1px solid blue;*/
+	cursor: pointer;
+	z-index: 70;
+	transform: rotateZ(45deg);
+	transition: 0.5s;
+	/*border: 1px solid green;*/
+	z-index: 50;
+}
+.close:hover {
+	transform: rotateZ(135deg);
+}
+.close .line-hori {
+	position: absolute;
+	top: 47.5%;
+	left: 0;
+	width: 100%;
+	border: 1px solid #ffffff;
+}
+.close .line-verti {
+	position: absolute;
+	top: 0;
+	left: 45%;
+	height: 100%;
+	border: 1px solid #ffffff;
+	background-color: rgba(0, 0, 0, 0);
+	z-index: 1;
+}
+@media (max-width: 767px) {
+	.bg img {
+	position: fixed;
+		transform: rotateZ(90deg);
+	width: 100%;
+	padding-left: 0vw;
+		border: 1px solid green;
+	}
+	.close {
+		top: 5vh;
+		right: 10vw;
+		
+	}
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+	.bg img {
+	position: fixed;
+		transform: rotateZ(90deg);
+	width: 100%;
+	padding-left: 0vw;
+		border: 1px solid green;
+	}
+	.close {
+		top: 5vh;
+		right: 5vw;
+		width: 5em;
+	height: 5em;
+	}
+	.colophon {
+		padding-left: 30vw;
+	}
+}
