@@ -1,0 +1,36 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'AT Apoc';
+    src: url("../../font/at apoc/AT Apoc Light.ttf") format('truetype');
+    font-weight: lighter;
+}
+@font-face {
+    font-family: 'AT Apoc';
+    src: url("../../font/at apoc/AT Apoc Light Italic.ttf") format('truetype');
+    font-weight: lighter;
+	font-style: italic;
+}
+@font-face {
+    font-family: 'AT Apoc';
+    src: url("../../font/at apoc/AT Apoc Revelations.ttf") format('truetype');
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'AT Apoc';
+    src: url("../../font/at apoc/AT Apoc Revelations Italic.ttf") format('truetype');
+    font-weight: normal;
+	font-style: italic;
+}
+@font-face {
+    font-family: 'AT Apoc';
+    src: url("../../font/at apoc/AT Apoc Dark.ttf") format('truetype');
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'AT Apoc';
+    src: url("../../font/at apoc/AT Apoc Dark Italic.ttf") format('truetype');
+    font-weight: bold;
+	font-style: italic;
+}
+
+
