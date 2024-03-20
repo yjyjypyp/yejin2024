@@ -1,0 +1,310 @@
+@charset "UTF-8";
+/* CSS Document */
+/*index popup*/
+input[id*="popup2"] {
+	display: none;
+}
+input[id*="popup2"] + label {
+	display: inline-block;
+	background: rgba(255, 255, 255, 0%);
+	color: #000000;
+	width: 100%;
+}
+input[id*="popup2"] + label + div {
+	/*close*/
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+input[id*="popup2"]:checked + label + div {
+	display: block;
+}
+input[id*="popup2"]:checked ~ .list {
+	display: none;
+}
+input[id*="popup2"] + label + div > div {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 95vw;
+	height: 90vh;
+	padding-left: 5vw;
+	padding-right: 5vw;
+	padding-top: 8vh;
+	padding-bottom: 8vh;
+	background:#862cdb;
+	z-index: 20;
+	border-radius: 800px 800px 0px 0px;
+}
+input[id*="popup2"] + label + div > div > label {
+	display: none;
+	position: absolute;
+	top: 0%;
+	right: 0%;
+	transform: translate(40%, -40%);
+	background: #000000;
+	border-radius: 100%;
+	z-index: 11;
+}
+input[id*="popup2"] + label + div > label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0);
+	z-index: 11;
+}
+.close {
+}
+.close span {
+	position: absolute;
+	font-size: 0.8rem;
+	transform-origin: 0px 100px;
+}
+.close:hover {
+	cursor: pointer; 
+	background-color: blue;
+	color: yellowgreen;
+	font-weight: 500;
+}
+ptitle {
+	font-size: 1.5rem;
+}
+.bluepopup {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: "Junction", sans-serif;
+	font-size: 0.19em;
+	line-height: 1.1em;
+	text-shadow: 0 0 0;
+	z-index: 1;
+}
+.bluepopup ::-webkit-scrollbar {
+	display: none;
+}
+.indexbody {
+		width: 100%;
+		height: 50vh;
+		overflow: auto;
+	}
+.indexlist {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin-top: 15vh;
+		padding-left: 3vw;
+		padding-right: 3vw;
+}
+.indexhead {
+	display: flex;
+	padding-right: 5px;
+	align-items: flex-start;
+	transform: rotateZ(-90deg);
+	color: white;
+	/*border: 1px solid green;*/
+}
+.indexgrid {
+	display: grid;
+	width: 100%;
+	height: 100%;
+	grid-template-columns: .2fr 5fr 5fr 1fr;
+	/*border: 0.3px solid white;*/
+	grid-row-gap: 0.4vw;
+	grid-column-gap: 0.5vw;
+	justify-content: flex-end;
+}
+.indexin {
+	display: flex;
+	align-items: center;
+	padding-right: 5px;
+	padding-left: 5px;
+	border-right: 0.5px solid white;
+	border-bottom: 0.5px solid white;
+}
+.indexblank {
+	height: 10px;
+}
+.indextitle {
+	justify-content: flex-start;
+}
+.indextitle a {
+	display: flex;
+	text-decoration: none;
+}
+.indextitle a :visited{
+	color: beige;
+	text-decoration: none;
+}
+.indextitle a:hover{
+	background-color: greenyellow;
+	font-style: italic;
+	text-decoration: none;
+}
+.indextitle a:hover pbody3 {
+	color: blue;
+}
+.indexcategory {
+	display: flex;
+	justify-content: flex-start;
+}
+hhead {
+	font-size: 0.8rem;
+}
+pbody2 {
+	color: beige;
+	font-size: 1rem;
+	line-height: 1rem;
+	font-weight: 100;
+}
+pbody3 {
+	color: beige;
+	font-size: 1rem;
+	line-height: 1rem;
+	font-weight: 100;
+	text-align: left;
+}
+@media (min-width: 1024px) {
+	/*--pc css--*/
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+	/*--tablet css--*/
+	input[id="popup2"] + label + div > div {
+	/*--블루 전체 팝업--*/
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: touch;
+	position: absolute;
+	top: 46%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 85vw;
+		height: 80vh;
+		padding-top: 0;
+		padding-bottom: 0;
+	padding-left: 5vw;
+	opacity: 95%;
+	border-radius: 800px 800px 0px 0px;
+	z-index: 30;
+}
+	input[id="popup2"] + label + div > label {
+	background: rgba(0, 0, 0, 70%);
+}
+	input[id="popup2"] + label + div > div > label {
+	/*--close--*/
+	transform: translate(55px, 74vh);
+	}
+	.indexbody {
+		width: 90%;
+		height: 50vh;
+		overflow: auto;
+		/*border: 1px solid green;*/
+	}
+	.indexin {
+		justify-content: flex-start;
+	}
+	.indexnumbering {
+		justify-content: flex-end;
+	}
+	.indexyear {
+		justify-content: flex-end;
+	}
+	.indexlist {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 15vh;
+		padding-left: 3vw;
+		padding-right: 3vw;
+}
+	.indexhead {
+		padding-right: 0px;
+		transform: rotateZ(0deg);
+		padding-top: 5px;
+		margin-bottom: 5vh;
+	}
+	.indexbody {
+		overflow: scroll;
+	}
+	.indexgrid {
+	width: 100%;
+	height: 100%;
+	grid-row-gap: 1vw;
+	grid-column-gap: 1vw;
+		overflow: scroll;
+	}
+	}
+@media (max-width: 767px) {
+	/*-mobile css-*/
+	input[id="popup2"] + label + div > div {
+	/*--블루 전체 팝업--*/
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: touch;
+	position: absolute;
+	top: 46%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 85vw;
+		height: 80vh;
+		padding-top: 0;
+		padding-bottom: 0;
+	padding-left: 5vw;
+	opacity: 95%;
+	border-radius: 800px 800px 0px 0px;
+	z-index: 30;
+}
+	input[id="popup2"] + label + div > label {
+	background: rgba(0, 0, 0, 70%);
+}
+	input[id="popup2"] + label + div > div > label {
+	/*--close--*/
+	transform: translate(55px, 74vh);
+	}
+	.indexbody {
+		width: 100%;
+		height: 50vh;
+		overflow: auto;
+		/*border: 1px solid green;*/
+	}
+	.indexin {
+		justify-content: flex-start;
+	}
+	.indexnumbering {
+		justify-content: flex-end;
+	}
+	.indexyear {
+		justify-content: flex-end;
+	}
+	.indexlist {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 15vh;
+		padding-left: 3vw;
+		padding-right: 3vw;
+}
+	.indexhead {
+		padding-right: 0px;
+		transform: rotateZ(0deg);
+		padding-top: 5px;
+		margin-bottom: 5vh;
+	}
+	.indexbody {
+		overflow: scroll;
+	}
+	.indexgrid {
+	width: 100%;
+	height: 100%;
+	grid-row-gap: 1vw;
+	grid-column-gap: 1vw;
+		overflow: scroll;
+	}
+}
