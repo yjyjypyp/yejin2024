@@ -38,7 +38,6 @@ input[id*="popup"] + label + div > div {
 	padding-top: 8vh;
 	padding-bottom: 8vh;
 	background:#fffbc7;
-	border: 1.5px solid #0506f5;
 	z-index: 12;
 	border-radius: 100px 100px 100px 100px;
 	overflow-x: hidden;
