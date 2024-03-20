@@ -13,6 +13,7 @@ body {
 	width: 100vw;
 	height: 100vh;
 	background-image:url("../img/index/main_bg_photo_05_inverted_02.png");
+	overflow: hidden;
 }
 .gradient01 {
 	display: none;
@@ -464,6 +465,7 @@ body {
 		flex-direction: column-reverse;
 	}
 	 .list ul li a .screen .info {
+		 display: none;
 	position: absolute;
       z-index: 2;
       color: #000000;
