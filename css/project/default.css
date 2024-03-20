@@ -205,14 +205,14 @@ pENG {
 	font-family: "junction", sans-serif;
 	font-weight: normal;
 	font-size: 1.3em;
-	line-height: 1.15em;
+	line-height: 1.2em;
 	padding-bottom: 1em;
 }
 pKOR {
 	font-family: "IBM Plex Sans KR", sans-serif;
 	font-weight: 300;
 	font-size: 1.26em;
-	line-height: 1.2em;
+	line-height: 1.3em;
 }
 .credit {
 	padding-top: 3em;
