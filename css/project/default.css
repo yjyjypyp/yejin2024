@@ -1,8 +1,15 @@
 @charset "UTF-8";
 /* CSS Document */
+html {
+	max-width: 100%;
+	scroll-behavior: smooth;
+}
 body {
 	font-family: 'Junction', sans-serif;
 	font-size: 12px;
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: touch;
+  margin: 0;
 }
 .slide_wrapper {
 	position: relative;
@@ -159,6 +166,7 @@ body {
 	height: 100%;
 	padding: 20px;
 	overflow: auto;
+	font-family: 'Junction', sans-serif;
 }
 .info::-webkit-scrollbar {
 	display: none;
@@ -215,7 +223,7 @@ pKOR {
 .bottom {
 	display: flex;
 	flex-direction: row;
-	justify-content:space-between;
+	justify-content: space-between;
 	position: fixed;
 	width: 100vw;
 	left: 0.8em;
