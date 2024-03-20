@@ -170,6 +170,7 @@ body {
 	padding: 20px;
 	overflow: auto;
 	font-family: 'Junction', sans-serif;
+	color: #000000;
 }
 .info::-webkit-scrollbar {
 	display: none;
@@ -197,8 +198,6 @@ body {
 	line-height: 1.2em;
 	padding-bottom: 2em;
 }
-.discription {
-}
 .ENG {
 	/*text-shadow: 0px 0px 8px #000000;*/
 }
@@ -208,7 +207,6 @@ pENG {
 	font-size: 1.3em;
 	line-height: 1.15em;
 	padding-bottom: 1em;
-	color: #000000;
 }
 pKOR {
 	font-family: "IBM Plex Sans KR", sans-serif;
@@ -430,7 +428,9 @@ pKOR {
 	.controls {
 		display: none;
 	}
-	
+	.info {
+		color: rgba(255, 255, 255, 95%);
+	}
 .responsive-box {
 	position: relative;
 	box-shadow: 0px 0px 20px #000000;
