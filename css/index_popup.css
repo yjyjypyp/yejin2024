@@ -41,6 +41,7 @@ input[id*="popup"] + label + div > div {
 	border: 1.5px solid #0506f5;
 	z-index: 12;
 	border-radius: 100px 100px 100px 100px;
+	overflow-x: hidden;
 }
 input[id*="popup"] + label + div > div > label {
 	display: none;

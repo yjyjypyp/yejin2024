@@ -144,6 +144,9 @@ html, body {
 }
 @media (max-width: 767px) {
 	/*-mobile css-*/
+	.projecttitle {
+	font-size: 4.5em;
+	}
 	.container {
 		width: 100vw;
 	height: auto;
@@ -157,7 +160,7 @@ html, body {
 	}
 	.projectinfo {
 		width: 96vw;
-		margin-top: 8vh;
+		margin-top: 9vh;
 		margin-bottom: 2vh;
 		background-color: rgba(0, 0, 0, 0.5);
 	}
@@ -174,5 +177,9 @@ html, body {
 	}
 	.projectimg img {
 		margin-bottom: 1vh;
+	}
+	.close {
+	top: 2vh;
+	left: 4vw;;
 	}
 }

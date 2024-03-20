@@ -1,7 +1,10 @@
 @charset "UTF-8";
 /* CSS Document */
 body {
+	font-family: 'Junction', Sans-serif;
+	font-size: 12px;
 	background-color:#000000;
+	overflow: hidden;
 }
 .bg {
 	display: flex;
