@@ -470,6 +470,7 @@ body {
 	}
 	.menu-text-section {
 		flex-direction: column-reverse;
+		padding-bottom: 0.5vh;
 	}
 	 .list ul li a .screen .info {
 		 display: none;
