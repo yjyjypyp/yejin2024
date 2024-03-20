@@ -3,10 +3,17 @@
 html, body {
 	font-family: 'Junction', sans-serif;
 	font-size: 12px;
+	max-width: 100%;
+	scroll-behavior: smooth;
+	overflow-x: hidden;
 }
 body {
 	width: 100vw;
 	height: 100vh;
+	scroll-behavior: smooth;
+-webkit-overflow-scrolling: touch;
+	overflow-x: hidden;
+  margin: 0;
 }
 .background {
 	display: flex;
