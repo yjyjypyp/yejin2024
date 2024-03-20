@@ -478,9 +478,11 @@ body {
 		/*--border: 1px solid blue;--*/
     }
 	.info p3 {
+		display: none;
 		font-size: 0.9em;
 	}
 	.info p4 {
+		display: none;
 		font-size: 0.8em;
 	}
 	.whitecircle-section {margin-right: 3.5vw;}
