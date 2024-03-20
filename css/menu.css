@@ -6,7 +6,6 @@ html, body {
 }
 body {
 	width: 100vw;
-	overflow: hidden;
 }
 .background {
 	display: flex;
@@ -173,6 +172,7 @@ body {
 	background-color: #ffffff;
 }
 .now p {
+	font-family: 'Junction', sans-serif;
 	font-size: 1em;
 }
 .now-title {
@@ -181,10 +181,12 @@ body {
 	/*border: 1px solid yellow;*/
 }
 .now-title p1 {
+	font-family: 'Junction', sans-serif;
 	font-size: 2em;
 	line-height: 1.2em;
 }
 .now-title p2 {
+	font-family: 'Junction', sans-serif;
 	margin-top: 0.5em;
 	font-size: 1em;
 	line-height: 1.2em;
@@ -251,6 +253,7 @@ body {
 	color: #ffffff;
 }
 .category .category-textbox p {
+	font-family: 'Junction', sans-serif;
 	margin: 0;
 }
 .category p1 {
@@ -258,20 +261,24 @@ body {
 	font-size: 1.7em;
 }
 .category p2 {
+	font-family: 'Junction', sans-serif;
 	font-family: 'AT Apoc', serif;
 	font-style: italic;
 	font-size: 1.8em;
 }
 .category p3 {
+	font-family: 'Junction', sans-serif;
 	font-family: 'American Typewriter';
 	font-weight: 200;
 	font-size: 1.75em;
 }
 .category p4 {
+	font-family: 'Junction', sans-serif;
 	font-family: 'Ribes', sans-serif;
 	font-size: 1.9em;
 }
 .category p5 {
+	font-family: 'Junction', sans-serif;
 	font-family: 'Montserrat', sans-serif;
 	font-style: italic;
 	font-size: 1.7em;
