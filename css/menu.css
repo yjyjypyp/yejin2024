@@ -12,13 +12,13 @@ body {
 	height: 100vh;
 	scroll-behavior: smooth;
 	-webkit-overflow-scrolling: touch;
-	overflow: hidden;
-  	margin: 0;
+	overflow-x: hidden;
+  margin: 0;
 }
 .background {
 	display: flex;
-	width: 100%;
-	height: 100%;
+	width: 100vw;
+	height: 100vh;
 	background-image:url("../img/index/main_bg_photo_05_inverted_02.png");
 	overflow: hidden;
 }
@@ -504,7 +504,7 @@ body {
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-template-rows: 1fr 1fr;
 	width: 100%;
-	height: 10vh;
+	height: 7vh;
 	color: rgba(255, 255, 255, 100%);
 	margin-right: 0em;
 	}
