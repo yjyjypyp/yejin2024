@@ -1,0 +1,88 @@
+@charset "UTF-8";
+/* CSS Document */
+.category .category-textbox {
+	display: flex;
+	position: absolute;
+	top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	height: 100%;
+	cursor: pointer;
+	z-index: 2;
+	color: #ffffff;
+	background-color:rgba(0, 0, 0, 0%);
+	 transition: all 0.08s;
+}
+.category .category-bg-black:hover .category-textbox {
+	text-shadow: 0px 0px 13px #ffffff, 0px 0px 13px #ffffff;
+	padding-bottom: 0.1em;
+	padding-left: 0.2em;
+	color: #fba8e3;
+}
+.category p6 {
+	color: #fba8e3;
+	text-shadow: 0px 0px 13px #ffffff, 0px 0px 13px #ffffff;
+}
+.category-bg-black01 { height: 100%; width: 99%;  transition: all 0.08s;}
+.category-bg-black02 { height: 100%; width: 94%;  transition: all 0.08s;}
+.category-bg-black03 { height: 100%; width: 88%;  transition: all 0.08s;}
+.category-bg-black04 { height: 100%; width: 82%;  transition: all 0.08s;}
+.category-bg-black05 { height: 100%; width: 76%;  transition: all 0.08s;}
+.category-bg-black06 { height: 100%; width: 100%;  transition: all 0.08s;}
+
+.category-bg-black01:hover { width: 100%; }
+.category-bg-black02:hover { width: 100%; }
+.category-bg-black03:hover { width: 100%; }
+.category-bg-black04:hover { width: 94%; }
+.category-bg-black05:hover { width: 88%; }
+.category-bg-black06:hover { width: 100%; }
+
+.whitecircle-section .circle:nth-child(1) {
+	border: 1px solid white;
+	background-color: rgba(255, 255, 255, 100%);
+}
+.whitecircle-section .circle:nth-child(2) {
+	border: 1px solid white;
+	background-color: rgba(255, 255, 255, 100%);
+}
+.whitecircle-section .circle:nth-child(3) {
+	border: 1px solid white;
+	background-color: rgba(255, 255, 255, 100%);
+}
+.whitecircle-section .circle:nth-child(4) {
+	border: 1px solid white;
+	background-color: rgba(255, 255, 255, 100%);
+}
+.whitecircle-section .circle:nth-child(5) {
+	border: 1px solid white;
+	background-color: rgba(255, 255, 255, 100%);
+}
+.whitecircle-section .circle:nth-child(6) {
+	border: 1px solid white;
+	background-color: rgba(255, 255, 255, 100%);
+}
+@media (min-width: 1024px) {
+	/*--pc css--*/
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+	/*--tablet css--*/
+}
+@media (max-width: 767px) {
+	/*-mobile css-*/
+	.category-bg-black01 { width: 100%; height: 99%;}
+.category-bg-black02 { width: 100%; height: 90%; }
+.category-bg-black03 { width: 100%; height: 80%; }
+.category-bg-black04 { width: 100%; height: 70%;}
+.category-bg-black05 { width: 100%; height: 60%;  }
+.category-bg-black06 { width: 100%; height: 100%; }
+
+.category-bg-black01:hover { width: 100%; height: 100%; }
+.category-bg-black02:hover { width: 100%; height: 95%; }
+.category-bg-black03:hover { width: 100%; height: 95%; }
+.category-bg-black04:hover { width: 100%; height: 95%;}
+.category-bg-black05:hover { width: 100%; height: 95%;}
+.category-bg-black06:hover { width: 100%; height: 100%;}
+}
