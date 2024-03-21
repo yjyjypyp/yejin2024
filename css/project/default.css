@@ -13,7 +13,6 @@ body {
 	scroll-behavior: smooth;
 	-webkit-overflow-scrolling: touch;
  	 margin: 0;
-	overflow-y: hidden;
 }
 .slide_wrapper {
 	position: relative;
@@ -336,18 +335,18 @@ pKOR {
 @media (min-width: 768px) and (max-width: 1024px) {
 	/*--tablet css--*/
 	body {
-		overflow-y: auto;
+		overflow-x: hidden;
 	}
 }
 @media (max-width: 767px) {
 	/*-mobile css-*/
 	body {
-		overflow-y: auto;
+		overflow-x: hidden;
 	}
 	.slide_wrapper {
 	position: relative;
-	width: 100vw;
-	height: 100vh;
+	width: 100%;
+	height: 100%;
 	/*border: 1px solid blue;*/
 	overflow: auto;
 }
@@ -358,6 +357,7 @@ pKOR {
     top: 0;
     left: 0;
 		padding-top: 10vh;
+		padding-bottom: 10vh;
     width: 100%;
     height: 100%;
     overflow-y: auto; /* 세로 스크롤 가능하도록 설정 */
