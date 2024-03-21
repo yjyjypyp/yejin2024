@@ -525,7 +525,11 @@ body {
 		display: flex;
 		background-color: rgba(0, 0, 0, 100%);
 }
-	
+	.category-info {
+	font-size: 1em;
+	line-height: 1.2em;
+	/*border: 1px solid #00FFB3;*/
+}
 	.category .category-textbox {
 	top: 50%;
  	 left: 50%;
@@ -549,7 +553,7 @@ body {
 .category p3 {
 	font-family: 'American Typewriter';
 	font-weight: 200;
-	font-size: 1.2em;
+	font-size: 1.16em;
 }
 .category p4 {
 	font-family: 'Ribes', sans-serif;
@@ -562,7 +566,7 @@ body {
 }
 .category p6 {
 	font-family: 'Srisakdi', sans-serif;
-	font-size: 1.3em;
+	font-size: 1.24em;
 }
 	.currenthover {
 		margin-top: 3vh;
