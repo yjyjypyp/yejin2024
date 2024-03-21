@@ -42,11 +42,11 @@ body {
 	flex-direction: column-reverse;
 	align-items: flex-end;
 	position: fixed;
-	width: 100vw;
+	width: 20vw;
+	margin-left: 80vw;
 	height: 100vh;
 	z-index: 10;
 	font-size: 2em;
-	/*border: 1px solid green;*/
 }
 .slidenumber p {
 	margin-right: 0.65em;
@@ -106,19 +106,42 @@ body {
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 100vw;
 	height: 100vh;
 	z-index: 10;
+	font-size: 1.2em;
 	/*border: 1px solid purple;*/
 }
-.prev {
-	width: 50%;
+.controls .prev {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	width: 5%;
 	cursor: w-resize;
 	/*cursor: url('custom-cursor.png'), auto;*/
 }
-.next {
-	width: 50%;
+.controls .next {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin-left: 90%;
+	width: 10%;
 	cursor: e-resize;
+}
+.controls .prev pguide {
+	margin-left: .95vw;
+	color: #0000f5;
+}
+.controls .prev:hover pguide {
+	margin-left: .7vw;
+	font-style: italic;
+}
+.controls .next pguide {
+	margin-right: 0.95vw;
+	color: #0000f5;
+}
+.controls .next:hover pguide {
+	margin-right: .7vw;
+	font-style: italic;
 }
 .head {
 	display: flex;
