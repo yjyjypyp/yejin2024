@@ -19,7 +19,7 @@ body {
 	display: flex;
 	width: 100vw;
 	height: 100vh;
-	background-image:url("../img/index/main_bg_photo_05_inverted_02.png");
+	background-image:url("../img/wallpaperproject/background_bw.jpg");
 	overflow: hidden;
 }
 .gradient01 {
@@ -457,7 +457,7 @@ body {
 	}
 	.bg-section {
 		width: 100%;
-		height: 93%;
+		height: 91%;
 	}
 	.menu-container {
 	display: flex;
@@ -504,7 +504,7 @@ body {
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-template-rows: 1fr 1fr;
 	width: 100%;
-	height: 7%;
+	height: 9%;
 	color: rgba(255, 255, 255, 100%);
 	margin-right: 0em;
 	}
@@ -549,11 +549,11 @@ body {
 .category p3 {
 	font-family: 'American Typewriter';
 	font-weight: 200;
-	font-size: 1.1em;
+	font-size: 1.2em;
 }
 .category p4 {
 	font-family: 'Ribes', sans-serif;
-	font-size: 1.1em;
+	font-size: 1.2em;
 }
 .category p5 {
 	font-family: 'Montserrat', sans-serif;
@@ -562,7 +562,7 @@ body {
 }
 .category p6 {
 	font-family: 'Srisakdi', sans-serif;
-	font-size: 1.2em;
+	font-size: 1.3em;
 }
 	.currenthover {
 		margin-top: 3vh;
