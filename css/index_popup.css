@@ -37,7 +37,7 @@ input[id*="popup"] + label + div > div {
 	padding-right: 5vw;
 	padding-top: 8vh;
 	padding-bottom: 8vh;
-	background:#fffbc7;
+	background:#ffff88;
 	z-index: 12;
 	border-radius: 100px 100px 100px 100px;
 	overflow-x: hidden;
@@ -77,6 +77,8 @@ input[id*="popup"] + label + div > label {
 	line-height: 1.1em;
 	text-shadow: 0 0 0;
 	overflow: auto;
+	-moz-::selection {color: #75fbfd; background: #ef5fff;}
+	::selection {color: #75fbfd; background: #ef5fff;}
 	  grid-template-areas:
  	 'a a a a a a z b b'
 	'a a a a a a z b b'
@@ -150,6 +152,7 @@ p5 {
 	
 }
 pbody {
+	color: #000000;
 }
 .innerpassage {
 	display: inline-block;
