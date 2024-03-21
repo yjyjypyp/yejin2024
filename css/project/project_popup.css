@@ -125,14 +125,38 @@ input[id*="popup"] + label + div > div > label > div {
 	/*line in close button on the pop up*/
 	position: absolute;
 	top: 50%;
-	left: 50%;
+	left: 0%;
 	transform: translate(-50%, -50%);
 	width: 60%;
 	height: 0.15em;
 	background: rgba(0, 0, 0, 1);
 	z-index: 1;
+	width: 2em;
+	height: 2em;
+	background-color: rgba(255, 255, 255, 0);
+	border: 0;
+	/*border: 1px solid blue;*/
+	cursor: pointer;
+	z-index: 100;
+	transform: rotateZ(45deg);
+	transition: 0.5s;
 }
-
+.close-line .line-hori {
+	position: absolute;
+	top: 47.5%;
+	left: 0;
+	width: 100%;
+	border: 1px solid black;
+}
+.close-line .line-verti {
+	position: absolute;
+	top: 0;
+	left: 45%;
+	height: 100%;
+	border: 1px solid black;
+	background-color: rgba(0, 0, 0, 0);
+	z-index: 1;
+}
 input[id*="popup"] + label + div > label {
 	position: absolute;
 	top: 0;
@@ -195,7 +219,7 @@ eight: 5em;
 	input[id*="popup"] + label + div > div > label {
 	/*close button on the pop up*/
 	position: absolute;
-	top: 0%;
+	top: 2%;
 	right: 50%;
 	transform: translate(50%, 50%);
 	padding: 12px;
@@ -203,19 +227,27 @@ eight: 5em;
 	border-radius: 25%;
 	z-index: 1;
 	cursor: crosshair;
-		border: 0.5px solid #ffffff;
 		/*border: 1px solid black;*/
 }
 	input[id*="popup"] + label + div > div > label > div {
 	/*line in close button on the pop up*/
 	position: absolute;
-	top: 50%;
-	left: 50%;
+	top: 0%;
+	left: 0%;
 	transform: translate(-50%, -50%);
 	width: 40%;
 	height: 0.1em;
-	background: rgba(255, 255, 255, 1);
+	background: rgba(0, 0, 0, 1);
 	z-index: 1;
+	width: 1.2em;
+	height: 1.2em;
+	background-color: rgba(255, 255, 255, 0);
+	border: 0;
+	/*border: 1px solid blue;*/
+	cursor: pointer;
+	z-index: 100;
+	transform: rotateZ(45deg);
+	transition: 0.5s;
 }
 	input[id*="popup"] + label + div > div {
 	/*contents*/
