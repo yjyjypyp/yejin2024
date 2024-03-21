@@ -266,7 +266,7 @@ ul li .list:visited + .hidden-list {
   flex-direction: column-reverse; /* 버튼을 맨 밑에 위치하도록 열의 순서를 뒤집습니다. */
   align-items: flex-end;
   position: fixed;
-	top: 91.5vh;
+	top: 91.5%;
   right: -2.5vw; /*브라우저 오른쪽 모서리에 맞춥니다. */
   z-index: 99;
 	 transform: rotate(90deg);
