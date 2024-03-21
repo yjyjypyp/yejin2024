@@ -12,8 +12,8 @@ body {
 	height: 100vh;
 	scroll-behavior: smooth;
 	-webkit-overflow-scrolling: touch;
-	overflow-x: hidden;
-  margin: 0;
+	overflow: hidden;
+  	margin: 0;
 }
 .background {
 	display: flex;
@@ -453,7 +453,7 @@ body {
 	display: flex;
 	flex-direction: column-reverse;
 		width: 95%;
-		height: 95.5%;
+		height: 95.5vh;
 	}
 	.bg-section {
 		width: 100%;
