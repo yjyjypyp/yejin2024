@@ -151,7 +151,7 @@ body {
 }
 .close .line-hori {
 	position: absolute;
-	top: 47.5%;
+	top: 47%;
 	left: 0;
 	width: 100%;
 	border: 1px solid black;
