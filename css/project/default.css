@@ -4,6 +4,7 @@ html {
 	max-width: 100vw;
 	height: 100vh;
 	scroll-behavior: smooth;
+	overflow: hidden;
 }
 body {
 	width: 100vw;
@@ -356,8 +357,6 @@ pKOR {
     position: absolute;
     top: 0;
     left: 0;
-		padding-top: 10vh;
-		padding-bottom: 10vh;
     width: 100%;
     height: 100%;
     overflow-y: auto; /* 세로 스크롤 가능하도록 설정 */
@@ -367,6 +366,12 @@ pKOR {
     width: 100%;
 		padding: 10px;
     height: auto;
+	}
+	.slides:nth-child(1){
+		padding-top: 10vh;
+	}
+	.slides:nth-last-child(1) {
+		padding-bottom: 8vh;
 	}
 
 /* 슬라이드 내부 컨텐츠를 가운데 정렬하는 스타일 */
