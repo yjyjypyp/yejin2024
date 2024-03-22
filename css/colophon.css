@@ -119,7 +119,7 @@ body {
 }
 @media (max-width: 767px) {
 	.bg img {
-
+	display: none;
 	position: fixed;
 		transform: rotateZ(90deg);
 	width: 100%;

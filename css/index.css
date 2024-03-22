@@ -226,6 +226,7 @@ ul li:nth-child(4) {
 	color: #ffffff;
 	z-index: 1;
 	cursor: pointer;
+	pointer-events: auto; /* list에 커서 이벤트 활성화 */
 }
 .list .p1 {
 	display: flex;
@@ -250,18 +251,13 @@ ul li:nth-child(4) {
 	transform: translate(-50%, -50%);
 	text-shadow: 0px 0px 10px #ffffff, 0px 0px 10px #ffffff, 0px 0px 10px #ffffff, 0px 0px 10px #ffffff, 0px 0px 10px #ffffff;
 }
-ul li .list:hover {
-	display: none;
-}
-ul li .list:hover + .hidden-list {
-	display: block;
-	color: #000000;
-	text-decoration: none;
-}
-ul li .list:visited + .hidden-list {
-	color: #000000;
-	text-decoration: none;
-}
+	ul li:hover .hidden-list {
+		display: block;
+		cursor: pointer;
+	}
+	ul li:hover .list {
+		display: none;
+	}
 }
 .homepagelink {
 	display: flex;
@@ -285,12 +281,12 @@ ul li .list:visited + .hidden-list {
 	font-size: 1.2em;
 	cursor: pointer;
 	color: #ffffff;
-	text-shadow: 0px 0px 12px #3100ff,  0px 0px 12px #3100ff,  0px 0px 12px #3100ff,  0px 0px 12px #3100ff,  0px 0px 12px #3100ff,  0px 0px 12px #3100ff,  0px 0px 12px #3100ff,  0px 0px 12px #3100ff,  0px 0px 12px #3100ff;
+	text-shadow: 0px 0px 12px #3100ff,  0px 0px 12px #3100ff,  0px 0px 12px #3100ff,  0px 0px 12px #3100ff,  0px 0px 12px #3100ff,  0px 0px 12px #3100ff,  0px 0px 12px #3100ff;
 	/*border: 1px solid green;*/
 }
 .homepagelink .btn:hover {
 	color: #000000;
-	text-shadow: 0px 0px 12px #ffffff, 0px 0px 12px #ffffff, 0px 0px 12px #ffffff, 0px 0px 12px #ffffff, 0px 0px 12px #ffffff, 0px 0px 12px #ffffff, 0px 0px 12px #ffffff, 0px 0px 12px #ffffff, 0px 0px 12px #ffffff;
+	text-shadow: 0px 0px 12px #ffffff, 0px 0px 12px #ffffff, 0px 0px 12px #ffffff, 0px 0px 12px #ffffff, 0px 0px 12px #ffffff, 0px 0px 12px #ffffff, 0px 0px 12px #ffffff;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
 	/*--tablet css--*/
@@ -469,7 +465,7 @@ ul li .list:visited + .hidden-list {
   position: fixed;
 		top: 100vh;
   right: 0; /*브라우저 오른쪽 모서리에 맞춥니다. */
-  z-index: 99;
+  z-index: 10;
 	 transform: rotate(90deg);
     transform-origin: top right;
   /*border: 1px solid blue;*/
@@ -479,10 +475,10 @@ ul li .list:visited + .hidden-list {
   display: inline-block;
 	background-color: rgba(255, 255, 255, 0);
 	border: 0;
-	padding-right: 1em;
-	padding-top: 1em;
+	padding-right: 0.8em;
+	padding-top: 0.5em;
 	font-family: "Junction", sans-serif;
-	font-size: 1.2em;
+	font-size: 1em;
 	cursor: pointer;
 	/*border: 1px solid green;*/
 }
