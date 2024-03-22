@@ -13,6 +13,7 @@ body {
 	scroll-behavior: smooth;
 	-webkit-overflow-scrolling: touch;
  	 margin: 0;
+	overflow: hidden;
 }
 .slide_wrapper {
 	position: relative;
@@ -150,6 +151,10 @@ iframe {
 	font-style: italic;
 	color: #CF27FF;
 }
+.controls .prev:active pguide {
+	margin-left: .95vw;
+	color: #000000;
+}
 .controls .next pguide {
 	margin-right: 0.95vw;
 	color: #000000;
@@ -158,6 +163,10 @@ iframe {
 	margin-right: .7vw;
 	font-style: italic;
 	color: #CF27FF;
+}
+.controls .next:active pguide {
+	margin-right: .95vw;
+	color: #000000;
 }
 .head {
 	display: flex;
@@ -394,6 +403,7 @@ pKOR {
 	/*-mobile css-*/
 	body {
 		overflow-x: hidden;
+		overflow-y: auto;
 	}
 	.slide_wrapper {
 	position: relative;
