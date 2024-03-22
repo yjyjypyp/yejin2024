@@ -50,7 +50,7 @@ h1 {
 	z-index: 10;
 	background: url("../img/index/main_bg_photo_05_inverted_03.png");
 	background-size: 100vw auto;
-	background-position: center;
+	background-position: 0 0%;
 	background-attachment: fixed;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -59,12 +59,15 @@ h2 {
 	display: flex;
 	position: absolute;
 	top: 69%;
-	left: 60%;
+	padding-top: 2vh;
+	paddin-bottom: 3vh;
+	padding-left: 2vw;
+	left: 45%;
 	font-size: 12em;
 	z-index: 10;
 	background: url("../img/index/main_bg_photo_05_inverted_03.png");
 	background-size: 100vw auto;
-	background-position: center;
+	background-position: 0 -10%;
 	background-attachment: fixed;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -458,8 +461,34 @@ ul li .list:visited + .hidden-list {
 	font-size: 8em;
 }
 	h2 {
-		left: 5%;
+	left: 5%;
 	font-size: 8em;	
+	}
+	.square {
+		top: 2%;
+		left: 72%;
+		width: 15vw;
+		height: 40vh;
+	}
+	.square2 {
+		top: 38%;
+		left: 10%;
+		width: 35vw;
+		height: 25vh;
+		background-size: contain;
+		background-position: top;
+	}
+	.square3 {
+		top: 52%;
+		left: 50%;
+		width: 50vw;
+		height: 3vh;
+	}
+	.square4 {
+		top: 88%;
+		left: 35%;
+		width: 60vw;
+		height: 20vh;
 	}
 	.content ul {
 	display: flex;
