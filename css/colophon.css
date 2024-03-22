@@ -60,6 +60,10 @@ body {
 .colophon .bottom {
 	grid-area: c;
 }
+.colophon p {
+	font-size: 1em;
+	line-height: 1.5em;
+}
 .close {
 	display: flex;
 	position: fixed;
@@ -96,27 +100,12 @@ body {
 	background-color: rgba(0, 0, 0, 0);
 	z-index: 1;
 }
-@media (max-width: 767px) {
-	.bg img {
-	position: fixed;
-		transform: rotateZ(90deg);
-	width: 100%;
-	padding-left: 0vw;
-		border: 1px solid green;
-	}
-	.close {
-		top: 5vh;
-		right: 10vw;
-		
-	}
-}
 @media (min-width: 768px) and (max-width: 1024px) {
 	.bg img {
 	position: fixed;
 		transform: rotateZ(90deg);
 	width: 100%;
 	padding-left: 0vw;
-		border: 1px solid green;
 	}
 	.close {
 		top: 5vh;
@@ -126,5 +115,19 @@ body {
 	}
 	.colophon {
 		padding-left: 30vw;
+	}
+}
+@media (max-width: 767px) {
+	.bg img {
+
+	position: fixed;
+		transform: rotateZ(90deg);
+	width: 100%;
+	padding-left: 0vw;
+	}
+	.close {
+		top: 5vh;
+		right: 10vw;
+		
 	}
 }
