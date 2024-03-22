@@ -7,7 +7,7 @@
 	justify-content: center;
 	width: 100%;
 	height: 100%;
-	background-image: url("../../img/movement/sketch_02.png");
+	background-image: url("../../img/fromthesun/scene_05.jpg");
 	background-repeat: no-repeat;
 	background-size:cover;
 }
@@ -44,12 +44,16 @@
 }
 .bgwhite2 {
 	background-color: white;
-	width: 75%;
+	width: 80%;
+}
+.bgwhite3 {
+	background-color: white;
+	width: 70%;
 }
 .video-image-grid {
 	width: 100%;
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr 1fr;
 	grid-column-gap: 0vw;
 	grid-row-gap: 1vh;
@@ -71,4 +75,16 @@
 }
 .ui-image-grid img{
 	width: 100%;
+}
+@media (max-width: 767px) {
+	/*-mobile css-*/
+	.bgwhite2 {
+	width: 100%;
+	}
+	.bgwhite3 {
+	width: 100%;
+}
+	.video-image-grid {
+		grid-row-gap: 0.5vh;
+	}
 }

@@ -59,3 +59,15 @@
 .video-image-grid img{
 	width: 100%;
 }
+@media (max-width: 767px) {
+	/*-mobile css-*/
+	.bgwhite2 {
+	width: 100%;
+	}
+	.bgwhite3 {
+	width: 100%;
+}
+	.video-image-grid {
+		grid-row-gap: 0.5vh;
+	}
+}

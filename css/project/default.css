@@ -79,6 +79,10 @@ body {
 	width: 75vw;
 	height: auto;
 }
+.responsive-box iframe {
+	width: 1280px;
+	height: 720px;
+}
 .responsive-box2 {
 	position: relative;
 	box-shadow: 0px 0px 20px #000000;
@@ -115,7 +119,7 @@ body {
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
-	width: 5%;
+	width: 15%;
 	cursor: w-resize;
 	/*cursor: url('custom-cursor.png'), auto;*/
 }
@@ -123,8 +127,8 @@ body {
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
-	margin-left: 90%;
-	width: 10%;
+	margin-left: 85%;
+	width: 15%;
 	cursor: e-resize;
 }
 .controls .prev pguide {
@@ -230,7 +234,7 @@ pENG {
 	font-weight: normal;
 	font-size: 1.3em;
 	line-height: 1.2em;
-	padding-bottom: 1em;
+	padding-bottom: 2em;
 }
 pKOR {
 	font-family: "IBM Plex Sans KR", sans-serif;
@@ -244,6 +248,10 @@ pKOR {
 	font-weight: normal;
 	font-size: 1.15em;
 	line-height: 1.25em;
+}
+.credit pcrekor {
+	font-family: "IBM Plex Sans KR", sans-serif;
+	font-size: 0.5em;
 }
 .bottom {
 	display: flex;
@@ -361,6 +369,10 @@ pKOR {
 	body {
 		overflow-x: hidden;
 	}
+	.responsive-box iframe {
+	width: 720px;
+		height: 480px;
+}
 }
 @media (max-width: 767px) {
 	/*-mobile css-*/
@@ -414,6 +426,10 @@ pKOR {
 	.slidenumber {
     display: none;
 	}
+	.responsive-box iframe {
+	width: 480px;
+		height: 240px;
+}
 	/*footnotes*/
 	.bottom {
 	display: flex;
@@ -473,6 +489,7 @@ pKOR {
 	height: auto;
 }
 .responsive-box3 img {
-	height: 100vh;
+	width: 100vw;
+	height: auto;
 }
 }
