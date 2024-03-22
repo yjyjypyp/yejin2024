@@ -67,7 +67,7 @@ h2 {
 	z-index: 10;
 	background: url("../img/index/main_bg_photo_05_inverted_03.png");
 	background-size: 100vw auto;
-	background-position: 0 -10%;
+	background-position: top;
 	background-attachment: fixed;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
