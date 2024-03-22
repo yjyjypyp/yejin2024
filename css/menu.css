@@ -18,7 +18,7 @@ body {
 	width: 100vw;
 	height: 100vh;
 	background-image:url("../img/wallpaperproject/background_bw.jpg");
-	overflow: hidden;
+	overflow-x: hidden;
 }
 .gradient01 {
 	display: none;
@@ -596,7 +596,7 @@ body {
 		right: 2.5%;
 	}
 	.homepagelink .btn { /* 버튼을 오른쪽으로 90도 회전시킵니다. */
-	padding-right: 0.8em;
+	padding-right: 1em;
 	padding-top: 0.5em;
 	font-family: "Junction", sans-serif;
 	font-size: 1em;

@@ -447,7 +447,7 @@ ul li .list:visited + .hidden-list {
 		top: 58vh;
 	}
 	.volumn-info {
-		top: 71%;
+		top: 72%;
 	margin-left: 60vw;	
 	}
 	.volumn-info p {
@@ -475,7 +475,7 @@ ul li .list:visited + .hidden-list {
   display: inline-block;
 	background-color: rgba(255, 255, 255, 0);
 	border: 0;
-	padding-right: 0.8em;
+	padding-right: 1em;
 	padding-top: 0.5em;
 	font-family: "Junction", sans-serif;
 	font-size: 1em;
