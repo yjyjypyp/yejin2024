@@ -318,8 +318,8 @@ body {
 }
 .whitecircle-section .circle {
 	border-radius: 50%;
-	width: 4.5em;
-	height: 4.5em;
+	width: 4em;
+	height: 4em;
 	margin: 0.2em;
 }
 .close {
@@ -452,8 +452,8 @@ body {
 	.black-section {
 	display: flex;
 	flex-direction: column-reverse;
-		width: 95%;
-		height: 95.5%;
+		width: 97%;
+		height: 94%;
 	}
 	.bg-section {
 		width: 100%;
@@ -584,22 +584,22 @@ body {
 	height: 100vh;
 	bottom: 0;
 	right: 0;
-	margin-right: 0.5vw;
-	margin-bottom: 12vh;
+	margin-right: 0.3vw;
+	margin-bottom: 13vh;
 }
 	.whitecircle-section .circle {
 	border-radius: 50%;
-	width: 1.5em;
-	height: 1.5em;
+	width: 1.2em;
+	height: 1.2em;
 	margin: 0.15em;
 }
 	.close { 
-		top: 1%;
-		right: 1.4%;
+		top: 1.6%;
+		right: 2.5%;
 	}
 	.homepagelink .btn { /* 버튼을 오른쪽으로 90도 회전시킵니다. */
 	padding-right: 0.5em;
-	padding-top: 0.6em;
+	padding-top: 0.4em;
 	/*font-size: 0.9em;*/
 	/*border: 1px solid green;*/
 }
