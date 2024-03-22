@@ -42,3 +42,13 @@
     -ms-filter: blur(5px); 
 	transform: scale(1.1);
 }
+.bgwhite2 {
+	background-color: white;
+	width: 75%;
+}
+@media (max-width: 767px) {
+	/*-mobile css-*/
+	.bgwhite2 {
+	width: 100%;
+	}
+}

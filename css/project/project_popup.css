@@ -102,7 +102,7 @@ input[id*="popup"] + label + div > div {
 	width: 28vw;
 	height: auto;
 	max-height: 80vh;
-	background: rgba(255, 255, 255, 0);
+	background: rgba(255, 255, 255, 0.3);
 	z-index: 3;
 	text-decoration-color: black;
 	text-shadow: 0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 10px rgba(255, 255, 255, 1);
@@ -216,6 +216,10 @@ eight: 5em;
 		padding-top: 3vh;
 		padding-left: 51vw;
 }
+	input[id*="popup"] + label + div {
+    display: block; /* 모바일에서 팝업 노출 */
+    /* 추가적인 스타일 지정 */
+  }
 	input[id*="popup"] + label + div > div > label {
 	/*close button on the pop up*/
 	position: absolute;
