@@ -12,12 +12,12 @@ body {
 	scroll-behavior: smooth;
 	-webkit-overflow-scrolling: touch;
   margin: 0;
+	background-image:url("../img/wallpaperproject/background_bw.jpg");
 }
 .background {
 	display: flex;
 	width: 100vw;
 	height: 100vh;
-	background-image:url("../img/wallpaperproject/background_bw.jpg");
 	overflow-x: hidden;
 }
 .gradient01 {
