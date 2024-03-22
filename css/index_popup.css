@@ -77,12 +77,12 @@ input[id*="popup"] + label + div > label {
 	line-height: 1.1em;
 	text-shadow: 0 0 0;
 	overflow: auto;
-	-moz-::selection {color: #75fbfd; background: #ef5fff;}
-	::selection {color: #75fbfd; background: #ef5fff;}
 	  grid-template-areas:
  	 'a a a a a a z b b'
 	'a a a a a a z b b'
 }
+-moz-::selection {color: #75fbfd; background: #ef5fff;}
+::selection {color: #75fbfd; background: #ef5fff;}
 .about_grid::-webkit-scrollbar {
 	display: none;
 }
