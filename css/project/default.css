@@ -4,7 +4,6 @@ html {
 	max-width: 100vw;
 	height: 100vh;
 	scroll-behavior: smooth;
-	overflow: hidden;
 }
 body {
 	width: 100vw;
@@ -144,19 +143,21 @@ iframe {
 }
 .controls .prev pguide {
 	margin-left: .95vw;
-	color: #0000f5;
+	color: #000000;
 }
 .controls .prev:hover pguide {
 	margin-left: .7vw;
 	font-style: italic;
+	color: #CF27FF;
 }
 .controls .next pguide {
 	margin-right: 0.95vw;
-	color: #0000f5;
+	color: #000000;
 }
 .controls .next:hover pguide {
 	margin-right: .7vw;
 	font-style: italic;
+	color: #CF27FF;
 }
 .head {
 	display: flex;
