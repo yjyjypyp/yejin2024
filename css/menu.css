@@ -5,14 +5,12 @@ html, body {
 	font-size: 12px;
 	max-width: 100%;
 	scroll-behavior: smooth;
-	overflow: hidden;
 }
 body {
 	width: 100vw;
 	height: 100vh;
 	scroll-behavior: smooth;
 	-webkit-overflow-scrolling: touch;
-	overflow-x: hidden;
   margin: 0;
 }
 .background {
