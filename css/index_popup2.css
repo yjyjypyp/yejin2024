@@ -31,8 +31,8 @@ input[id*="popup2"] + label + div > div {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	width: 95vw;
-	height: 90vh;
+	width: 80vw;
+	height: 88vh;
 	padding-left: 5vw;
 	padding-right: 5vw;
 	padding-top: 8vh;
@@ -58,7 +58,7 @@ input[id*="popup2"] + label + div > label {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: rgba(0, 0, 0, 0);
+	background: rgba(0, 0, 0, 0.5);
 	z-index: 11;
 }
 .close {
