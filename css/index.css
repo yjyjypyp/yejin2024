@@ -92,7 +92,7 @@ h1, h2, span {
 	font-style: italic;
 }
 .A {
-	font-family: "AT Apoc", sans-serif; /* "ME"에 사용할 다른 폰트 */
+	font-family: "AT Apoc", sans-serif;
 	font-weight: bold;
 }
 .Z {
@@ -414,6 +414,9 @@ button:hover {
 	}
 	.colophon-body .left {
 	padding-right: 1vw;
+	}
+	.bottom {
+		top: 84vh;
 	}
 	.bottom p1, button {
 	font-size: .8rem;
