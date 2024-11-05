@@ -1,586 +1,422 @@
 @charset "UTF-8";
 /* CSS Document */
-html, body {
-	font-family: 'Junction', sans-serif;
-	font-size: 12px;
+html, body{
+	margin: 0;
+	padding: 0;
+	widht: 100%;
+	height: 100%;
 }
-body {
-	width: 100vw;
+.background {
+	width: 100%;
 	height: 300vh;
-	overflow-x: hidden;
-}
-body::-webkit-scrollbar {
-	width: 0px;	
-}
-body::webkit-scrollbar-thumb {
-	width: 0px;
-	border: 1px solid #ffffff;
-}
-body::webkit-scrollbar-track {
-	width: 0px;
-}
-.section {
-	display: flex;
-	position: relative;
-	width: 100%;
-	height: 100%;
-	background-image:url("../img/index/main_bg_photo_05_resize.jpg");
-	background-size: cover;
-	background-position: center;
+	background: linear-gradient(to bottom, #ff2a4e,#ff2a4e,#ffffe8,#33641e,#33641e,#6300ff);
+	background-size: 100% 100%;
 	background-repeat: no-repeat;
-	overflow: hidden;
 }
-.container {
+.bgimage {
+	display: none;
+}
+.content {
 	display: flex;
-	position: relative;
 	flex-direction: column;
+	position: fixed;
 	width: 100%;
-	height: 100%;
-	height: auto;
-	object-fit: cover;
+	height: 40%;
+	padding-top: 2rem;
+	padding-right: 2rem;
+	z-index:2;
+	top: 0;
 }
-h1 {
+.menu {
+	cursor: pointer;
+}
+.menu-each {
 	display: flex;
+	flex-direction: column;
+	border: 1px solid blue;
+}
+li a {
+	text-decoration: none;
+    color: #000000;
+    display: block; /* a 태그를 블록으로 설정하여 전체 영역을 클릭 가능하게 만듭니다 */
+    width: 100%; /* 전체 너비를 차지하게 설정 */
+    height: 100%; /* 전체 높이를 차지하게 설정 */
+    pointer-events: auto; /* a 태그의 포인터 이벤트 활성화 */
+}
+li a:active,
+li a:checked,
+li a:hover {
+    text-decoration: none;
+    color: #000000;
+}
+.list-about,
+.shown-list,
+.hidden-list {
+    text-align: right; /* 오른쪽 정렬 */
+    pointer-events: auto; /* 포인터 이벤트 활성화 */
+	text-shadow: 0px 0px 6px rgba(0,0,0,1), 0px 0px 6px rgba(0,0,0,1), 0px 0px 9px rgba(123,230,255,1.00);
+}
+
+.hidden-list {
+    display: none;
+    white-space: nowrap;
+	font-style: italic; /* 원한다면 기울임 적용 */
+	text-shadow: 0px 0px 3px rgba(0,0,0,1), 0px 0px 4px rgba(0,0,0,1), 0px 0px 9px rgba(255,255,255,1.00);
+}
+
+ul li:hover .hidden-list {
+    display: block;
+    cursor: pointer;
+}
+
+ul li:hover .shown-list {
+    display: none;
+}
+
+h1, h2, span {
+    margin: 0;
+    font-family: "helvetica neue", sans-serif;
+    font-weight: 400;
+    font-size: 5rem;
+    line-height: 4.3rem;
+    letter-spacing: -.35rem;
+    text-align: right; /* 오른쪽 정렬 */
+    margin-bottom: .15rem;
+	color: rgba(0, 0, 0, 1);
+    transition: transform 0.6s ease, opacity 0.6s ease; /* 애니메이션 효과 */
+}
+.about {
+	text-align: right;
+}
+.star {
+	font-style: italic;
+}
+.A {
+	font-family: "AT Apoc", sans-serif; /* "ME"에 사용할 다른 폰트 */
+	font-weight: bold;
+}
+.Z {
+	font-family: "Basteleur"; /* "ME"에 사용할 다른 폰트 */
+}
+.see {
+	font-family: "Basteleur";
+}
+.make {
+	font-family: "Courgette";
+}
+.find {
+	font-family: "Pilowlava";
+}
+.credit {
+	font-family: "Sinistre", serif;/* "ME"에 사용할 다른 폰트 */
+}
+.know {
+    font-family: "Sinistre", serif; /* "KNOW"에 사용할 다른 폰트 */
+    /* 원하는 경우 폰트 두께 조정 */
+}
+.me {
+    font-family: "Savoye LET"; /* "ME"에 사용할 다른 폰트 */
+}
+/* 여백에 클릭이나 hover 이벤트가 발생하지 않도록 하기 */
+ul li {
+    pointer-events: none; /* ul li에 클릭 이벤트 비활성화 */
+}
+
+ul li a {
+    pointer-events: auto; /* a 태그에 클릭 이벤트 활성화 */
+}
+
+/* 팝업 스타일 */
+.index-popup {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 88vw;
+	height: 90vh;
+	padding-left: 5vw;
+	padding-right: 5vw;
+	padding-top: 8vh;
+	padding-bottom: 8vh;
+	background: radial-gradient(circle, rgba(0, 0, 0, .8) 0%, rgba(0, 0, 0, 0) 70%);
+	z-index: 12;
+	font-family: 'junction', sans-serif;
+	font-size: .9rem;
+	line-height: 1rem;
+	font-weight: lighter;
+	font-style: normal;
+	border-radius: 500px 0px 500px 500px;
+	overflow: hidden;
+	cursor: crosshair;
+	box-shadow: 0 0 20px rgba(255,236,157,1.00); /* 주변에 그림자 추가 */
+    backdrop-filter: blur(20px); /* 배경 흐림 효과 */
+}
+.colophon-popup {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 46vw;
+	height: 80vh;
+	padding-left: 5vw;
+	padding-right: 5vw;
+	background: radial-gradient(circle, rgba(0, 0, 0, .8) 0%, rgba(232, 138, 255, 0.1) 70%);
+	z-index: 12;
+	font-family: 'junction', sans-serif;
+	font-size: .9rem;
+	line-height: 1rem;
+	font-weight: lighter;
+	font-style: normal;
+	border-radius: 500px 500px 500px 500px;
+	overflow: hidden;
+	cursor: help;
+	box-shadow: 0 0 20px rgba(217,164,255,1.00); /* 주변에 그림자 추가 */
+    backdrop-filter: blur(20px); /* 배경 흐림 효과 */
+}
+.about-popup {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 88vw;
+	height: 90vh;
+	padding-left: 5vw;
+	padding-right: 5vw;
+	padding-top: 8vh;
+	padding-bottom: 8vh;
+	background: radial-gradient(circle, rgba(0, 0, 0, .8) 0%, rgba(123, 230, 255, 0.2) 70%);
+	z-index: 12;
+	font-family: "junction", sans-serif;
+	font-size: .9rem;
+	line-height: 1rem;
+	font-weight: lighter;
+	font-style: normal;
+	border-radius: 100px 100px 100px 100px;
+	overflow: hidden;
+	cursor: crosshair;
+	box-shadow: 0 0 50px rgba(123,230,255,1.00); /* 주변에 그림자 추가 */
+    backdrop-filter: blur(20px); /* 배경 흐림 효과 */
+}
+.index-popup, .colophon-popup, .about-popup {
+    display: none; /* 초기에는 숨겨둠 */
+}
+.bottom {
 	position: relative;
-	top: 81vh;
-	padding-top: 2vh;
-	paddin-bottom: 3vh;
-	padding-left: 2vw;
-	font-size: 12em;
+	overflow: hidden;
+	white-space: nowrap;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	position: fixed;
+	width: 100%;
+	height: auto;
+	top: 86vh;
+	padding-left: 1vw;
 	z-index: 10;
-	background: url("../img/index/main_bg_photo_05_inverted_03.png");
-	background-size: 100vw auto;
-	background-position: 0 0%;
-	background-attachment: fixed;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
 }
-h2 {
-	display: flex;
-	position: absolute;
-	top: 68%;
-	padding-top: 2vh;
-	paddin-bottom: 3vh;
-	padding-left: 2vw;
-	left: 56%;
-	font-size: 12em;
-	z-index: 10;
-	background: url("../img/index/main_bg_photo_05_inverted_03.png");
-	background-size: 100vw auto;
-	background-position: top;
-	background-attachment: fixed;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+.marquee {
+    display: inline-block; /* 인라인 블록으로 설정 */
+	white-space: nowrap;
+    animation: marquee 10s linear infinite; /* 애니메이션 설정 */
 }
-.square {
-	display: flex;
-	position: absolute;
-	top: 2%;
-	left: 72%;
-	width: 15vw;
-	height: 40vh;
-	background-image: url("../img/index/main_bg_photo_05_inverted_03.png");
-	background-size: 100vw auto;
-	background-position: top;
-	background-attachment: fixed;
-    -webkit-background-clip: padding-box; /* Webkit 기반 브라우저에서는 -webkit- 접두사 사용 */
-    background-clip: padding-box;
+.arrow-down {
+	animation: bounce 1.5s ease-in-out infinite;
+	margin-top: 3.5vh;
+	padding-bottom: 2vh;
 }
-.square2 {
-	display: flex;
-	position: absolute;
-	top: 38%;
-	left: 10%;
-	width: 35vw;
-	height: 25vh;
-	background-image: url("../img/index/main_bg_photo_05_inverted_03.png");
-	background-size: 100vw auto;
-	background-position: top;
-	background-attachment: fixed;
-    -webkit-background-clip: padding-box; /* Webkit 기반 브라우저에서는 -webkit- 접두사 사용 */
-    background-clip: padding-box;
+.arrow-down p2{
+	font-size: 2rem;
+    color: black;
+    text-shadow: 
+      	 0 0 10px rgba(255, 255, 255, 0.8), 
+        0 0 20px rgba(255, 255, 255, 0.6),
+        0 0 30px rgba(255, 0, 255, 0.5),
+        0 0 40px rgba(255, 0, 255, 0.4);
+    animation: glow 1.5s infinite alternate;
 }
-.square3 {
-	display: flex;
-	position: absolute;
-	top: 48%;
-	left: 70%;
-	width: 6vw;
-	height: 10vh;
-	background-image: url("../img/index/main_bg_photo_05_inverted_03.png");
-	background-size: 100vw auto;
-	background-position: top;
-	background-attachment: fixed;
-    -webkit-background-clip: padding-box; /* Webkit 기반 브라우저에서는 -webkit- 접두사 사용 */
-    background-clip: padding-box;
+@keyframes glow {
+    from {
+        text-shadow: 
+            0 0 5px rgba(0, 0, 0, 0.6), 
+            0 0 10px rgba(0, 0, 0, 0.4);
+    }
+    to {
+        text-shadow: 
+            0 0 10px rgba(0,0,0, 1), 
+            0 0 20px rgba(255,255,255, 1);
+    }
 }
-.square4 {
-	display: flex;
-	position: absolute;
-	top: 78%;
-	left: 55%;
-	width: 22vw;
-	height: 60vh;
-	background-image: url("../img/index/main_bg_photo_05_inverted_03.png");
-	background-size: 100vw auto;
-	background-position: top;
-	background-attachment: fixed;
-    -webkit-background-clip: padding-box; /* Webkit 기반 브라우저에서는 -webkit- 접두사 사용 */
-    background-clip: padding-box;
+@keyframes bounce {
+    0%{
+        transform: translateY(-3px); /* 기본 위치 */
+    }
+    60% {
+        transform: translateY(-10px); /* 위로 이동 */
+    }
+    100% {
+        transform: translateY(-3px); /* 중간 위치 */
+    }
 }
-.content{
-	display: flex;
-	position: absolute;
-	width: 100vw;
-	height: 100vh;
-	z-index: 10;
+.bottom p1, button {
+	font-family: 'junction', sans-serif;
+	font-size: .8rem;
+	color: black;
+	text-shadow: 0px 0px 3px rgba(0,0,0,.7), 0px 0px 5px rgba(0,0,0,.2);
+}
+button {
+	background-color: rgba(255, 255, 255, 0);
+	border: 0;
+	cursor: pointer;
+}
+button:hover {
+	text-decoration: underline;
+}
+.bottom a {
+	text-decoration: none;
+}
+.bottom a:hover {
+	text-decoration: none;
+	font-weight: bold;
+}
+.bottom a:active {
+	text-decoration: none;
+}
+.bottom a:checked {
+	text-decoration: none;
 }
 .copyright {
 	display: flex;
-	position: fixed;
-	padding-top: 1.5vh;
-	padding-left: 10vw;
-}
-.copyright .circle {
-	width: 1em;
-	height: 1em;
-	border-radius: 50%;
-	background-color: #000000;
-	margin-right: .2vw;
-}
-.copyright p{
-	font-size: 1em;
-	line-height: 1.2em;
-	font-weight: 300;
-	text-shadow: 0px 0px 10px #ffffff, 0px 0px 10px #ffffff, 0px 0px 10px #ffffff, 0px 0px 10px #ffffff, 0px 0px 10px #ffffff, 0px 0px 10px #ffffff, 0px 0px 10px #ffffff, 0px 0px 10px #ffffff, 0px 0px 10px #ffffff, 0px 0px 10px #ffffff;
-}
-.all-volumn {
-	display: flex;
-	flex-direction: column;
-	width: 100vw;
-	height: 100vh;
-}
-.volumn {
-	display: flex;
-	position: fixed;
-	justify-content: flex-end;
-	width: 20%;
-	top: 60vh;
-	margin-left: 81%;
-	padding-right: 6%;
-	font-family: "VPPixelPro";
-	font-size: 10em;
-	z-index: 1;
-	/*text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;*/
-}
-.volumn a {
-	color: #000000;
-	text-decoration: none;
-	cursor: pointer;
-}
-.volumn a:hover {
-	color: #000000;
-	text-decoration: none;
-	padding-top: 0.5vh;
-	padding-left: 0.3vw;
-}
-.volumn a:active {
-	color: #000000;
-	text-decoration: none;
-}
-.volumn a:checked {
-	color: #000000;
-	text-decoration: none;
-}
-.volumn-info a {
-	color: #000000;
-	text-decoration: none;
-}
-.volumn-info a:hover {
-	color: #000000;
-	text-decoration: none;
-	padding-top: 0.5vh;
-	padding-left: 0.3vw;
-}
-.volumn-info a:active {
-	color: #000000;
-	text-decoration: none;
-}
-.volumn-info a:checked {
-	color: #000000;
-	text-decoration: none;
-}
-.volumn p {
-	z-index: 1;
-}
-.volumn-img {
-	display: flex;
-	position: fixed;
-	justify-content: center;
-	align-items:center;
-	top: 64vh;
-	left: 86vw;
-	width: 160px;
-	heigth: auto;
-	z-index: -1;
-}
-.volumn-info {
-	display: flex;
-	position: fixed;
+	flex-direction: row;
 	align-items: center;
-	top: 73vh;
-	margin-left: 80vw;
-	z-index: 1;
+	padding-left: .4vw;
+	padding-right: .4vw;
+	line-height: .65rem;
 }
-.volumn-info:hover {
-	cursor: pointer;
+.bottom .circle {
+	width: .4vw;         /* 원의 가로 크기 */
+    height: .4vw;        /* 원의 세로 크기 */
+    background-color: black; /* 원의 배경색 */
+    border-radius: 50%;   /* 모서리 둥글게 */
+    /* 추가 스타일링 */
+    display: flex;        /* 내부 내용 정렬을 위한 Flexbox */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center;
+	margin-right: .15vw;
+	box-shadow: 0px 0px 3px rgba(0,0,0,.7), 0px 0px 5px rgba(0,0,0,.2);
 }
-.volumn-info:hover .volumn a {
-	padding-top: 0.5vh;
-	padding-left: 0.3vw;
+.colophon-body {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-row-gap: 5vh;
+	z-index: 5;
+	padding-top: 24vh;
+	padding-left: 5vw;
+	padding-right: 5vw;
+	color: #ffffff;
+	font-weight: normal;
+	text-shadow: 0 0 10px #b748ff, 0 0 10px #b748ff, 0 0 10px #b748ff, 0 0 10px #b748ff, 0 0 10px #b748ff, 0 0 10px #b748ff, 0 0 10px #b748ff, 0 0 10px #b748ff, 0 0 10px #b748ff, 0 0 10px #9b748ff;
+	grid-template-areas: 
+		'a a b'
+		'c c c'
 }
-.volumn-info p{
-	font-size: 1.5em;
-	line-height: 1.2em;
-	background-color: rgba(255, 255, 255, 90%);
-	padding: 1.5vw;
-	margin-right: 5vw;
+.colophon-body .left {
+	grid-area: a;
+	padding-right: 6vw;
 }
-.list img {
-	display: none;
-	position: absolute;
-	transform: translate(-50%, -40%);
-	z-index: -2;
-	width: 4em;
+.colophon-body .right {
+	grid-area: b;
+	text-align: right;
 }
+.colophon-bottom {
+	grid-area: c;
+}
+.colophon-body p {
+	font-size: 1em;
+	line-height: 1.5em;
+}
+/* 글리터 효과 스타일 */
+.glitter {
+    position: absolute;
+    width: 5px; /* 글리터 크기 */
+    height: 5px;
+    background-color: white; /* 글리터 색상 */
+    opacity: 0.8;
+    border-radius: 50%; /* 원형 */
+    pointer-events: none; /* 클릭 불가 */
+	box-shadow: 0 0 5px white, 0 0 10px gold; /* 빛나는 효과 */
+    animation: fall linear infinite; /* 애니메이션 설정 */
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh); /* 위에서 시작 */
+        opacity: 1; /* 처음에는 보임 */
+    }
+    100% {
+        transform: translateY(100vh); /* 아래로 떨어짐 */
+        opacity: 0; /* 아래로 갈수록 사라짐 */
+    }
+}
+@keyframes blink {
+    0%, 100% {
+        opacity: 1; /* 완전히 보이는 상태 */
+    }
+    50% {
+        opacity: 0; /* 완전히 보이지 않는 상태 */
+    }
+}
+.glitter-plus {
+    position: absolute;
+    width: 4.5px;      /* 다이아몬드의 가로 크기 */
+    height: 4.5px;     /* 다이아몬드의 세로 크기 (길쭉하게 설정) */
+    background-color: rgba(255, 255, 255, 0.9); /* 다이아몬드 색상 */
+    transform: rotate(45deg); /* 45도 회전으로 다이아몬드 모양 구현 */
+    animation: blink 1s infinite; /* 깜빡임 애니메이션 */
+    box-shadow: 0 0 5px white, 0 0 5px gold, 0 0 10px gold; /* 빛나는 효과 */
+}
+.color-white { background-color: rgba(255, 255, 255, 0.9); }
+.color-gold { background-color: rgba(255, 223, 186, 0.9); }
+.color-lightblue { background-color: rgba(186, 225, 255, 0.9); }
+.color-lightpink { background-color: rgba(255, 192, 203, 0.9); }
+
 @media (min-width: 1024px) {
 	/*--pc css--*/
-.content ul {
-	display: flex;
-	position: fixed;
-		flex-direction:column;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	height: 100%;
-	font-family: 'Srisakdi', sans-serif;
-	font-size: 6.5em;
-	/*text-shadow: 0px 0px 10px #d858f7, 0px 0px 10px #d858f7, 0px 0px 10px #d858f7, 0px 0px 10px #ffffa4, 0px 0px 10px #ffffa4;*/
-	text-shadow: 0px 0px 10px #d858f7, 0px 0px 10px #d858f7, 0px 0px 10px #d858f7, 0px 0px 10px #000000, 0px 0px 10px #000000;
-	/*border: 1px solid red;*/
-}
-.content ul li {
-	display: flex;
-	align-items: center;
-	width: 100vw;
-	height: 12vh;
-	margin-bottom: 4vh;
-	background-color: rgba(255, 255, 255, 0%);
-	position: relative;
-	
-}
-ul li:nth-child(1) {
-	left: 20vw;
-}
-ul li:nth-child(2) {
-	left: 60vw;
-}
-ul li:nth-child(3) {
-	left: 70vw;
-}
-ul li:nth-child(4) {
-	left: 45%;
-}
-.list {
-	display: flex;
-	position: relative;
-	width: 100%;
-	color: #ffffff;
-	z-index: 1;
-	cursor: pointer;
-	pointer-events: auto; /* list에 커서 이벤트 활성화 */
-}
-.list .p1 {
-	display: flex;
-	position: absolute;
-	transform: translate(-50%, -50%);
-	z-index: 1;
-}
-.list .p2 {
-	display: flex;
-	position: absolute;
-	transform: translate(-50%, -50%);
-	z-index: 2;
-	color: #ffffff;
-	text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000
-}
-.hidden-list {
-	display: none;
-	position: absolute;
-	top: 50%;
-	left: 0%;
-	color: #000000;
-	transform: translate(-50%, -50%);
-	text-shadow: 0px 0px 10px #ffffff, 0px 0px 10px #ffffff, 0px 0px 10px #ffffff, 0px 0px 10px #ffffff, 0px 0px 10px #ffffff;
-}
-	ul li:hover .hidden-list {
-		display: block;
-		cursor: pointer;
-	}
-	ul li:hover .list {
-		display: none;
-	}
-}
-.homepagelink {
-	display: flex;
-  flex-direction: column-reverse; /* 버튼을 맨 밑에 위치하도록 열의 순서를 뒤집습니다. */
-  align-items: flex-end;
-  position: fixed;
-	top: 91.5%;
-  right: -2.5vw; /*브라우저 오른쪽 모서리에 맞춥니다. */
-  z-index: 99;
-	 transform: rotate(90deg);
-  /*border: 1px solid blue;*/
-}
-.homepagelink .btn { /* 버튼을 오른쪽으로 90도 회전시킵니다. */
-  display: inline-block;
-	background-color: rgba(255, 255, 255, 0);
-	border: 0;
-	padding-right: 1em;
-	padding-top: 1em;
-	padding-bottom: 1em;
-	font-family: "Junction", sans-serif;
-	font-size: 1.2em;
-	cursor: pointer;
-	color: #ffffff;
-	text-shadow: 0px 0px 12px #3100ff,  0px 0px 12px #3100ff,  0px 0px 12px #3100ff,  0px 0px 12px #3100ff,  0px 0px 12px #3100ff,  0px 0px 12px #3100ff,  0px 0px 12px #3100ff;
-	/*border: 1px solid green;*/
-}
-.homepagelink .btn:hover {
-	color: #000000;
-	text-shadow: 0px 0px 12px #ffffff, 0px 0px 12px #ffffff, 0px 0px 12px #ffffff, 0px 0px 12px #ffffff, 0px 0px 12px #ffffff, 0px 0px 12px #ffffff, 0px 0px 12px #ffffff;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
 	/*--tablet css--*/
-	.content ul {
-	display: flex;
-	position: fixed;
-		flex-direction:column;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	height: 100%;
-	font-family: 'Srisakdi', sans-serif;
-	font-size: 6.5em;
-	/*text-shadow: 0px 0px 10px #d858f7, 0px 0px 10px #d858f7, 0px 0px 10px #d858f7, 0px 0px 10px #ffffa4, 0px 0px 10px #ffffa4;*/
-	text-shadow: 0px 0px 10px #d858f7, 0px 0px 10px #d858f7, 0px 0px 10px #d858f7, 0px 0px 10px #000000, 0px 0px 10px #000000;
-	/*border: 1px solid red;*/
-}
-.content ul li {
-	display: flex;
-	align-items: center;
-	width: 100vw;
-	height: 12vh;
-	margin-bottom: 4vh;
-	background-color: rgba(255, 255, 255, 0%);
-	position: relative;
-	
-}
-ul li:nth-child(1) {
-	left: 20vw;
-}
-ul li:nth-child(2) {
-	left: 60vw;
-}
-ul li:nth-child(3) {
-	left: 70vw;
-}
-ul li:nth-child(4) {
-	left: 50%;
-}
-.list {
-	display: flex;
-	position: relative;
-	width: 100%;
-	color: #ffffff;
-	z-index: 1;
-	cursor: pointer;
-}
-.list .p1 {
-	display: flex;
-	position: absolute;
-	transform: translate(-50%, -50%);
-	z-index: 1;
-}
-.list .p2 {
-	display: flex;
-	position: absolute;
-	transform: translate(-50%, -50%);
-	z-index: 2;
-	color: #ffffff;
-	text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000
-}
-.hidden-list {
-	display: none;
-	position: absolute;
-	top: 50%;
-	left: 0%;
-	color: #000000;
-	transform: translate(-50%, -50%);
-	text-shadow: 0px 0px 10px #ffffff, 0px 0px 10px #ffffff, 0px 0px 10px #ffffff, 0px 0px 10px #ffffff, 0px 0px 10px #ffffff;
-}
-ul li .list:hover {
-	display: none;
-}
-ul li .list:hover + .hidden-list {
-	display: block;
-	color: #000000;
-	text-decoration: none;
-}
-ul li .list:visited + .hidden-list {
-	color: #000000;
-	text-decoration: none;
-}
-	.volumn-info {
-		margin-left: 74vw;
-	}
-	.volumn-info p{
-	margin-right: 3vw;
-}
-	.volumn-img {
-	top: 63.5vh;
-	left: 76vw;
-}
 }
 @media (max-width: 767px) {
 	/*-mobile css-*/
-	h1 {
-	display: flex;
-	top: 76.5vh;
-	padding-left: 3.5vw;
-	font-size: 8em;
+	.content {
+	padding-top: 1rem;
+	padding-right: 1rem;
+	}
+	h1, h2, span {
+    font-weight: 400;
+    font-size: 4.1rem;
+    line-height: 3.9rem;
+    letter-spacing: -.35rem;
+    text-align: right; /* 오른쪽 정렬 */
+    margin-bottom: .15rem;
+	color: rgba(0, 0, 0, 1);
+    transition: transform 0.6s ease, opacity 0.6s ease; /* 애니메이션 효과 */
 }
-	h2 {
-	left: 5%;
-	font-size: 8em;	
+	.colophon-popup {
+	width: 86vw;
+	height: 80vh;
 	}
-	.square {
-		top: 2%;
-		left: 72%;
-		width: 15vw;
-		height: 40vh;
+	.colophon-body {
+	padding-top: 18vh;
+	padding-left: 2vw;
+	padding-right: 2vw;
 	}
-	.square2 {
-		top: 38%;
-		left: 10%;
-		width: 35vw;
-		height: 25vh;
-		background-size: contain;
-		background-position: top;
+	.colophon-body .left {
+	padding-right: 1vw;
 	}
-	.square3 {
-		top: 52%;
-		left: 50%;
-		width: 50vw;
-		height: 3vh;
+	.bottom p1, button {
+	font-size: .8rem;
+	color: black;
+	text-shadow: 0px 0px 3px rgba(0,0,0,.7), 0px 0px 5px rgba(0,0,0,.2);
 	}
-	.square4 {
-		top: 88%;
-		left: 26%;
-		width: 40vw;
-		height: 16vh;
-	}
-	.content ul {
-	display: flex;
-	position: fixed;
-		flex-direction:column;
-	align-items: center;
-	justify-content: flex-start;
-	width: 100%;
-	height: 100%;
-		margin-top: 12vh;
-	font-family: 'Srisakdi', sans-serif;
-	font-size: 5em;
-	/*text-shadow: 0px 0px 10px #d858f7, 0px 0px 10px #d858f7, 0px 0px 10px #d858f7, 0px 0px 10px #ffffa4, 0px 0px 10px #ffffa4;*/
-	text-shadow: 0px 0px 10px #d858f7, 0px 0px 10px #d858f7, 0px 0px 10px #d858f7, 0px 0px 10px #000000, 0px 0px 10px #000000;
-		
-}
-	.content ul li {
-		display: flex;
-		width: 100%;
-		height: 10vh;
-		margin-bottom: 1vh;
-	}
-	.content ul li a {
-		width: 100%;
-	}
-	.list {
-	display: flex;
-		position: relative;
-		justify-content: flex-end;
-	position: relative;
-	color: #ffffff;
-	z-index: 1;
-	cursor: pointer;
-		padding-right: 4%;
-}
-	.list img {
-	display: none;
-}
-	.list .p1 {
-	display: flex;
-	position: absolute;
-	z-index: 1;
-		text-align: right; /* p 요소들을 오른쪽 정렬 */
-}
-	.list .p2 {
-	display: flex;
-	position: absolute;
-	z-index: 2;
-	color: #ffffff;
-	text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
-	text-align: right; /* p 요소들을 오른쪽 정렬 */
-}
-	.hidden-list {
-	display: none;
-	}
-	.volumn {
-		top: 58vh;
-	}
-	.volumn-info {
-		top: 72vh;
-	margin-left: 60vw;	
-	}
-	.volumn-info p {
-		margin-top: 1vh;
-		font-size: 1em;
-	}
-.volumn-img {
-	top: 63vh;
-	left: 53.5%;
-}
-	.homepagelink {
-  display: flex;
-  flex-direction: column-reverse; /* 버튼을 맨 밑에 위치하도록 열의 순서를 뒤집습니다. */
-  align-items: flex-end;
-  position: fixed;
-		top: 100vh;
-  right: 0; /*브라우저 오른쪽 모서리에 맞춥니다. */
-  z-index: 10;
-	 transform: rotate(90deg);
-    transform-origin: top right;
-  /*border: 1px solid blue;*/
-}
-
-.homepagelink .btn { /* 버튼을 오른쪽으로 90도 회전시킵니다. */
-  display: inline-block;
-	background-color: rgba(255, 255, 255, 0);
-	border: 0;
-	padding-right: 1em;
-	padding-top: 0.5em;
-	font-family: "Junction", sans-serif;
-	font-size: 1em;
-	cursor: pointer;
-	/*border: 1px solid green;*/
-}
 }
