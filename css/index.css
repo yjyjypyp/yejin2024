@@ -109,6 +109,7 @@ h1, h2, span {
 }
 .credit {
 	font-family: "Sinistre", serif;/* "ME"에 사용할 다른 폰트 */
+	font-weight: normal;/* 원하는 경우 폰트 두께 조정 */
 }
 .know {
     font-family: "Sinistre", serif; /* "KNOW"에 사용할 다른 폰트 */
