@@ -1,0 +1,7 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'Courgette';
+	src: url("../../font/courgette/Courgette-Regular.ttf") format('truetype');
+    font-weight: regular;
+    font-style: normal;
+}

@@ -1,0 +1,29 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'Sinistre';
+    src: url("../../font/sinistre/Sinistre-Bold.woff2") format('woff2'),
+		url("../../font/sinistre/Sinistre-Bold.otf") format('opentype');
+    font-weight: bold;
+    font-style: bold;
+}
+@font-face {
+    font-family: 'Sinistre';
+    src: url("../../font/sinistre/Sinistre-Dark.woff2") format('woff2'),
+		url("../../font/sinistre/Sinistre-Dark.otf") format('opentype');
+    font-weight: bolder;
+    font-style: dark;
+}
+@font-face {
+    font-family: 'Sinistre';
+    src: url("../../font/sinistre/Sinistre-Regular.woff2") format('woff2'),
+		url("../../font/sinistre/Sinistre-Regular.otf") format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Sinistre';
+    src: url("../../font/sinistre/SinistreVF.woff2") format('woff2'),
+		url("../../font/sinistre/SinistreVF.ttf") format('truetype');
+    font-weight: vf;
+    font-style: vf;
+}

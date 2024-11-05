@@ -1,0 +1,9 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'Pilowlava';
+    src: url("../../font/pilowlava/Pilowlava-Regular.eot") format('opentype'),
+		url("../../font/pilowlava/Pilowlava-Regular.woff") format('woff'),
+		url("../../font/pilowlava/Pilowlava-Regular.woff2") format('woff2');
+    font-weight: regular;
+}
+
