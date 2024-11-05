@@ -112,7 +112,7 @@ h1, h2, span {
 }
 .know {
     font-family: "Sinistre", serif; /* "KNOW"에 사용할 다른 폰트 */
-    /* 원하는 경우 폰트 두께 조정 */
+    font-weight: normal;/* 원하는 경우 폰트 두께 조정 */
 }
 .me {
     font-family: "Savoye LET"; /* "ME"에 사용할 다른 폰트 */
