@@ -12,9 +12,43 @@ html, body{
 	background: linear-gradient(to bottom, #ff2a4e,#ff2a4e,#ffffe8,#33641e,#33641e,#6300ff);
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
+	overflow: hidden;
+	filter: contrast(1.2) brightness(0.9);
 }
+/* 노이즈 효과 */
+.background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) .5px, transparent 1px);
+    background-size: 8px 8px; /* 점 간격을 조절하여 노이즈 밀도를 설정 */
+    opacity: 1; /* 노이즈 강도 */
+    pointer-events: none;
+    animation: noise .3s infinite; /* 애니메이션 추가 */
+}
+
+/* 애니메이션 키프레임 */
 .bgimage {
 	display: none;
+}
+.bg_graphics {
+	position: fixed;
+	top: 44%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    background-image: url('./img/index/render_composition_edit02.png');
+    background-size: cover; /* 이미지를 화면에 꽉 채우도록 설정 */
+    background-position: center; /* 화면의 정중앙에 이미지를 위치시킴 */
+    background-repeat: no-repeat;
+	}
+	.bg_graphics img {
+		width: 1100px;
+		height: 1100px;
 }
 .content {
 	display: flex;
@@ -402,6 +436,21 @@ button:hover {
     margin-bottom: .15rem;
 	color: rgba(0, 0, 0, 1);
     transition: transform 0.6s ease, opacity 0.6s ease; /* 애니메이션 효과 */
+}
+	.bg_graphics {
+	top: 58%;
+    left: 4%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    background-image: url('./img/index/render_composition_edit02.png');
+    background-size: cover; /* 이미지를 화면에 꽉 채우도록 설정 */
+    background-position: center; /* 화면의 정중앙에 이미지를 위치시킴 */
+    background-repeat: no-repeat;
+	}
+	.bg_graphics img {
+		width: 800px;
+		height: 800px;
 }
 	.colophon-popup {
 	width: 86vw;
