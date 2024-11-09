@@ -438,8 +438,8 @@ button:hover {
     transition: transform 0.6s ease, opacity 0.6s ease; /* 애니메이션 효과 */
 }
 	.bg_graphics {
-	top: 58%;
-    left: 4%;
+	top: 73%;
+    left: 35%;
     transform: translate(-50%, -50%);
     width: 100vw;
     height: 100vh;
@@ -449,8 +449,8 @@ button:hover {
     background-repeat: no-repeat;
 	}
 	.bg_graphics img {
-		width: 800px;
-		height: 800px;
+		width: 600px;
+		height: 600px;
 }
 	.colophon-popup {
 	width: 86vw;

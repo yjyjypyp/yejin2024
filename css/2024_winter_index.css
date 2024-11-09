@@ -183,7 +183,6 @@ pbody3 {
 	.indexbody {
 		width: 100%;
 		height: 50vh;
-		overflow: auto;
 		/*border: 1px solid green;*/
 	}
 	.indexin {
