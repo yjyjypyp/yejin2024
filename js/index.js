@@ -106,16 +106,14 @@ function createSingleGlitter(popupElement) {
 /// 다이아몬드 모양 글리터 생성 함수
 function createDiamondGlitter() {
     const diamondCount = 60; // 생성할 다이아몬드 글리터 개수
-    let diamondInterval = setInterval(() => {
-        if (diamondCount <= 0) {
-            clearInterval(diamondInterval);
-            return;
-        }
-
+    const initialCount = 10; // 초기 로드 시 즉시 생성할 글리터 개수
+    
+    // 글리터 생성 함수
+    function createSingleGlitter() {
         const glitterDiamond = document.createElement('div');
         glitterDiamond.classList.add('glitter-plus');
 		
-		 // 다양한 색상 클래스에서 랜덤 선택
+        // 다양한 색상 클래스에서 랜덤 선택
         const colorClasses = ['color-white', 'color-gold', 'color-lightblue', 'color-lightpink'];
         const randomColorClass = colorClasses[Math.floor(Math.random() * colorClasses.length)];
         glitterDiamond.classList.add(randomColorClass);
@@ -137,9 +135,24 @@ function createDiamondGlitter() {
         glitterDiamond.addEventListener('animationend', () => {
             glitterDiamond.remove();
         });
+    }
 
-        diamondCount--;
-    }, 600); // 500ms 간격으로 다이아몬드 글리터 생성
+    // 초기 글리터 생성
+    for (let i = 0; i < initialCount; i++) {
+        createSingleGlitter();
+    }
+
+    // 나머지 글리터 생성 (일정 시간 간격으로 생성)
+    let remainingCount = diamondCount - initialCount;
+    let diamondInterval = setInterval(() => {
+        if (remainingCount <= 0) {
+            clearInterval(diamondInterval);
+            return;
+        }
+        
+        createSingleGlitter();
+        remainingCount--;
+    }, 600); // 600ms 간격으로 다이아몬드 글리터 생성
 }
 
 // 페이지 로드 시 글리터 생성
@@ -147,4 +160,3 @@ window.onload = () => {
     createGlitter();        // 기존 글리터 생성
     createDiamondGlitter(); // 다이아몬드 글리터 생성
 };
-
