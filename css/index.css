@@ -486,11 +486,14 @@ button:hover {
 	padding-right: 1vw;
 	}
 	.bottom {
-		top: 84vh;
+		top: 83vh;
 	}
 	.bottom p1, button {
 	font-size: .8rem;
 	color: black;
 	text-shadow: 0px 0px 3px rgba(0,0,0,.7), 0px 0px 5px rgba(0,0,0,.2);
 	}
+}
+button {
+	padding-top: .4vh;
 }
