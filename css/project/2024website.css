@@ -107,4 +107,14 @@
 	.video-image-grid {
 		grid-row-gap: 0.5vh;
 	}
+	.video-image-grid2 {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+	grid-column-gap: 0vw;
+	grid-row-gap: 1vh;
+	justify-content: center;
+	align-items: center;
+}
 }
