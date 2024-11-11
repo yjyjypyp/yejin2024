@@ -58,7 +58,30 @@ body {
 	height: 100%;
 	background-color: #000000;
 	border: 1px solid #000000;
+	overflow: hidden; /* 글리터가 영역을 벗어나지 않도록 */
 }
+.glitter {
+        position: absolute;
+        background-color: #ffffff;
+        border-radius: 50%;
+        opacity: 0.8;
+        animation: glitterFall linear infinite;
+    }
+
+    /* 글리터 애니메이션 */
+    @keyframes glitterFall {
+        0% {
+            transform: translateY(-100px);
+            opacity: 0.8;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(100vh);
+            opacity: 0;
+        }
+    }
 .menu-container {
 	display: grid;
 	grid-template-columns: 9fr 2fr;
