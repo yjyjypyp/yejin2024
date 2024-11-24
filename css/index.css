@@ -460,9 +460,6 @@ button:hover {
 }
 @media (max-width: 767px) {
 	/*-mobile css-*/
-	.background {
-	height: 200vh;
-}
 .background img {
 	position: relative;
 	left: 50%;
