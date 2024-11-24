@@ -481,8 +481,8 @@ button:hover {
 	position: relative;
 	left: 50%;
 	top: 50%;
-	transform: translate(-46%, -42%);
-	width: 200vw;
+	transform: translate(-45%, -42%);
+	width: 190vw;
 	height: auto;
 	object-fit: cover;
 }
