@@ -476,7 +476,7 @@ button:hover {
 	position: relative;
 	left: 50%;
 	top: 50%;
-	transform: translate(-46%, -50%);
+	transform: translate(-46%, -60%);
 	width: 200vw;
 	height: auto;
 }
