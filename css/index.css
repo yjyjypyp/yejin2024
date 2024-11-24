@@ -474,6 +474,9 @@ button:hover {
 		background-size: auto 100%; /* 비율에 맞춰 세로 크기 조정 */
 		background-repeat: no-repeat;
 	}
+	.background::before {
+    height: 200vh;
+	}
 .background img {
 	position: relative;
 	left: 50%;
