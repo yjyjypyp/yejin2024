@@ -19,7 +19,12 @@ body::-webkit-scrollbar {
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	overflow: hidden;
+	z-index: 1;
 	filter: contrast(1.2) brightness(0.9);
+}
+.background img {
+	width: 100vw;
+	height: auto;
 }
 /* 노이즈 효과 */
 .background::before {
@@ -55,21 +60,32 @@ body::-webkit-scrollbar {
 }
 
 /* 애니메이션 키프레임 */
-.bg_graphics {
-	position: fixed;
-	top: 44%;
-    left: 60%;
+.bg_graphics .item_human, .item_cherrytop, .item_cherrymiddle, .item_tree, .item_crackers, .item_lightbulb{
+	display: none;
+	position: absolute;
+	top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     width: 100vw;
     height: 100vh;
-    background-image: url('./img/index/render_composition_edit02.png');
     background-size: cover; /* 이미지를 화면에 꽉 채우도록 설정 */
     background-position: center; /* 화면의 정중앙에 이미지를 위치시킴 */
     background-repeat: no-repeat;
+	z-index: 50;
 	}
-	.bg_graphics img {
-		width: 1100px;
-		height: 1100px;
+.item_human {transform: translate(-60%, -50%);}
+.item_cherrytop {transform: translate(-90%, -120%);}
+.item_lightbulb {transform: translate(0%, -50%);}
+.item_cherrymiddle {transform: translate(-50%, -50%);}
+.item_tree {transform: translate(-50%, -50%);}
+.item_crackers {transform: translate(-50%, -50%);}
+
+.item_human img {
+		width: 1800px;
+		height: 1800px;
+}
+.bg_graphics {
+	display: none;
 }
 .content {
 	display: flex;
@@ -444,6 +460,17 @@ button:hover {
 }
 @media (max-width: 767px) {
 	/*-mobile css-*/
+	.background {
+	height: 200vh;
+}
+.background img {
+	position: relative;
+	left: 50%;
+	top: 50%;
+	transform: translate(-40%, -45%);
+	width: 200vw;
+	height: auto;
+}
 	.content {
 	padding-top: 1rem;
 	padding-right: 1rem;
@@ -459,6 +486,7 @@ button:hover {
     transition: transform 0.6s ease, opacity 0.6s ease; /* 애니메이션 효과 */
 }
 	.bg_graphics {
+		display: none;
 	top: 68%;
     left: 35%;
     transform: translate(-50%, -50%);
