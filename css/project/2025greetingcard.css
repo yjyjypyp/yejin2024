@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/* CSS Document */
+.bgimg {
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	background-image: url("../../img/dualisticrelationship/silkscreen_ori_poster_square.jpg");
+	background-repeat: no-repeat;
+	background-size:cover;
+}
+.bgimg2 {
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	background-image: url("../../img/dualisticrelationship/color_04_re.jpg");
+	background-repeat: no-repeat;
+	background-size:cover;
+}
+.bgimg3 {
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	background-image: url("../../img/dualisticrelationship/IMG_0555_bw.jpg");
+	background-repeat: no-repeat;
+	background-size:cover;
+}
+.bgimg3::before {
+	content: "";
+	filter: blur(5px);
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px); 
+    -o-filter: blur(5px); 
+    -ms-filter: blur(5px); 
+	transform: scale(1.1);
+}
