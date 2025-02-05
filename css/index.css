@@ -14,10 +14,13 @@ body::-webkit-scrollbar {
 }
 .background {
 	width: 100%;
-	height: 300vh;
-	background: linear-gradient(to bottom, #ff2a4e,#908c97,#6f677a,#6300ff,#33641e);
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
+	height: 170vh;
+	background:
+		url("../img/index/Jan_1920_1950.png") center/cover no-repeat, 
+		linear-gradient(to bottom, rgba(0, 246, 255, 0.7), rgba(144, 140, 151, 0.7), rgba(111, 103, 122, 0.7), rgba(99, 0, 255, 0.7), rgba(51, 100, 30, 0.7));
+	background-size: cover, 100% 100%;
+	background-repeat: no-repeat, no-repeat;
+	background-position: center, center;
 	overflow: hidden;
 	z-index: 1;
 	filter: contrast(1.2) brightness(0.9);
@@ -73,12 +76,12 @@ body::-webkit-scrollbar {
     background-repeat: no-repeat;
 	z-index: 50;
 	}
-.item_human {transform: translate(-60%, -50%);}
-.item_cherrytop {transform: translate(-90%, -120%);}
-.item_lightbulb {transform: translate(0%, -50%);}
-.item_cherrymiddle {transform: translate(-50%, -50%);}
-.item_tree {transform: translate(-50%, -50%);}
-.item_crackers {transform: translate(-50%, -50%);}
+.item_human {display: none;transform: translate(-60%, -50%);}
+.item_cherrytop {display: none; transform: translate(-90%, -120%);}
+.item_lightbulb {display: none;transform: translate(0%, -50%);}
+.item_cherrymiddle {display: none;transform: translate(-50%, -50%);}
+.item_tree {display: none;transform: translate(-50%, -50%);}
+.item_crackers {display: none;transform: translate(-50%, -50%);}
 
 .item_human img {
 		width: 1800px;
@@ -125,14 +128,14 @@ li a:hover {
 .hidden-list {
     text-align: right; /* 오른쪽 정렬 */
     pointer-events: auto; /* 포인터 이벤트 활성화 */
-	text-shadow: 0px 0px 6px rgba(0,0,0,1), 0px 0px 6px rgba(0,0,0,1), 0px 0px 9px rgba(123,230,255,1.00);
+	text-shadow: 0px 0px 6px rgba(254,255,171,1), 0px 0px 6px rgba(255,255,255,1), 0px 0px 9px rgba(123,230,255,1.00);
 }
 
 .hidden-list {
     display: none;
     white-space: nowrap;
 	font-style: italic; /* 원한다면 기울임 적용 */
-	text-shadow: 0px 0px 3px rgba(0,0,0,1), 0px 0px 4px rgba(0,0,0,1), 0px 0px 9px rgba(255,255,255,1.00);
+	text-shadow: 0px 0px 3px rgba(255,255,255,1), 0px 0px 4px rgba(255,255,255,1), 0px 0px 9px rgba(255,255,255,1.00);
 }
 
 ul li:hover .hidden-list {
@@ -143,17 +146,28 @@ ul li:hover .hidden-list {
 ul li:hover .shown-list {
     display: none;
 }
-
-h1, h2, span {
+h1{
     margin: 0;
-    font-family: "helvetica neue", sans-serif;
+    font-family: 'Helvetica Neue', 'Noto Sans KR', sans-serif;
     font-weight: 400;
     font-size: 5rem;
     line-height: 4.3rem;
     letter-spacing: -.35rem;
     text-align: right; /* 오른쪽 정렬 */
     margin-bottom: .15rem;
-	color: rgba(0, 0, 0, 1);
+	color: rgba(248, 255, 212, 1);
+    transition: transform 0.6s ease, opacity 0.6s ease; /* 애니메이션 효과 */
+}
+h2, span {
+    margin: 0;
+    font-family: 'Helvetica Neue', 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    font-size: 5rem;
+    line-height: 4.3rem;
+    letter-spacing: -.35rem;
+    text-align: right; /* 오른쪽 정렬 */
+    margin-bottom: .15rem;
+	color: rgba(248, 255, 212, 1);
     transition: transform 0.6s ease, opacity 0.6s ease; /* 애니메이션 효과 */
 }
 .about {
@@ -283,7 +297,7 @@ ul li a {
 	position: fixed;
 	width: 100%;
 	height: auto;
-	top: 86vh;
+	top: 84vh;
 	padding-left: 1vw;
 	z-index: 10;
 }
@@ -299,7 +313,7 @@ ul li a {
 }
 .arrow-down p2{
 	font-size: 2rem;
-    color: black;
+    color: rgba(255,255,255,1);
     text-shadow: 
       	 0 0 10px rgba(255, 255, 255, 0.8), 
         0 0 20px rgba(255, 255, 255, 0.6),
@@ -310,12 +324,12 @@ ul li a {
 @keyframes glow {
     from {
         text-shadow: 
-            0 0 5px rgba(0, 0, 0, 0.6), 
-            0 0 10px rgba(0, 0, 0, 0.4);
+            0 0 5px rgba(255, 255, 255, 0.6), 
+            0 0 10px rgba(255, 255, 255, 0.4);
     }
     to {
         text-shadow: 
-            0 0 10px rgba(0,0,0, 1), 
+            0 0 10px rgba(255,255,255, 1), 
             0 0 20px rgba(255,255,255, 1);
     }
 }
@@ -333,8 +347,10 @@ ul li a {
 .bottom p1, button {
 	font-family: 'junction', sans-serif;
 	font-size: .8rem;
-	color: black;
-	text-shadow: 0px 0px 3px rgba(0,0,0,.7), 0px 0px 5px rgba(0,0,0,.2);
+	line-height: .95rem;
+	text-align: center;
+	color: rgb(255,255,255);
+	text-shadow: 0px 0px 3px rgba(170,255,140,.7), 0px 0px 5px rgba(170,255,140,.2);
 }
 button {
 	background-color: rgba(255, 255, 255, 0);
@@ -368,14 +384,14 @@ button:hover {
 .bottom .circle {
 	width: .4vw;         /* 원의 가로 크기 */
     height: .4vw;        /* 원의 세로 크기 */
-    background-color: black; /* 원의 배경색 */
+    background-color: rgb(255,255,255); /* 원의 배경색 */
     border-radius: 50%;   /* 모서리 둥글게 */
     /* 추가 스타일링 */
     display: flex;        /* 내부 내용 정렬을 위한 Flexbox */
     justify-content: center; /* 수평 중앙 정렬 */
     align-items: center;
 	margin-right: .15vw;
-	box-shadow: 0px 0px 3px rgba(0,0,0,.7), 0px 0px 5px rgba(0,0,0,.2);
+	box-shadow: 0px 0px 3px rgba(0,246,255,.7), 0px 0px 5px rgba(0,246,255,.2);
 }
 .colophon-body {
 	display: grid;
@@ -471,8 +487,13 @@ button:hover {
 	/*-mobile css-*/
 	.background {
 		height: 200vh; /* 모바일에서 높이를 200vh로 설정 */
-		background-size: auto 100%; /* 비율에 맞춰 세로 크기 조정 */
-		background-repeat: no-repeat;
+		background:
+		url("../img/index/Jan_1080_1920.png") center center / contain no-repeat,
+		linear-gradient(to bottom, rgba(0, 246, 255, 0.7), rgba(144, 140, 151, 0.7), rgba(111, 103, 122, 0.7), rgba(99, 0, 255, 0.7), rgba(51, 100, 30, 0.7));
+	background-size: cover, 100% auto;
+	background-repeat: no-repeat, no-repeat;
+	background-position: center, center;
+	background-repeat: no-repeat;
 	}
 	.background::before {
     height: 200vh;
@@ -497,7 +518,7 @@ button:hover {
     letter-spacing: -.35rem;
     text-align: right; /* 오른쪽 정렬 */
     margin-bottom: .15rem;
-	color: rgba(0, 0, 0, 1);
+	color: rgba(254, 255, 171, 1);
     transition: transform 0.6s ease, opacity 0.6s ease; /* 애니메이션 효과 */
 }
 	.bg_graphics {
@@ -533,8 +554,8 @@ button:hover {
 	}
 	.bottom p1, button {
 	font-size: .8rem;
-	color: black;
-	text-shadow: 0px 0px 3px rgba(0,0,0,.7), 0px 0px 5px rgba(0,0,0,.2);
+	color: white;
+	text-shadow: 0px 0px 3px rgba(0,246,255,.7), 0px 0px 5px rgba(0,246,255,.2);
 	}
 }
 button {
