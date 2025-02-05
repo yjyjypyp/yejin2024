@@ -149,6 +149,7 @@ ul li:hover .shown-list {
 h1{
     margin: 0;
     font-family: 'Helvetica Neue', 'Noto Sans KR', sans-serif;
+	unicode-bidi: isolate; /* 일부 브라우저에서 이모지로 변환 방지 */
     font-weight: 400;
     font-size: 5rem;
     line-height: 4.3rem;
@@ -161,6 +162,7 @@ h1{
 h2, span {
     margin: 0;
     font-family: 'Helvetica Neue', 'Noto Sans KR', sans-serif;
+	unicode-bidi: isolate; /* 일부 브라우저에서 이모지로 변환 방지 */
     font-weight: 400;
     font-size: 5rem;
     line-height: 4.3rem;
@@ -550,7 +552,7 @@ button:hover {
 	padding-right: 1vw;
 	}
 	.bottom {
-		top: 83vh;
+		top: 80.5vh;
 	}
 	.bottom p1, button {
 	font-size: .8rem;
