@@ -86,6 +86,12 @@ pbody3 {
 	font-weight: 100;
 	text-align: left;
 }
+pkor {
+	font-family: "IBM Plex Sans KR", sans-serif;
+	font-weight: 300;
+	font-size: 1em;
+	line-height: 1.3em;
+}
 @media (min-width: 1024px) {
 	/*--pc css--*/
 }
