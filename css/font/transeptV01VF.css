@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'TranseptV01VF';  /* 폰트 이름 */
+  src: url("../../font/TranseptV01VF.woff2") format('woff2'),  /* WOFF2 파일 경로 */
+       url("../../font/TranseptV01VF.woff") format('woff'),    /* WOFF 파일 경로 */
+       url("../../font/TranseptV01VF.ttf") format('truetype'); /* TTF 파일 경로 */
+  font-weight: 1 100;  /* 지원하는 두께 범위 (최소 1, 최대 1000) */
+  font-stretch: 75% 100%; /* (선택) 지원 폭 설정 */
+}
