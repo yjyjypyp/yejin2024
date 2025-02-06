@@ -180,6 +180,12 @@ h2, span {
 	color: rgba(248, 255, 212, 1);
     transition: transform 0.6s ease, opacity 0.6s ease; /* 애니메이션 효과 */
 }
+ul li:hover span {
+    color: #FFDCEA;
+}
+ul li:hover .hidden-list{
+	text-shadow: 0px 0px 3px rgba(255,255,255,1), 0px 0px 4px rgba(255,255,255,1), 0px 0px 9px rgba(255,255,255,1.00);
+}
 .about {
 	text-align: right;
 }
