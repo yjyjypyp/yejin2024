@@ -28,8 +28,56 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Bitter:ital,wght@0,100..900;1,100..900&family=Courgette&family=Hubballi&family=IBM+Plex+Sans+KR&family=Kreon:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Signika:wght@300..700&family=Srisakdi:wght@400;700&display=swap" rel="stylesheet">
-</head>
+	<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js"></script>
+	<script>
+    // 🔥 Firebase 설정
+    const firebaseConfig = {
+        apiKey: "AIzaSyB7UBtLW83PAV2r7kBGJr_mj8MTvVq3XjM",
+  		authDomain: "visitor-counter-3b798.firebaseapp.com",
+  		projectId: "visitor-counter-3b798",
+  		storageBucket: "visitor-counter-3b798.firebasestorage.app",
+		messagingSenderId: "145890945017",
+		appId: "1:145890945017:web:2823c1c6007a922cb3ff28",
+    };
 
+    // Firebase 초기화
+    firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
+    
+    // 🔥 2. 오늘 날짜 가져오기 (YYYY-MM-DD 형식)
+    function getTodayDate() {
+        let today = new Date();
+        return today.toISOString().split("T")[0]; // "YYYY-MM-DD" 형식
+    }
+
+    const todayDate = getTodayDate();
+    const totalRef = database.ref("visitorCount/total");
+    const todayRef = database.ref(`visitorCount/daily/${todayDate}`);
+
+    // 🔥 3. 방문자 수 가져와서 업데이트
+    function updateVisitorCount() {
+        totalRef.once("value", (snapshot) => {
+            document.getElementById("totalCount").innerText = snapshot.val() || 0;
+        });
+
+        todayRef.once("value", (snapshot) => {
+            document.getElementById("todayCount").innerText = snapshot.val() || 0;
+        });
+    }
+
+    // 🔥 4. 방문자 추가 (중복 방지)
+    if (!sessionStorage.getItem("visited")) {
+        sessionStorage.setItem("visited", "true");
+
+        totalRef.transaction((count) => (count || 0) + 1);
+        todayRef.transaction((count) => (count || 0) + 1);
+    }
+
+    // 🔥 5. 초기 카운트 업데이트
+    updateVisitorCount();
+</script>
+</head>
 <body>
 	<div class="background">
 		<!--<img src="./img/index/Jan_1920_1950.png">-->
@@ -408,30 +456,40 @@
 	</ul>
 		</div>
 	<div class="bottom">
-		<div class="arrow-down"><p2>↓</p2></div>
-		<div class="copyright"><div class="circle"></div><div class="circle"></div>
-			<div class="marquee">
-			<p1 class="copyright">This website is designed and developed by Ye Jin Choi.2025.</p1>
-			</div>
-			<div class="circle"></div><div class="circle"></div>
-		</div>
-		<div class="button-container">
-    <button class="btn" onclick="location.href='http://yejinschoi.com'">
-      YEJINSCHOI.COM
-    </button>
-    <!-- 인스타그램 아이콘 버튼 -->
-    <a href="https://www.instagram.com/sansan.wip" target="_blank" class="instagram-btn">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-		  <!-- 카메라 렌즈 (중앙 정렬) -->
-    		 <circle cx="12" cy="12" r="4" stroke-width="1.5"></circle>
-        <path d="M16 11.37a4 4 0 1 1-4.73-4.73 4 4 0 0 1 4.73 4.73z"></path>
-        <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
-      </svg>
-    </a>
-  </div>
-  <p1>Last updated: Feb 2025</p1>
-	</div>
+		<!-- 기존 요소 (가운데 정렬) -->
+    <div class="center-content">
+        <div class="arrow-down"><p2>↓</p2></div>
+        <div class="copyright">
+            <div class="circle"></div><div class="circle"></div>
+            <div class="marquee">
+                <p1 class="copyright">This website is designed and developed by Ye Jin Choi. 2025.</p1>
+            </div>
+            <div class="circle"></div><div class="circle"></div>
+        </div>
+
+        <div class="button-container">
+            <button class="btn" onclick="location.href='http://yejinschoi.com'">
+                YEJINSCHOI.COM
+            </button>
+            <a href="https://www.instagram.com/sansan.wip" target="_blank" class="instagram-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <circle cx="12" cy="12" r="4" stroke-width="1.5"></circle>
+                    <path d="M16 11.37a4 4 0 1 1-4.73-4.73 4 4 0 0 1 4.73 4.73z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+                </svg>
+            </a>
+        </div>
+
+        <p1>Last updated: Feb 2025</p1>
+    </div>
+
+    <!-- ✅ 방문자 카운트 (우측 하단 고정) -->
+    <div class="visitor-counter">
+        <p1>Today: <span id="todayCount">0</span>&nbsp&nbsp&nbsp&nbsp Total: <span id="totalCount">0</span></p1>
+        <p1>Count started on 07 Feb 2025</p1>
+    </div>
+</div>
 	<script src="js/index.js"></script>
 </body>
 </html>
