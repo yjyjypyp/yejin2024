@@ -360,55 +360,117 @@ ul li a {
         transform: translateY(-3px); /* 중간 위치 */
     }
 }
-.bottom p1, button {
-	font-family: 'junction', sans-serif;
-	font-size: .8rem;
-	line-height: .95rem;
-	text-align: center;
-	color: rgb(255,255,255);
-	text-shadow: 0px 0px 3px rgba(170,255,140,.7), 0px 0px 5px rgba(170,255,140,.2);
+.bottom p1, button, .instagram-btn {
+    font-family: 'junction', sans-serif;
+    font-size: .8rem;
+    line-height: .95rem;
+    text-align: center;
+    color: rgb(255,255,255);
+    text-shadow: 0px 0px 3px rgba(170,255,140,.7), 0px 0px 5px rgba(170,255,140,.2);
 }
-button {
-	background-color: rgba(255, 255, 255, 0);
-	border: 0;
-	cursor: pointer;
-}
-button:hover {
-	text-decoration: underline;
-}
-.bottom a {
-	text-decoration: none;
-}
-.bottom a:hover {
-	text-decoration: none;
-	font-weight: bold;
-}
-.bottom a:active {
-	text-decoration: none;
-}
-.bottom a:checked {
-	text-decoration: none;
-}
-.copyright {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	padding-left: .4vw;
-	padding-right: .4vw;
-	line-height: .65rem;
-}
-.bottom .circle {
-	width: .4vw;         /* 원의 가로 크기 */
-    height: .4vw;        /* 원의 세로 크기 */
-    background-color: rgb(255,255,255); /* 원의 배경색 */
-    border-radius: 50%;   /* 모서리 둥글게 */
-    /* 추가 스타일링 */
-    display: flex;        /* 내부 내용 정렬을 위한 Flexbox */
-    justify-content: center; /* 수평 중앙 정렬 */
+
+/* 버튼과 아이콘을 가로 정렬 */
+.button-container {
+    display: inline-flex;
     align-items: center;
-	margin-right: .15vw;
-	box-shadow: 0px 0px 3px rgba(0,246,255,.7), 0px 0px 5px rgba(0,246,255,.2);
+    gap: 10px; /* 버튼과 아이콘 사이 여백 */
 }
+
+/* 버튼 스타일 */
+button {
+    background-color: rgba(255, 255, 255, 0);
+    border: 0;
+    cursor: pointer;
+}
+
+button:hover, .instagram-btn:hover {
+    text-decoration: underline;
+}
+/* 인스타그램 버튼 스타일 */
+.instagram-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+/* 기존 버튼과 동일한 hover 효과 적용 */
+.instagram-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: relative; /* 밑줄 위치 조정용 */
+}
+
+/* 호버 시 아이콘에도 밑줄 추가 */
+.instagram-btn::after {
+    content: "";  
+    position: absolute;
+    bottom: -2px; /* 밑줄 위치 조정 */
+    width: 100%;  
+    height: 1px;  
+    background-color: white;  
+    transform: scaleX(0); /* 기본적으로 숨김 */
+    /*transition: transform 0.2s ease-in-out;*/
+}
+
+/* hover 시 밑줄 표시 */
+.instagram-btn:hover::after {
+    transform: scaleX(1); /* 밑줄 나타남 */
+}
+
+.instagram-btn svg {
+    width: 16px;  /* 아이콘 크기 */
+    height: 16px;
+    stroke: rgb(255, 255, 255);
+	filter: drop-shadow(0px 0px 3px rgba(170,255,140,0.7)) 
+            drop-shadow(0px 0px 5px rgba(170,255,140,0.2)); /* 그림자 효과 추가 */
+	margin-bottom: .1rem;
+}
+/* 링크 스타일 */
+.bottom a {
+    text-decoration: none;
+}
+
+.bottom a:hover {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.bottom a:active,
+.bottom a:checked {
+    text-decoration: none;
+}
+
+/* copyright 스타일 */
+.copyright {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: .4vw;
+    padding-right: .4vw;
+    line-height: .65rem;
+}
+
+/* 원 스타일 */
+.bottom .circle {
+    width: .4vw;
+    height: .4vw;
+    background-color: rgb(255,255,255);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: .15vw;
+    box-shadow: 0px 0px 3px rgba(0,246,255,.7), 0px 0px 5px rgba(0,246,255,.2);
+}
+
 .colophon-body {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
