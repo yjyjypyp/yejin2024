@@ -36,13 +36,13 @@
 }
 .item a:hover {
 	text-decoration: none;
-	background-color: #000000;
-	border: 1.5px solid #000000;
-	color: #ff351a;
+	background-color: orchid;
+	border: 1.5px solid orchid;
+	color: aquamarine;
 	cursor: pointer;
 }
 .item a:hover plink {
-	color: #ff351a;
+	color: aquamarine;
 }
 .about1 {
 	grid-area: a
