@@ -360,7 +360,32 @@ ul li a {
         transform: translateY(-3px); /* 중간 위치 */
     }
 }
-.bottom p1, button, .instagram-btn {
+/* ✅ bottom을 전체 너비로 설정 */
+.bottom {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* 기존 요소 중앙 정렬 */
+    align-items: center;
+    padding: 10px 5vw;
+}
+
+/* ✅ 기존 요소를 중앙 정렬 유지 */
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* ✅ 방문자 카운트 (우측 하단 고정) */
+.visitor-counter {
+	display: block;
+    position: absolute;
+    bottom: 1vh; /* 화면 하단에서 10px 위 */
+    right: 2.5vw; /* 화면 오른쪽에서 3vw 왼쪽 */
+}
+.center-content p1, button, .instagram-btn{
     font-family: 'junction', sans-serif;
     font-size: .8rem;
     line-height: .95rem;
@@ -368,7 +393,21 @@ ul li a {
     color: rgb(255,255,255);
     text-shadow: 0px 0px 3px rgba(170,255,140,.7), 0px 0px 5px rgba(170,255,140,.2);
 }
-
+.visitor-counter span {
+	font-size: .8rem;
+    line-height: .95rem;
+    color: rgb(255,255,255);
+    text-shadow: 0px 0px 3px rgba(170,255,140,.7), 0px 0px 5px rgba(170,255,140,.2);
+}
+.visitor-counter p1 {
+	 text-align: right;
+	display: block;
+    font-family: 'junction', sans-serif;
+    font-size: .8rem;
+    line-height: .95rem;
+    color: rgb(255,255,255);
+    text-shadow: 0px 0px 3px rgba(170,255,140,.7), 0px 0px 5px rgba(170,255,140,.2);
+}
 /* 버튼과 아이콘을 가로 정렬 */
 .button-container {
     display: inline-flex;
@@ -470,7 +509,6 @@ button:hover, .instagram-btn:hover {
     margin-right: .15vw;
     box-shadow: 0px 0px 3px rgba(0,246,255,.7), 0px 0px 5px rgba(0,246,255,.2);
 }
-
 .colophon-body {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -649,7 +687,12 @@ button:hover, .instagram-btn:hover {
 	color: white;
 	text-shadow: 0px 0px 3px rgba(0,246,255,.7), 0px 0px 5px rgba(0,246,255,.2);
 	}
-}
 button {
 	padding-top: .4vh;
+}
+.visitor-counter {
+	display: none;
+        right: 2vw; /* 모바일에서는 조금 더 안쪽으로 */
+        font-size: 0.7rem; /* 글자 크기 조정 */
+    }
 }
