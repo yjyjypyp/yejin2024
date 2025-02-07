@@ -49,36 +49,40 @@
   const app = initializeApp(firebaseConfig);
   const database = getDatabase(app);
 
-  // 🔥 2. 오늘 날짜 가져오기 (YYYY-MM-DD 형식)
-  function getTodayDate() {
-    let today = new Date();
-    return today.toISOString().split("T")[0]; // "YYYY-MM-DD" 형식
+  // 🔥 1. 영국 시간(UTC) 기준으로 오늘 날짜 가져오기
+  function getTodayDateUTC() {
+    let now = new Date();
+    return now.toISOString().split("T")[0]; // UTC 기준 "YYYY-MM-DD" 형식
   }
 
-  const todayDate = getTodayDate();
-  const totalRef = ref(database, "visitorCount/total"); // ✅ 수정
-  const todayRef = ref(database, `visitorCount/daily/${todayDate}`); // ✅ 수정
+  const todayDate = getTodayDateUTC();
+  const totalRef = ref(database, "visitorCount/total");
+  const todayRef = ref(database, `visitorCount/daily/${todayDate}`);
 
-  // 🔥 3. 방문자 수 가져와서 업데이트
+  // 🔥 2. 방문자 수 가져와서 업데이트 (데이터를 먼저 불러오고 증가)
   function updateVisitorCount() {
-    get(totalRef).then((snapshot) => { // ✅ 수정
-      document.getElementById("totalCount").innerText = snapshot.val() || 0;
+    get(totalRef).then((snapshot) => {
+      let count = snapshot.val() || 0;
+      document.getElementById("totalCount").innerText = count;
+
+      if (!sessionStorage.getItem("visited")) {
+        sessionStorage.setItem("visited", "true");
+        runTransaction(totalRef, (c) => (c || 0) + 1);
+      }
     });
 
-    get(todayRef).then((snapshot) => { // ✅ 수정
-      document.getElementById("todayCount").innerText = snapshot.val() || 0;
+    get(todayRef).then((snapshot) => {
+      let count = snapshot.val() || 0;
+      document.getElementById("todayCount").innerText = count;
+
+      if (!sessionStorage.getItem("visited_today")) {
+        sessionStorage.setItem("visited_today", "true");
+        runTransaction(todayRef, (c) => (c || 0) + 1);
+      }
     });
   }
 
-  // 🔥 4. 방문자 추가 (중복 방지)
-  if (!sessionStorage.getItem("visited")) {
-    sessionStorage.setItem("visited", "true");
-
-    runTransaction(totalRef, (count) => (count || 0) + 1); // ✅ 수정
-    runTransaction(todayRef, (count) => (count || 0) + 1); // ✅ 수정
-  }
-
-  // 🔥 5. 초기 카운트 업데이트
+  // 🔥 3. 초기 방문자 수 업데이트 실행
   updateVisitorCount();
 </script>
 
