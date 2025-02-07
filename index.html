@@ -33,63 +33,75 @@
 <!-- Firebase SDK 로드 -->
 <!-- Firebase SDK 로드 -->
 <script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-  import { getDatabase, ref, get, runTransaction } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+  // Firebase SDK 로드
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getDatabase, ref, get, runTransaction } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
-  // 🔥 Firebase 설정
-  const firebaseConfig = {
-    apiKey: "AIzaSyB7UBtLW83PAV2r7kBGJr_mj8MTvVq3XjM",
-    authDomain: "visitor-counter-3b798.firebaseapp.com",
-    projectId: "visitor-counter-3b798",
-    storageBucket: "visitor-counter-3b798.firebasestorage.app",
-    messagingSenderId: "145890945017",
-    appId: "1:145890945017:web:2823c1c6007a922cb3ff28"
-  };
+// 🔥 Firebase 설정
+const firebaseConfig = {
+  apiKey: "AIzaSyB7UBtLW83PAV2r7kBGJr_mj8MTvVq3XjM",
+  authDomain: "visitor-counter-3b798.firebaseapp.com",
+  projectId: "visitor-counter-3b798",
+  storageBucket: "visitor-counter-3b798.firebasestorage.app",
+  messagingSenderId: "145890945017",
+  appId: "1:145890945017:web:2823c1c6007a922cb3ff28"
+};
 
-  // Firebase 초기화
-  const app = initializeApp(firebaseConfig);
-  const database = getDatabase(app);
+// Firebase 초기화
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
 
-  // 🔥 1. 영국 시간(UTC) 기준으로 오늘 날짜 가져오기
-  function getTodayDateUTC() {
-    let now = new Date();
-    return now.toISOString().split("T")[0]; // UTC 기준 "YYYY-MM-DD" 형식
-  }
+// 🔥 1. 영국 시간(UTC) 기준으로 오늘 날짜 가져오기
+function getTodayDateUTC() {
+  let now = new Date();
+  return now.toISOString().split("T")[0]; // UTC 기준 "YYYY-MM-DD" 형식
+}
 
-  const todayDate = getTodayDateUTC();
-  const totalRef = ref(database, "visitorCount/total");
-  const todayRef = ref(database, `visitorCount/daily/${todayDate}`);
+const todayDate = getTodayDateUTC();
+const totalRef = ref(database, "visitorCount/total");
+const todayRef = ref(database, `visitorCount/daily/${todayDate}`);
 
-  // 🔥 2. 방문자 수 가져와서 업데이트
-  function updateVisitorCount() {
-    get(totalRef).then((snapshot) => {
-      let count = snapshot.val() || 0;
-      document.getElementById("totalCount").innerText = count;
-    });
+// 🔥 2. 방문자 수 가져와서 업데이트
+function updateVisitorCount() {
+  get(totalRef).then((snapshot) => {
+    let count = snapshot.val() || 0;
+    document.getElementById("totalCount").innerText = count;
+  });
 
-    get(todayRef).then((snapshot) => {
-      let count = snapshot.val() || 0;
-      document.getElementById("todayCount").innerText = count;
-    });
-  }
+  get(todayRef).then((snapshot) => {
+    let count = snapshot.val() || 0;
+    document.getElementById("todayCount").innerText = count;
+  });
+}
 
-  // 🔥 3. 방문자 추가 (중복 방지)
+// 🔥 3. 방문자 추가 후 업데이트 (비동기 처리)
+async function addVisitor() {
+  let updated = false;
+
   if (!sessionStorage.getItem("visited")) {
     sessionStorage.setItem("visited", "true");
 
-    // ✅ 전체 방문자 수 증가
-    runTransaction(totalRef, (c) => (c || 0) + 1);
+    await runTransaction(totalRef, (c) => (c || 0) + 1);
+    updated = true;
   }
 
   if (!sessionStorage.getItem("visited_today")) {
     sessionStorage.setItem("visited_today", "true");
 
-    // ✅ 오늘 방문자 수 증가
-    runTransaction(todayRef, (c) => (c || 0) + 1);
+    await runTransaction(todayRef, (c) => (c || 0) + 1);
+    updated = true;
   }
 
-  // 🔥 4. 초기 방문자 수 업데이트 실행
-  updateVisitorCount();
+  // ✅ 업데이트가 이루어진 경우만 방문자 수 다시 가져오기
+  if (updated) updateVisitorCount();
+}
+
+// 🔥 4. 방문자 수 가져오기 (페이지 로드 시)
+updateVisitorCount();
+
+// 🔥 5. 방문자 추가 (세션 기준 중복 방지)
+addVisitor();
+
 </script>
 
 </head>
