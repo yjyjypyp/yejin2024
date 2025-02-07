@@ -420,6 +420,7 @@ button {
     background-color: rgba(255, 255, 255, 0);
     border: 0;
     cursor: pointer;
+	padding-top: 0.35vh;
 }
 
 button:hover, .instagram-btn:hover {
@@ -494,7 +495,7 @@ button:hover, .instagram-btn:hover {
     align-items: center;
     padding-left: .4vw;
     padding-right: .4vw;
-    line-height: .65rem;
+	line-height: .95rem;
 }
 
 /* 원 스타일 */
