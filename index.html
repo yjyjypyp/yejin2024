@@ -30,9 +30,9 @@
 	<link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Bitter:ital,wght@0,100..900;1,100..900&family=Courgette&family=Hubballi&family=IBM+Plex+Sans+KR&family=Kreon:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Signika:wght@300..700&family=Srisakdi:wght@400;700&display=swap" rel="stylesheet">
 	
 	<!-- Firebase SDK 로드 -->
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js"></script>
-	<script>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
     // 🔥 Firebase 설정
     const firebaseConfig = {
         apiKey: "AIzaSyB7UBtLW83PAV2r7kBGJr_mj8MTvVq3XjM",
@@ -44,8 +44,8 @@
     };
 
     // Firebase 초기화
-    firebase.initializeApp(firebaseConfig);
-    const database = firebase.database();
+    const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app);
     
     // 🔥 2. 오늘 날짜 가져오기 (YYYY-MM-DD 형식)
     function getTodayDate() {
