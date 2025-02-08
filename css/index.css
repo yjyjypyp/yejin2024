@@ -694,6 +694,14 @@ button:hover, .instagram-btn:hover {
 button {
 	padding-top: .4vh;
 }
+	.instagram-btn svg {
+    width: 16px;  /* 아이콘 크기 */
+    height: 16px;
+    stroke: rgb(255, 255, 255);
+	filter: drop-shadow(0px 0px 3px rgba(170,255,140,0.7)) 
+            drop-shadow(0px 0px 5px rgba(170,255,140,0.2)); /* 그림자 효과 추가 */
+	margin-bottom: .1rem;
+}
 .visitor-counter {
 	display: none;
         right: 2vw; /* 모바일에서는 조금 더 안쪽으로 */
