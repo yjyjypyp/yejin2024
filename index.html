@@ -88,7 +88,7 @@ async function addVisitor() {
   if (!sessionStorage.getItem("visited_today")) {
     sessionStorage.setItem("visited_today", "true");
 
-    await runTransaction(todayRef, (c) => (c || 0) + 1);
+    await runTransaction(todayRef, (c) => (parseInt(c) || 0) + 1);
     updated = true;
   }
 
