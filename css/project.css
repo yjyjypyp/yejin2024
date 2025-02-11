@@ -428,7 +428,7 @@ button:hover, .instagram-btn:hover {
     left: 53%;
 }
 	.context {
-    padding-top: 20.5vh;
+    padding-top: 21vh;
 		height: calc(100vh - 1vh); /* 상단 고정 영역 제외한 높이 */
 }
 	.navigator {
