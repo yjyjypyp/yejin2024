@@ -1,0 +1,522 @@
+html, body {
+	font-family: 'Junction', sans-serif;
+	font-size: 16px;
+	max-width: 100%;
+	scroll-behavior: smooth;
+}
+body {
+	width: 100vw;
+	height: 100vh;
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: touch;
+ 	margin: 0;
+	background:
+		/*linear-gradient(to bottom, rgba(0, 246, 255, 0.7), rgba(144, 140, 151, 0.7), rgba(111, 103, 122, 0.7), rgba(99, 0, 255, 0.7), rgba(51, 100, 30, 0.7));*/
+		linear-gradient(to bottom, rgba(255, 255, 255, 1),rgba(255, 255, 255, 1),rgba(255, 255, 255, 1),rgba(0, 246, 255, 0.7));
+	background-size: cover, 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	overflow: hidden;
+}
+.container {
+     position: relative;
+     width: 100vw;
+}
+.top-profile {
+	display: none;
+	position: fixed;
+	width: 95%;
+	height: 8vh;
+	padding-top: 2vh;
+	padding-left: 2vh;
+}
+.top-profile p1 {
+	font-size: 1.5rem;
+}
+.context {
+	display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100vh - 9vh); /* 상단 고정 영역 제외한 높이 */
+    overflow-y: auto; /* 내부 스크롤 활성화 */
+    padding-top: 8vh;
+}
+.now {
+    position: fixed; /* 화면 상단에 고정 */
+    top: 5vh; /* 적절한 위치 조정 */
+    left: 75%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1em;
+    animation: blink 1.5s infinite ease-out;
+    width: 100%;
+    z-index: 10;
+	text-shadow: 2px 2px 5px rgba(0, 246, 255, 1); /* 텍스트 그림자 추가 */
+}
+
+@keyframes blink {
+  from {
+    opacity: 0; /* 초기 상태: 보이기 */
+  }
+  to {
+    opacity: 1; /* 최종 상태: 숨기기 */
+  }
+}
+.now .circle {
+	width: .65em;
+	height: .65em;
+	border-radius: 50%;
+	margin-right: 0.5em;
+	background-color: #000000;
+	box-shadow: 2px 2px 5px rgba(0, 246, 255, 1); /* 텍스트 그림자 추가 */
+}
+.now p {
+	font-family: 'Junction', sans-serif;
+	font-size: .8em;
+	color: black;
+}
+/* 기본 컨테이너 스타일 */
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2열 그리드 */
+    gap: 6px;
+    width: 74%;
+	margin-left: 25%;
+    overflow-y: auto; /* 내부 컨텐츠가 넘칠 경우 스크롤 */
+}
+
+/* 개별 프로젝트 스타일 */
+.project {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+    transition: transform 0.3s ease;
+    padding-bottom: 15px; /* 제목과 태그가 안 잘리게 여백 추가 */
+}
+
+.project:hover {
+    transform: scale(1);
+}
+
+/* 썸네일 이미지 */
+.project img {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* 16:9 비율 유지 */
+    object-fit: cover;
+    display: block;
+	transition: transform 0.3s ease-in-out, clip-path 0.3s ease-in-out;
+    clip-path: inset(0); /* 기본값 */
+}
+
+/* 제목 스타일 (이미지 아래 5px 간격) */
+.project-title {
+	display: flex;
+    margin-top: 10px;
+    font-weight: normal;
+    font-size: .9em;
+	line-height: 1.2em;
+    color: #000000;
+}
+
+/* 태그 스타일 (제목 아래 5px 간격) */
+.project-tags {
+	display: flex;
+    margin-top: 5px;
+    font-size: 0.8em;
+    color: #777;
+}
+/* Hover 시 효과 적용 */
+.project:hover img {
+}
+.project:hover .project-title {
+	font-style: italic;
+	background-color: yellowgreen;
+	color: white;
+}
+.navigator {
+	position: fixed;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+	left: 2rem;
+	top: 5vh;
+}
+.navigator a {
+	color: rgba(0,0,0,1);
+}
+.navigator button {
+    all: unset; /* 기본 버튼 스타일 제거 */
+	display: inline-block; /* 텍스트 관련 스타일이 초기화되지 않도록 */
+    font-size: 16px;
+    position: relative;
+    transition: all 0.3s ease;
+    padding-left: 30px; /* 화살표 공간 확보 */
+	padding-bottom: .3em;
+	cursor: pointer;
+	/*background-color: greenyellow;
+	width: 20%;*/
+}
+/* hover 시 화살표 보이게 설정 */
+.navigator a:hover::before {
+    opacity: 1;
+    transform: translateX(-5px); /* 약간 왼쪽 이동 */
+}
+/* hover 시 글씨도 오른쪽으로 이동 */
+.navigator button:hover {
+    padding-left: 35px;
+    font-style: italic;
+	cursor: pointer;
+	 text-shadow: 2px 2px 5px rgba(120, 255, 0, 1); /* 텍스트 그림자 추가 */
+}
+
+.close {
+	display: flex;
+	position: fixed;
+	width: 2em;
+	height: 2em;
+	top: 1em;
+	right: 1em;
+	background-color: rgba(255, 255, 255, 0);
+	border: 0;
+	/*border: 1px solid blue;*/
+	cursor: pointer;
+	z-index: 70;
+	transform: rotateZ(45deg);
+	transition: 0.5s;
+	/*border: 1px solid green;*/
+	z-index: 50;
+}
+.close:hover {
+	transform: rotateZ(135deg);
+}
+.close .line-hori {
+	position: absolute;
+	top: 47.5%;
+	left: 0;
+	width: 100%;
+	border: 1px solid #000000;
+}
+.close .line-verti {
+	position: absolute;
+	top: 0;
+	left: 45%;
+	height: 100%;
+	border: 1px solid #000000;
+	background-color: rgba(0, 0, 0, 0);
+	z-index: 1;
+}
+.bottom {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* 기존 요소 중앙 정렬 */
+    align-items: center;
+    padding: 15px 5vw;
+}
+
+/* ✅ 기존 요소를 중앙 정렬 유지 */
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* ✅ 방문자 카운트 (우측 하단 고정) */
+.visitor-counter {
+	display: block;
+    position: absolute;
+    bottom: 1vh; /* 화면 하단에서 10px 위 */
+    right: 2.5vw; /* 화면 오른쪽에서 3vw 왼쪽 */
+    min-width: 120px; /* ✅ 최소 너비 설정 (숫자가 겹치지 않도록) */
+}
+.center-content p1, button, .instagram-btn{
+    font-family: 'junction', sans-serif;
+    font-size: .8rem;
+    line-height: .95rem;
+    text-align: center;
+    color: rgb(255,255,255);
+    text-shadow: 0px 0px 3px rgba(30,209,0,.7), 0px 0px 5px rgba(30,209,0,.2);
+}
+.visitor-counter span {
+	font-size: .8rem;
+    line-height: .95rem;
+    color: rgb(255,255,255);
+    text-shadow: 0px 0px 3px rgba(170,255,140,.7), 0px 0px 5px rgba(170,255,140,.2);
+	 letter-spacing: 1px; /* ✅ 글자 간격 조정 */
+}
+.visitor-counter p1 {
+	 text-align: right;
+	display: block;
+    font-family: 'junction', sans-serif;
+    font-size: .8rem;
+    line-height: .95rem;
+    color: rgb(255,255,255);
+    text-shadow: 0px 0px 3px rgba(170,255,140,.7), 0px 0px 5px rgba(170,255,140,.2);
+	white-space: nowrap; /* ✅ 숫자가 한 줄로 유지되도록 설정 */
+}
+/* 버튼과 아이콘을 가로 정렬 */
+.button-container {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px; /* 버튼과 아이콘 사이 여백 */
+}
+
+/* 버튼 스타일 */
+button {
+    background-color: rgba(255, 255, 255, 0);
+    border: 0;
+    cursor: pointer;
+	padding-top: 0.35vh;
+}
+
+button:hover, .instagram-btn:hover {
+    text-decoration: underline;
+}
+/* 인스타그램 버튼 스타일 */
+.instagram-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+/* 기존 버튼과 동일한 hover 효과 적용 */
+.instagram-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: relative; /* 밑줄 위치 조정용 */
+}
+
+/* 호버 시 아이콘에도 밑줄 추가 */
+.instagram-btn::after {
+    content: "";  
+    position: absolute;
+    bottom: -2px; /* 밑줄 위치 조정 */
+    width: 100%;  
+    height: 1px;  
+    background-color: white;  
+    transform: scaleX(0); /* 기본적으로 숨김 */
+    /*transition: transform 0.2s ease-in-out;*/
+}
+
+/* hover 시 밑줄 표시 */
+.instagram-btn:hover::after {
+    transform: scaleX(1); /* 밑줄 나타남 */
+}
+
+.instagram-btn svg {
+    width: 16px;  /* 아이콘 크기 */
+    height: 16px;
+    stroke: rgb(255, 255, 255);
+	filter: drop-shadow(0px 0px 3px rgba(170,255,140,0.7)) 
+            drop-shadow(0px 0px 5px rgba(170,255,140,0.2)); /* 그림자 효과 추가 */
+	margin-bottom: .1rem;
+}
+/* 링크 스타일 */
+.bottom a {
+    text-decoration: none;
+}
+
+.bottom a:hover {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.bottom a:active,
+.bottom a:checked {
+    text-decoration: none;
+}
+
+/* copyright 스타일 */
+.copyright {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: .4vw;
+    padding-right: .4vw;
+	line-height: .95rem;
+}
+
+/* 원 스타일 */
+.bottom .circle {
+    width: .4vw;
+    height: .4vw;
+    background-color: rgb(255,255,255);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: .15vw;
+    box-shadow: 0px 0px 3px rgba(0,246,255,.7), 0px 0px 5px rgba(0,246,255,.2);
+}
+/* 글리터 효과 스타일 */
+.glitter {
+    position: absolute;
+    width: 5px; /* 글리터 크기 */
+    height: 5px;
+    background-color: white; /* 글리터 색상 */
+    opacity: 0.8;
+    border-radius: 50%; /* 원형 */
+    pointer-events: none; /* 클릭 불가 */
+	box-shadow: 0 0 5px white, 0 0 10px gold; /* 빛나는 효과 */
+    animation: fall linear infinite; /* 애니메이션 설정 */
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh); /* 위에서 시작 */
+        opacity: 1; /* 처음에는 보임 */
+    }
+    100% {
+        transform: translateY(100vh); /* 아래로 떨어짐 */
+        opacity: 0; /* 아래로 갈수록 사라짐 */
+    }
+}
+@keyframes blink {
+    0%, 100% {
+        opacity: 1; /* 완전히 보이는 상태 */
+    }
+    50% {
+        opacity: 0; /* 완전히 보이지 않는 상태 */
+    }
+}
+.glitter-plus {
+    position: absolute;
+    width: 4.5px;      /* 다이아몬드의 가로 크기 */
+    height: 4.5px;     /* 다이아몬드의 세로 크기 (길쭉하게 설정) */
+    background-color: rgba(255, 255, 255, 0.9); /* 다이아몬드 색상 */
+    transform: rotate(45deg); /* 45도 회전으로 다이아몬드 모양 구현 */
+    animation: blink 1s infinite; /* 깜빡임 애니메이션 */
+    box-shadow: 0 0 5px white, 0 0 5px gold, 0 0 10px lightpink; /* 빛나는 효과 */
+}
+.color-white { background-color: rgba(255, 255, 255, 0.95); }
+.color-gold { background-color: rgba(255, 223, 186, 0.95); }
+.color-lightblue { background-color: rgba(186, 225, 255, 0.95); }
+.color-lightpink { background-color: rgba(255, 192, 203, 0.95); }
+@media (min-width: 768px) and (max-width: 1024px) {
+	/*--tablet css--*/
+	.navigator {
+	position: fixed;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+	left: .5rem;
+	top: 5vh;
+}
+	.project-container {
+    grid-template-columns: repeat(1, 1fr); /* 2열 그리드 */
+	width: 72%;
+	margin-left: 27%;
+	}
+}
+@media (max-width: 767px) {
+	.now {
+    top: 16vh; /* 적절한 위치 조정 */
+    left: 53%;
+}
+	.context {
+    padding-top: 18.5vh;
+		height: calc(100vh - 12vh); /* 상단 고정 영역 제외한 높이 */
+}
+	.navigator {
+	display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 2열 그리드 */
+    gap: .15em;
+	position: fixed;
+    width: 98%;
+	align-items: center; /* 세로 가운데 정렬 */
+    justify-content: center;
+	left: 0rem;
+		margin-left: 1%;
+		margin-right: 1%;
+	top: 6vh;
+}
+	.navigator button {
+		display: flex;
+    align-items: center; /* 세로 가운데 정렬 */
+		justify-content: center;
+		padding-left: 0px; /* 화살표 공간 확보 */
+		text-align: center;
+		padding-top: .5em;
+		line-height: 1.1em;
+		font-size: .76em;
+}
+	.navigator a {
+	display: flex;
+    align-items: center; /* 세로 가운데 정렬 */
+		justify-content: center;
+		padding-left: 0px; /* 화살표 공간 확보 */
+		text-align: center;
+		background-color: hotpink;
+		height:4vh;
+		min-height: 4vh;
+		padding-top: .1em;
+		line-height: 1.1em;
+		color:rgba(255, 255, 255, .8);
+		text-decoration: none;
+	}
+	/* hover 시 글씨도 오른쪽으로 이동 */
+.navigator a:hover {
+    padding-left: 0em;
+    font-style: italic;
+	cursor: pointer;
+	 text-shadow: 2px 2px 5px rgba(120, 255, 0, 1); /* 텍스트 그림자 추가 */
+}
+	.navigator button:hover {
+    padding-left: 0px;
+    font-style: italic;
+	cursor: pointer;
+	 text-shadow: 2px 2px 5px rgba(120, 255, 0, 1); /* 텍스트 그림자 추가 */
+}
+	.project-container {
+    grid-template-columns: repeat(1, 1fr); /* 2열 그리드 */
+	width: 98%;
+	margin-left: 1%;
+		margin-right: 1%;
+		gap: .1em;
+	}
+	.project-title {
+		display: none;
+	}
+	.project-tags {
+		display: none;
+	}
+	.bottom {
+		top: 89vh;
+		padding: 0;
+	}
+	.bottom p1, button {
+	font-size: .8rem;
+	color: white;
+	text-shadow: 0px 0px 3px rgba(0,246,255,.7), 0px 0px 5px rgba(0,246,255,.2);
+	}
+button {
+	padding-top: .4vh;
+}
+	.instagram-btn svg {
+    width: 16px;  /* 아이콘 크기 */
+    height: 16px;
+    stroke: rgb(255, 255, 255);
+	filter: drop-shadow(0px 0px 3px rgba(170,255,140,0.7)) 
+            drop-shadow(0px 0px 5px rgba(170,255,140,0.2)); /* 그림자 효과 추가 */
+	margin-bottom: .1rem;
+}
+.visitor-counter {
+	display: none;
+        right: 2vw; /* 모바일에서는 조금 더 안쪽으로 */
+        font-size: 0.7rem; /* 글자 크기 조정 */
+    }
+}
+}

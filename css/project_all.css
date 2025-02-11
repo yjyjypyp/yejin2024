@@ -1,0 +1,38 @@
+@charset "UTF-8";
+/* CSS Document */
+/* 첫 번째 버튼: 항상 화살표 보이도록 */
+.navigator a:first-child {
+	font-style: italic;
+	text-decoration: underline;
+	text-shadow: 2px 2px 5px rgba(0, 246, 255, 1); /* 텍스트 그림자 추가 */
+}
+/* 화살표 스타일 */
+.navigator a::before {
+    content: "→"; /* 오른쪽 화살표 */
+    position: absolute;
+    left: 0; /* 글씨 앞에 위치 */
+    width: 20px; /* 고정된 공간을 차지하여 정렬 유지 */
+    text-align: right; /* 오른쪽 정렬 */
+    opacity: 0; /* 기본적으로 숨김 */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.navigator a:first-child::before {
+    opacity: 1;
+}
+@media (max-width: 767px) {
+	.navigator a:first-child {
+		color: rgba(255, 255, 255, 1);
+	text-shadow: 2px 2px 5px rgba(0, 246, 255, 1); /* 텍스트 그림자 추가 */
+		
+	}
+	.navigator a::before {
+		display: none;
+    content: "→"; /* 오른쪽 화살표 */
+    position: absolute;
+    left: 0; /* 글씨 앞에 위치 */
+    width: 20px; /* 고정된 공간을 차지하여 정렬 유지 */
+    text-align: right; /* 오른쪽 정렬 */
+    opacity: 0; /* 기본적으로 숨김 */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+	}
+}
