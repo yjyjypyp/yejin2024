@@ -1,7 +1,7 @@
 // 썸네일 이미지 목록 & 프로젝트명
     const projects = [
 		 { img: "../img/re_thumbnail/thumb_csmidentity_01.png", title: "Central Saint Martins Graduate Show Identity[Finalist]", link: "csmidentity.html",tags: "#Graphic #MotionGraphic #Branding"},
-		 { img: "../img/re_thumbnail/final.gif", poster: "../img/re_thumbnail/thumb_movement_01.png", title: "Movement and Non-movement", link: "movement.html",tags: "#Graphic #Motion Graphics #Illustration.Drawing #EverydayPractice"},
+		 { img: "../img/re_thumbnail/thumb_movement_01.png", poster: "../img/re_thumbnail/thumb_movement_01.png", title: "Movement and Non-movement", link: "movement.html",tags: "#Graphic #Motion Graphics #Illustration.Drawing #EverydayPractice"},
 		 { img: "../img/re_thumbnail/thumb_likeapurespirit_03.png", title: "Like a Pure Spirit", link: "likeapurespirit.html",tags: "#Graphic #MotionGraphic #Print and Publication"},
 		 { img: "../img/gestures/gestures_screened_gathered.jpg", title: "Gestures", link: "gestures.html",tags: "#Graphic #MotionGraphic"},
 		{ img: "../img/fromthesun/scene_03.jpg", title: "From the Sun", link: "fromthesun.html",tags: "#Graphic #MotionGraphic #Mobile"},
