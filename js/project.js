@@ -2,6 +2,14 @@
 function goBack() {
 	window.history.back();
 }
+//모바일에서는 처음에 팝업떠있게하기
+document.addEventListener("DOMContentLoaded", function() {
+    // 팝업을 트리거하는 input을 자동으로 체크
+    let popupCheckbox = document.getElementById("popup"); // popup의 id를 정확히 확인하세요
+    if (popupCheckbox) {
+        popupCheckbox.checked = true; // 자동으로 팝업 열기
+    }
+});
 
 //slideshow
 var isMobile = window.matchMedia("only screen and (max-width: 768px)").matches; // 모바일 화면인지 확인
