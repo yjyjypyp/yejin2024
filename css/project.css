@@ -144,6 +144,7 @@ body {
     justify-content: space-around;
 	left: 2rem;
 	top: 5vh;
+	z-index: 100;
 }
 .navigator a {
 	color: rgba(0,0,0,1);
@@ -424,11 +425,11 @@ button:hover, .instagram-btn:hover {
 }
 @media (max-width: 767px) {
 	.now {
-    top: 17vh; /* 적절한 위치 조정 */
+    top: 18vh; /* 적절한 위치 조정 */
     left: 53%;
 }
 	.context {
-    padding-top: 19.5vh;
+    padding-top: 20.5vh;
 		height: calc(100vh - 1vh); /* 상단 고정 영역 제외한 높이 */
 }
 	.navigator {
@@ -443,17 +444,6 @@ button:hover, .instagram-btn:hover {
 		margin-left: 1%;
 		margin-right: 1%;
 	top: 6vh;
-}
-	.navigator button {
-		display: none;
-    align-items: center; /* 세로 가운데 정렬 */
-		justify-content: center;
-		padding-left: 0px; /* 화살표 공간 확보 */
-		text-align: center;
-		padding-top: .5em;
-		line-height: 1.1em;
-		font-size: .76em;
-		pointer-events: none;
 }
 	.navigator a {
 	display: flex;
@@ -471,6 +461,7 @@ button:hover, .instagram-btn:hover {
 		pointer-events: auto;
 		transition: all 0.3s ease;
 		font-size: .85em;
+		pointer-events: auto !important;
 	}
 	/* hover 시 글씨도 오른쪽으로 이동 */
 .navigator a:hover {
@@ -501,7 +492,7 @@ button:hover, .instagram-btn:hover {
 	color: white;
 	text-shadow: 0px 0px 3px rgba(0,246,255,.7), 0px 0px 5px rgba(0,246,255,.2);
 	}
-button {
+.bottom button {
 	padding-top: .4vh;
 }
 	.instagram-btn svg {
