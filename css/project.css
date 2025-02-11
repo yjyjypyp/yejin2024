@@ -147,7 +147,7 @@ body {
 .navigator a {
 	color: rgba(0,0,0,1);
 }
-.navigator button {
+.navigator a {
     all: unset; /* 기본 버튼 스타일 제거 */
 	display: inline-block; /* 텍스트 관련 스타일이 초기화되지 않도록 */
     font-size: 16px;
@@ -165,7 +165,7 @@ body {
     transform: translateX(-5px); /* 약간 왼쪽 이동 */
 }
 /* hover 시 글씨도 오른쪽으로 이동 */
-.navigator button:hover {
+.navigator a:hover {
     padding-left: 35px;
     font-style: italic;
 	cursor: pointer;
@@ -444,7 +444,7 @@ button:hover, .instagram-btn:hover {
 	top: 6vh;
 }
 	.navigator button {
-		display: flex;
+		display: none;
     align-items: center; /* 세로 가운데 정렬 */
 		justify-content: center;
 		padding-left: 0px; /* 화살표 공간 확보 */
@@ -463,21 +463,17 @@ button:hover, .instagram-btn:hover {
 		background-color: hotpink;
 		height:4vh;
 		min-height: 4vh;
-		padding-top: .1em;
+		padding-top: .2em;
 		line-height: 1.1em;
 		color:rgba(255, 255, 255, .8);
 		text-decoration: none;
 		pointer-events: auto;
+		transition: all 0.3s ease;
+		font-size: .85em;
 	}
 	/* hover 시 글씨도 오른쪽으로 이동 */
 .navigator a:hover {
     padding-left: 0em;
-    font-style: italic;
-	cursor: pointer;
-	 text-shadow: 2px 2px 5px rgba(120, 255, 0, 1); /* 텍스트 그림자 추가 */
-}
-	.navigator button:hover {
-    padding-left: 0px;
     font-style: italic;
 	cursor: pointer;
 	 text-shadow: 2px 2px 5px rgba(120, 255, 0, 1); /* 텍스트 그림자 추가 */
