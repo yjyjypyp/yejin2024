@@ -12,7 +12,7 @@
 		 { img: "../img/re_thumbnail/thumb_dualistic_05.png", title: "Dualistic Relationship: Does It Reveal or Conceal? -part 2", link: "dualisticrelationship_part2.html",tags: "#Graphic #Print and Publication #EverydayPractice"},
 		{ img: "../img/re_thumbnail/thumb_dualistic_04.png", title: "Dualistic Relationship: Does It Reveal or Conceal? -part 1", link: "dualisticrelationship_part1.html",tags: "#Graphic #Print and Publication #EverydayPractice"},
 		 { img: "../img/re_thumbnail/thumb_surface_02.png", title: "Surface as a Screen", link: "surfaceasascreen.html",tags: "#Graphic #Interaction #EverydayPractice"},
-		 { img: "../img/re_thumbnail/final.gif", poster: "../img/re_thumbnail/thumb_movement_01.png", title: "Movement and Non-movement", link: "movement.html",tags: "#Graphic #Motion Graphics #Illustration.Drawing #EverydayPractice"},
+		 { img: "../img/re_thumbnail/thumb_movement_01.png", poster: "../img/re_thumbnail/thumb_movement_01.png", title: "Movement and Non-movement", link: "movement.html",tags: "#Graphic #Motion Graphics #Illustration.Drawing #EverydayPractice"},
 		 { img: "../img/betweenyourmemories/0t.png", title: "Between Your Memories", link: "betweenyourmemories.html",tags: "#Graphic #Web.Interaction"},
 		 { img: "../img/re_thumbnail/thumb_likeapurespirit_03.png", title: "Like a Pure Spirit", link: "likeapurespirit.html",tags: "#Graphic #MotionGraphic #Print and Publication"},
 		 { img: "../img/gestures/gestures_screened_gathered.jpg", title: "Gestures", link: "gestures.html",tags: "#Graphic #MotionGraphic"},
