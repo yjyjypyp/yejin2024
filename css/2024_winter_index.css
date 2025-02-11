@@ -207,8 +207,9 @@ pkor {
 	justify-content: center;
 	align-items: center;
 	margin-top: 15vh;
-		padding-left: .1vw;
-		padding-right: .1vw;
+		padding-left: 0vw;
+		padding-right: 0vw;
+		overflow-x: hidden;
 }
 	.indexhead {
 		padding-right: 0px;
