@@ -16,12 +16,11 @@ body {
 	background-size: cover, 100% 100%;
 	background-repeat: no-repeat;
 	background-position: center;
-	overflow: auto;
+	overflow: hidden;
 }
 .container {
      position: relative;
      width: 100vw;
-	overflow: hidden;
 }
 .top-profile {
 	display: none;
