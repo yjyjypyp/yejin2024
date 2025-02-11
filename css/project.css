@@ -16,11 +16,12 @@ body {
 	background-size: cover, 100% 100%;
 	background-repeat: no-repeat;
 	background-position: center;
-	overflow: hidden;
+	overflow: auto;
 }
 .container {
      position: relative;
      width: 100vw;
+	overflow: hidden;
 }
 .top-profile {
 	display: none;
@@ -423,11 +424,11 @@ button:hover, .instagram-btn:hover {
 }
 @media (max-width: 767px) {
 	.now {
-    top: 16vh; /* 적절한 위치 조정 */
+    top: 17vh; /* 적절한 위치 조정 */
     left: 53%;
 }
 	.context {
-    padding-top: 18.5vh;
+    padding-top: 19.5vh;
 		height: calc(100vh - 1vh); /* 상단 고정 영역 제외한 높이 */
 }
 	.navigator {
@@ -461,9 +462,9 @@ button:hover, .instagram-btn:hover {
 		padding-left: 0px; /* 화살표 공간 확보 */
 		text-align: center;
 		background-color: hotpink;
-		height:4vh;
-		min-height: 4vh;
-		padding-top: .2em;
+		height:3vh;
+		min-height: 3vh;
+		padding-top: .4em;
 		line-height: 1.1em;
 		color:rgba(255, 255, 255, .8);
 		text-decoration: none;
