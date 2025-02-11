@@ -14,6 +14,7 @@ input[id*="popup"] + label {
 	/*border: 1px solid purple;*/
 	z-index: 70;
 	cursor: pointer;
+	position: relative;
 }
 input[id*="popup"] + label h0 {
 	/*border: 1px solid purple;*/
@@ -22,6 +23,10 @@ input[id*="popup"] + label h0 {
 	font-style: normal;
 	text-align: left;
 	margin-top: .2em;
+	color: black; /* 기본 색상 */
+    mix-blend-mode: difference; /* 배경과 반전 효과 */
+	text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.2), 
+             -2px -2px 4px rgba(255, 255, 255, 0.2);
 }
 input[id*="popup"] + label h0:hover {
 	/*border: 1px solid purple;*/
