@@ -222,6 +222,7 @@ pkor {
 	height: 100%;
 	grid-row-gap: 1vw;
 	grid-column-gap: 1vw;
-		overflow: scroll;
+		overflow-x:hidden;
+		overflow-y: scroll;
 	}
 }
