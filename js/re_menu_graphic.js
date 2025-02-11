@@ -5,7 +5,7 @@
 		 { img: "../img/re_thumbnail/thumb_2025card_04.jpg", title: "2025 Greeting Card", link: "2025greetingcard.html",tags: "#Graphic #Print and Publication #EverydayPractice"},
 		 { img: "../img/re_thumbnail/thumb_2024christmas_02.jpg", title: "2024 Website: Christmas Edition", link: "2024website_christmas.html",tags: "#Graphic #Web.Interaction #EverydayPractice"},
 		 { img: "../img/re_thumbnail/thumb_marketroot.jpg", title: "Market Root Vol.2", link: "marketroot.html",tags: "#Graphic #Print and Publication "},
-		 { img: "../img/5543/collection1_04.jpg", title: "SanSan Press", link: "5543.html",tags: "#Graphic #Illustration.Drawing #EverydayPractice"},
+		 { img: "../img/5543/collection1_04.jpg", title: "SanSan Press", link: "sansanpress.html",tags: "#Graphic #Illustration.Drawing #EverydayPractice"},
 		 { img: "../img/re_thumbnail/thumb_2024website_02.jpg", title: "2024 Website", link: "2024website.html",tags: "#Graphic #Web.Interaction #EverydayPractice"},
 		 { img: "../img/re_thumbnail/thumb_browsers.jpg", title: "Browsers and Browsers", link: "browsersandbrowsers.html",tags: "#Graphic #Web.Interaction #Print and Publication"},
 		 { img: "../img/re_thumbnail/thumb_csmidentity_01.jpg", title: "Central Saint Martins Graduate Show Identity[Finalist]", link: "csmidentity.html",tags: "#Graphic #MotionGraphic #Branding"},

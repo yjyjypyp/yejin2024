@@ -1,7 +1,7 @@
 // 썸네일 이미지 목록 & 프로젝트명
     const projects = [
 		 { img: "../img/re_thumbnail/thumb_2025card_04.jpg", title: "2025 Greeting Card", link: "2025greetingcard.html",tags: "#Graphic #Print and Publication #Illustration.Drawing #EverydayPractice"},
-		 { img: "../img/5543/collection1_04.jpg", title: "SanSan Press", link: "5543.html",tags: "#Graphic #Illustration.Drawing #EverydayPractice"},
+		 { img: "../img/5543/collection1_04.jpg", title: "SanSan Press", link: "sansanpress.html",tags: "#Graphic #Illustration.Drawing #EverydayPractice"},
 		 { img: "../img/re_thumbnail/thumb_movement_01.jpg", poster: "../img/re_thumbnail/thumb_movement_01.png", title: "Movement and Non-movement", link: "movement.html",tags: "#Graphic #Motion Graphics #Illustration.Drawing #EverydayPractice"},
 		 { img: "../img/re_thumbnail/thumb_likeapurespirit_03.jpg", title: "Like a Pure Spirit", link: "likeapurespirit.html",tags: "#Graphic #MotionGraphic #Print and Publication"},
 		 { img: "../img/gestures/gestures_screened_gathered.jpg", title: "Gestures", link: "gestures.html",tags: "#Graphic #MotionGraphic"},

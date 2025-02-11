@@ -2,7 +2,7 @@
     const projects = [
 		 { img: "../img/re_thumbnail/thumb_2025card_04.jpg", title: "2025 Greeting Card", link: "2025greetingcard.html",tags: "#Graphic #Print and Publication #EverydayPractice"},
 		 { img: "../img/re_thumbnail/thumb_marketroot.jpg", title: "Market Root Vol.2", link: "marketroot.html",tags: "#Graphic #Print and Publication "},
-		 { img: "../img/5543/collection1_04.jpg", title: "SanSan Press", link: "5543.html",tags: "#Graphic #Illustration.Drawing #EverydayPractice"},
+		 { img: "../img/5543/collection1_04.jpg", title: "SanSan Press", link: "sansanpress.html",tags: "#Graphic #Illustration.Drawing #EverydayPractice"},
 		 { img: "../img/re_thumbnail/thumb_browsers.jpg", title: "Browsers and Browsers", link: "browsersandbrowsers.html",tags: "#Graphic #Web.Interaction #Print and Publication"},
 		 { img: "../img/re_thumbnail/thumb_dualistic_05.jpg", title: "Dualistic Relationship: Does It Reveal or Conceal? -part 2", link: "dualisticrelationship_part2.html",tags: "#Graphic #Print and Publication #EverydayPractice"},
 		{ img: "../img/re_thumbnail/thumb_dualistic_04.jpg", title: "Dualistic Relationship: Does It Reveal or Conceal? -part 1", link: "dualisticrelationship_part1.html",tags: "#Graphic #Print and Publication #EverydayPractice"},
