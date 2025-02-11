@@ -169,7 +169,7 @@ pkor {
 	top: 46%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	width: 94vw;
+	width: 96vw;
 		height: 80vh;
 		padding-top: 0;
 		padding-bottom: 0;
@@ -177,6 +177,7 @@ pkor {
 	opacity: 95%;
 	border-radius: 800px 800px 0px 0px;
 	z-index: 30;
+		overflow-x: hidden;
 }
 	input[id="popup2"] + label + div > label {
 	background: rgba(0, 0, 0, 70%);
@@ -206,8 +207,8 @@ pkor {
 	justify-content: center;
 	align-items: center;
 	margin-top: 15vh;
-		padding-left: .5vw;
-		padding-right: .5vw;
+		padding-left: .1vw;
+		padding-right: .1vw;
 }
 	.indexhead {
 		padding-right: 0px;
