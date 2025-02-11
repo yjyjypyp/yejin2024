@@ -452,6 +452,7 @@ button:hover, .instagram-btn:hover {
 		padding-top: .5em;
 		line-height: 1.1em;
 		font-size: .76em;
+		pointer-events: none;
 }
 	.navigator a {
 	display: flex;
@@ -466,6 +467,7 @@ button:hover, .instagram-btn:hover {
 		line-height: 1.1em;
 		color:rgba(255, 255, 255, .8);
 		text-decoration: none;
+		pointer-events: auto;
 	}
 	/* hover 시 글씨도 오른쪽으로 이동 */
 .navigator a:hover {
