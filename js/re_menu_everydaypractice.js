@@ -1,13 +1,13 @@
 // 썸네일 이미지 목록 & 프로젝트명
     const projects = [
-        { img: "../img/re_thumbnail/thumb_lifeitsbeautiful_02.png", title: "lifeitsbeautiful.xyz", link: "lifeitsbeautiful.html",tags: "#Graphic #Web.Interaction #EverydayPractice"},
-		 { img: "../img/re_thumbnail/thumb_youbelieved_01.png", title: "You Believed What Was Written, Whether It Was True Or False: Part2", link: "youbelieved.html",tags: "#Graphic #EverydayPractice"},
-		 { img: "../img/re_thumbnail/thumb_goodluckkeyring_02.png", title: "You Believed What Was Written, Whether It Was True Or False: Part1", link: "goodluckfish.html",tags: "#Graphic #EverydayPractice"},
-		 { img: "../img/re_thumbnail/thumb_2025card_04.png", title: "2025 Greeting Card", link: "2025greetingcard.html",tags: "#Graphic #Print and Publication #EverydayPractice"},
-		 { img: "../img/re_thumbnail/thumb_2024christmas_02.png", title: "2024 Website: Christmas Edition", link: "2024website_christmas.html",tags: "#Graphic #Web.Interaction #EverydayPractice"},
-		 { img: "../img/re_thumbnail/thumb_marketroot.png", title: "Market Root Vol.2", link: "marketroot.html",tags: "#Graphic #Print and Publication "},
+        { img: "../img/re_thumbnail/thumb_lifeitsbeautiful_02.jpg", title: "lifeitsbeautiful.xyz", link: "lifeitsbeautiful.html",tags: "#Graphic #Web.Interaction #EverydayPractice"},
+		 { img: "../img/re_thumbnail/thumb_youbelieved_01.jpg", title: "You Believed What Was Written, Whether It Was True Or False: Part2", link: "youbelieved.html",tags: "#Graphic #EverydayPractice"},
+		 { img: "../img/re_thumbnail/thumb_goodluckkeyring_02.jpg", title: "You Believed What Was Written, Whether It Was True Or False: Part1", link: "goodluckfish.html",tags: "#Graphic #EverydayPractice"},
+		 { img: "../img/re_thumbnail/thumb_2025card_04.jpg", title: "2025 Greeting Card", link: "2025greetingcard.html",tags: "#Graphic #Print and Publication #EverydayPractice"},
+		 { img: "../img/re_thumbnail/thumb_2024christmas_02.jpg", title: "2024 Website: Christmas Edition", link: "2024website_christmas.html",tags: "#Graphic #Web.Interaction #EverydayPractice"},
+		 { img: "../img/re_thumbnail/thumb_marketroot.jpg", title: "Market Root Vol.2", link: "marketroot.html",tags: "#Graphic #Print and Publication "},
 		 { img: "../img/5543/collection1_04.jpg", title: "SanSan Press", link: "5543.html",tags: "#Graphic #Illustration.Drawing #EverydayPractice"},
-		 { img: "../img/re_thumbnail/thumb_2024website_02.png", title: "2024 Website", link: "2024website.html",tags: "#Graphic #Web.Interaction #EverydayPractice"}
+		 { img: "../img/re_thumbnail/thumb_2024website_02.jpg", title: "2024 Website", link: "2024website.html",tags: "#Graphic #Web.Interaction #EverydayPractice"}
     ];
 const container = document.getElementById("projectContainer");
 

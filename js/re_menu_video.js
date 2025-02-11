@@ -1,6 +1,6 @@
 // 썸네일 이미지 목록 & 프로젝트명
     const projects = [
-		 { img: "../img/re_thumbnail/thumb_likeapurespirit_03.png", title: "Like a Pure Spirit", link: "likeapurespirit.html",tags: "#Graphic #MotionGraphic #Print and Publication"},
+		 { img: "../img/re_thumbnail/thumb_likeapurespirit_03.jpg", title: "Like a Pure Spirit", link: "likeapurespirit.html",tags: "#Graphic #MotionGraphic #Print and Publication"},
 		{ img: "../img/royal salute/03.jpg", title: "Royal Salute", link: "royalsalute.html",tags: "#VideoProduction"},
 		{ img: "../img/flowersick/mainimage_01_resize.jpg", title: "Flower Sick", link: "flowersick.html",tags: "#VideoProduction"}
     ];

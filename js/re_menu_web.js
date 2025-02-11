@@ -1,10 +1,10 @@
 // 썸네일 이미지 목록 & 프로젝트명
     const projects = [
-        { img: "../img/re_thumbnail/thumb_lifeitsbeautiful_02.png", title: "lifeitsbeautiful.xyz", link: "lifeitsbeautiful.html",tags: "#Graphic #Web.Interaction #EverydayPractice"},
-		 { img: "../img/re_thumbnail/thumb_2024christmas_02.png", title: "2024 Website: Christmas Edition", link: "2024website_christmas.html",tags: "#Graphic #Web.Interaction #EverydayPractice"},
-		 { img: "../img/re_thumbnail/thumb_2024website_02.png", title: "2024 Website", link: "2024website.html",tags: "#Graphic #Web.Interaction #EverydayPractice"},
-		 { img: "../img/re_thumbnail/thumb_browsers.png", title: "Browsers and Browsers", link: "browsersandbrowsers.html",tags: "#Graphic #Web.Interaction #Print and Publication"},
-		 { img: "../img/re_thumbnail/thumb_surface_02.png", title: "Surface as a Screen", link: "surfaceasascreen.html",tags: "#Graphic #Interaction #EverydayPractice"},
+        { img: "../img/re_thumbnail/thumb_lifeitsbeautiful_02.jpg", title: "lifeitsbeautiful.xyz", link: "lifeitsbeautiful.html",tags: "#Graphic #Web.Interaction #EverydayPractice"},
+		 { img: "../img/re_thumbnail/thumb_2024christmas_02.jpg", title: "2024 Website: Christmas Edition", link: "2024website_christmas.html",tags: "#Graphic #Web.Interaction #EverydayPractice"},
+		 { img: "../img/re_thumbnail/thumb_2024website_02.jpg", title: "2024 Website", link: "2024website.html",tags: "#Graphic #Web.Interaction #EverydayPractice"},
+		 { img: "../img/re_thumbnail/thumb_browsers.jpg", title: "Browsers and Browsers", link: "browsersandbrowsers.html",tags: "#Graphic #Web.Interaction #Print and Publication"},
+		 { img: "../img/re_thumbnail/thumb_surface_02.jpg", title: "Surface as a Screen", link: "surfaceasascreen.html",tags: "#Graphic #Interaction #EverydayPractice"},
 		 { img: "../img/betweenyourmemories/0t.png", title: "Between Your Memories", link: "betweenyourmemories.html",tags: "#Graphic #Web.Interaction"},
 		{ img: "../img/fromthesun/scene_03.jpg", title: "From the Sun", link: "fromthesun.html",tags: "#Graphic #MotionGraphic #Mobile"},
 		{ img: "../img/royal salute/03.jpg", title: "Royal Salute", link: "royalsalute.html",tags: "#VideoProduction"},
