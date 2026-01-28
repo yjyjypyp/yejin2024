@@ -1,7 +1,7 @@
 // 썸네일 이미지 목록 & 프로젝트명
     const projects = [
 		{ img: "../img/re_thumbnail/thumb_2026card.jpg", title: "2026 Greeting Card", link: "2026greetingcard.html",tags: "#Graphic #Print and Publication #EverydayPractice"},
-		{ img: "../img/re_thumbnail/thumb_Estate.jpg", title: "Estate / SanSan x Yoosung Kim", link: "estate.html",tags: "#Illustration #Book Design #Print and Publication #EverydayPractice"},
+		{ img: "../img/re_thumbnail/thumb_estate.jpg", title: "Estate / SanSan x Yoosung Kim", link: "estate.html",tags: "#Illustration #Book Design #Print and Publication #EverydayPractice"},
 		{ img: "../img/re_thumbnail/thumb_marketroot_vol5.jpg", title: "Market Root Vol.5 Poster/Identity", link: "marketroot_vol5.html",tags: "#Graphic #Book Design #Branding #Print and Publication"},
         { img: "../img/re_thumbnail/thumb_lifeitsbeautiful_02.jpg", title: "lifeitsbeautiful.xyz", link: "lifeitsbeautiful.html",tags: "#Graphic #Web.Interaction #EverydayPractice"},
 		 { img: "../img/re_thumbnail/thumb_youbelieved_01.jpg", title: "You Believed What Was Written, Whether It Was True Or False: Part2", link: "youbelieved.html",tags: "#Graphic #EverydayPractice"},
