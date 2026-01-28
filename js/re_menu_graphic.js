@@ -1,6 +1,7 @@
 // 썸네일 이미지 목록 & 프로젝트명
     const projects = [
         { img: "../img/re_thumbnail/thumb_lifeitsbeautiful_02.jpg", title: "lifeitsbeautiful.xyz", link: "lifeitsbeautiful.html",tags: "#Graphic #Web.Interaction #EverydayPractice"},
+		{ img: "../img/re_thumbnail/thumb_marketroot_vol5.jpg", title: "Market Root Vol.5 Poster/Identity", link: "marketroot_vol5.html",tags: "#Graphic #Book Design #Branding #Print and Publication"},
 		 { img: "../img/re_thumbnail/thumb_goodluckkeyring_02.jpg", title: "You Believed What Was Written, Whether It Was True Or False: Part1", link: "goodluckfish.html",tags: "#Graphic #EverydayPractice"},
 		 { img: "../img/re_thumbnail/thumb_2025card_04.jpg", title: "2025 Greeting Card", link: "2025greetingcard.html",tags: "#Graphic #Print and Publication #EverydayPractice"},
 		 { img: "../img/re_thumbnail/thumb_2024christmas_02.jpg", title: "2024 Website: Christmas Edition", link: "2024website_christmas.html",tags: "#Graphic #Web.Interaction #EverydayPractice"},
