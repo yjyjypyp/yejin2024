@@ -1,65 +1,64 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow, noarchive">
-<meta name="googlebot" content="noindex, nofollow">
-<title>Ye Jin Choi — Portfolio</title>
-<style>
-  :root { --bg: #ffffff; --fg: #000000; --muted: #999999; }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { height: 100%; background: var(--bg); color: var(--fg); }
-  body {
-    font-family: "Neue Haas Grotesk Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px; line-height: 1.4;
-    display: flex; flex-direction: column;
-  }
-  header {
-    display: flex; justify-content: space-between; align-items: baseline;
-    padding: 14px 20px; gap: 16px;
-  }
-  header a { color: var(--fg); text-decoration: none; }
-  header a:hover { color: var(--muted); }
-  main { flex: 1; min-height: 0; padding: 0 20px 20px; }
-  iframe { width: 100%; height: 100%; border: 0; display: block; background: var(--bg); }
-  .hint { color: var(--muted); }
-  @media (max-width: 700px) {
-    header { padding: 12px 16px; }
-    main { padding: 0 16px 16px; }
-    .hint { display: none; }
-  }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ye Jin Choi — Portfolio 2026</title>
+  <!-- Hidden page: not linked from the site, kept out of search results -->
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    :root { --bg: #e8e8e8; --ink: #111; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: var(--bg);
+      overflow: hidden;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    .frame {
+      position: fixed;
+      inset: 0;
+    }
+    iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .fullscreen {
+      position: fixed;
+      top: 14px;
+      right: 16px;
+      z-index: 2;
+      font-size: 13px;
+      line-height: 1;
+      color: var(--ink);
+      text-decoration: none;
+      background: rgba(255,255,255,0.85);
+      padding: 8px 10px;
+      border-radius: 999px;
+      transition: opacity 0.2s ease;
+    }
+    .fullscreen:hover { opacity: 0.5; }
+  </style>
 </head>
 <body>
-<header>
-  <span>Ye Jin Choi — Portfolio 2026</span>
-  <span><span class="hint">Click or use ← → to navigate · </span><a id="full" href="#" target="_blank" rel="noopener">View full screen ↗</a></span>
-</header>
-<main>
-  <iframe id="figma" title="Ye Jin Choi — Portfolio" allowfullscreen></iframe>
-</main>
-<script>
-  // ▼ 여기에 Figma 프로토타입 링크(Present → Share prototype → Copy link)만 붙여넣으세요
-  const FIGMA_PROTOTYPE_URL = "https://www.figma.com/proto/nqnpU3lAefer397qDE1Gru/Portfolio-2026-%E2%80%94-Ye-Jin-Choi?node-id=261-2712&p=f&scaling=contain&content-scaling=fixed&starting-point-node-id=261%3A2712&page-id=261%3A2711";
+  <a class="fullscreen" id="fullscreen" href="#" target="_blank" rel="noopener">View full screen ↗</a>
+  <div class="frame">
+    <iframe id="portfolio" title="Ye Jin Choi — Portfolio 2026" allowfullscreen></iframe>
+  </div>
 
-  // 프로토타입 링크로 임베드 주소를 자동으로 만듭니다
-  (function () {
-    const full = document.getElementById("full");
-    const frame = document.getElementById("figma");
-    full.href = FIGMA_PROTOTYPE_URL;
-    try {
-      const u = new URL(FIGMA_PROTOTYPE_URL);
-      u.hostname = "embed.figma.com";
-      u.searchParams.set("embed-host", "share");
-      u.searchParams.set("hide-ui", "1");
-      u.searchParams.set("scaling", "contain");
-      u.searchParams.delete("t");
-      frame.src = u.toString();
-    } catch (e) {
-      frame.remove();
-    }
-  })();
-</script>
+  <script>
+    // Full portfolio prototype — always opens on the Cover (flow starting point 261:2712)
+    const PROTOTYPE_URL = "https://www.figma.com/proto/nqnpU3lAefer397qDE1Gru/Portfolio-2026-%E2%80%94-Ye-Jin-Choi?node-id=261-2712&p=f&scaling=contain&content-scaling=fixed&starting-point-node-id=261%3A2712&page-id=261%3A2711";
+
+    const embed = new URL(PROTOTYPE_URL.replace("https://www.figma.com/", "https://embed.figma.com/"));
+    embed.searchParams.set("embed-host", "share");
+    embed.searchParams.set("hide-ui", "1");
+
+    document.getElementById("portfolio").src = embed.toString();
+    document.getElementById("fullscreen").href = PROTOTYPE_URL;
+  </script>
 </body>
 </html>
