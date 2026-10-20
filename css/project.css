@@ -452,7 +452,7 @@ button:hover, .instagram-btn:hover {
 		justify-content: center;
 		padding-left: 0px; /* 화살표 공간 확보 */
 		text-align: center;
-		background-color: hotpink;
+		background-color: #000; /* Christmas 2026 (default: hotpink) */
 		height:3vh;
 		min-height: 3vh;
 		padding-top: .4em;
