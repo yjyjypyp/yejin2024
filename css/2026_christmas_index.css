@@ -62,14 +62,33 @@ body {
 	display: none;
 }
 
-/* --- 3. Mobile: keep the character in frame ----------------- */
+/* --- 3. Mobile: dedicated portrait artwork ----------------- */
+/* 1170×2532 = 390×844 @3x. Anchored to the bottom so the character
+   and lettering stay put; taller/shorter phones only trim the sky. */
 @media (max-width: 767px) {
 	:root {
-		--xmas-focus-x: 14%;
+		--xmas-focus-x: 50%;
+		--xmas-focus-y: 100%;
 	}
 	.background {
+		background-image: url("../img/index/xmas2026/xmas2026_mobile.jpg");
 		background-image: image-set(
-			url("../img/index/xmas2026/xmas2026_3640.webp") 1x
+			url("../img/index/xmas2026/xmas2026_mobile.webp") 1x
 		);
+	}
+
+	/* Menu scales with the screen so it stays in the sky
+	   and YE JIN♥CHOI holds on one line */
+	.content h1,
+	.content span {
+		font-size: min(4.1rem, 13.4vw, 7.2vh);
+		line-height: 0.92em;
+		letter-spacing: -0.07em;
+	}
+
+	/* Footer sits under the lettering, clear of the artwork */
+	.bottom {
+		top: auto;
+		bottom: max(10px, env(safe-area-inset-bottom));
 	}
 }
