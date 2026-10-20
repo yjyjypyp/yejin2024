@@ -62,6 +62,12 @@ body {
 	display: none;
 }
 
+/* Footer anchored to the bottom edge instead of 82vh */
+.bottom {
+	top: auto;
+	bottom: 14px;
+}
+
 /* --- 2b. Footer & counter: warm red-beige ------------------- */
 :root {
 	--xmas-footer: #F2D4C7;                          /* light red-beige */
