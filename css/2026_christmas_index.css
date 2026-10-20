@@ -95,6 +95,18 @@ body {
 	background-color: var(--xmas-footer);
 }
 
+/* --- 2c. Menu hover: emerald, same 3-layer neon as the menu --- */
+/* Default menu glow: 6px warm / 6px white / 9px cool — kept, tinted green */
+:root {
+	--xmas-hover: #5FD497;
+	--xmas-hover-glow: 0 0 6px #D9FFC9, 0 0 6px #FFFFFF, 0 0 9px #1FA866;
+}
+ul li:hover .hidden-list,
+ul li:hover .hidden-list span {
+	color: var(--xmas-hover);
+	text-shadow: var(--xmas-hover-glow);
+}
+
 /* --- 3. Mobile: dedicated portrait artwork ----------------- */
 /* 1170×2532 = 390×844 @3x. Anchored to the bottom so the character
    and lettering stay put; taller/shorter phones only trim the sky. */
