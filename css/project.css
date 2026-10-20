@@ -14,7 +14,7 @@ body {
 		/*linear-gradient(to bottom, rgba(0, 246, 255, 0.7), rgba(144, 140, 151, 0.7), rgba(111, 103, 122, 0.7), rgba(99, 0, 255, 0.7), rgba(51, 100, 30, 0.7));*/
 		/* Default (pre-Christmas): linear-gradient(to bottom, rgba(255, 255, 255, 1),rgba(255, 255, 255, 1),rgba(255, 255, 255, 1),rgba(0, 246, 255, 0.7)); */
 		/* Christmas 2026 — swap back to the line above after the season */
-		linear-gradient(to bottom, rgba(255, 255, 255, 1),rgba(255, 255, 255, 1),rgba(255, 255, 255, 1),#9e0d00);
+		linear-gradient(to bottom, #fff 0%, #fff 83.3%, #9e0d00 100%); /* red ramp = bottom 1/6 */
 	background-size: cover, 100% 100%;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -547,7 +547,7 @@ button:hover, .instagram-btn:hover {
 		background: #fff;
 	}
 	.project-container {
-		background: linear-gradient(to bottom, rgba(255, 255, 255, 0) calc(100% - 45vh), var(--xmas-red) 100%);
+		background: linear-gradient(to bottom, rgba(255, 255, 255, 0) calc(100% - 22.5vh), var(--xmas-red) 100%);
 		background-attachment: local;
 		padding-bottom: 28vh;      /* end space: last image clears the footer, red shows */
 		box-sizing: border-box;
