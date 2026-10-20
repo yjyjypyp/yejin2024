@@ -172,7 +172,7 @@ body {
     padding-left: 35px;
     font-style: italic;
 	cursor: pointer;
-	 text-shadow: 2px 2px 5px rgba(120, 255, 0, 1); /* 텍스트 그림자 추가 */
+	 text-shadow: 2px 2px 5px #2FA866; /* Christmas 2026 (default: rgba(120, 255, 0, 1)) */
 }
 
 .close {
@@ -469,7 +469,7 @@ button:hover, .instagram-btn:hover {
     padding-left: 0em;
     font-style: italic;
 	cursor: pointer;
-	 text-shadow: 2px 2px 5px rgba(120, 255, 0, 1); /* 텍스트 그림자 추가 */
+	 text-shadow: 2px 2px 5px #2FA866; /* Christmas 2026 (default: rgba(120, 255, 0, 1)) */
 }
 	.project-container {
     grid-template-columns: repeat(1, 1fr); /* 2열 그리드 */

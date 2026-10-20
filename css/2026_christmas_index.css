@@ -95,11 +95,12 @@ body {
 	background-color: var(--xmas-footer);
 }
 
-/* --- 2c. Menu hover: emerald, same 3-layer neon as the menu --- */
-/* Default menu glow: 6px warm / 6px white / 9px cool — kept, tinted green */
+/* --- 2c. Menu hover: dark green with layered soft glow -------- */
 :root {
-	--xmas-hover: #5FD497;
-	--xmas-hover-glow: 0 0 6px #D9FFC9, 0 0 6px #FFFFFF, 0 0 9px #1FA866;
+	--xmas-hover: #093B24;
+	/* dark green bleed at the letter edge -> emerald -> mint halo */
+	--xmas-hover-glow: 0 0 2px #093B24, 0 0 4px #0C4A2D, 0 0 7px #146B40,
+	                   0 0 11px #2FA866, 0 0 16px #5FD497, 0 0 24px #9EF0BE;
 }
 ul li:hover .hidden-list,
 ul li:hover .hidden-list span {
