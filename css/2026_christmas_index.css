@@ -1,0 +1,75 @@
+@charset "UTF-8";
+/* ==========================================================
+   Christmas 2026 — index
+   Single-screen, no scroll. Loaded last so it overrides
+   index.css / 2024_winter_*.css. Remove this <link> to switch off.
+   ========================================================== */
+
+:root {
+	--xmas-bg-fallback: #1a0306;
+	--xmas-focus-x: 50%;        /* horizontal focal point of the image */
+	--xmas-focus-y: 50%;
+}
+
+/* --- 1. Kill the 1950px scroll ------------------------------ */
+html, body {
+	height: 100%;
+	min-height: 0;
+	overflow: hidden;
+	overscroll-behavior: none;
+}
+body {
+	min-height: 0;
+	background: var(--xmas-bg-fallback);
+}
+
+/* --- 2. Full-viewport illustration -------------------------- */
+.background {
+	position: fixed;
+	inset: 0;
+	width: 100%;
+	height: 100vh;
+	height: 100dvh;             /* mobile: ignores browser chrome */
+	min-height: 0;
+	filter: none;
+	background-color: var(--xmas-bg-fallback);
+	background-image: url("../img/index/xmas2026/xmas2026_1920.jpg");
+	background-image: image-set(
+		url("../img/index/xmas2026/xmas2026_1920.webp") 1x,
+		url("../img/index/xmas2026/xmas2026_3640.webp") 2x
+	);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: var(--xmas-focus-x) var(--xmas-focus-y);
+}
+
+/* Large screens get the full-resolution file even at 1x */
+@media (min-width: 1921px) {
+	.background {
+		background-image: image-set(
+			url("../img/index/xmas2026/xmas2026_3640.webp") 1x
+		);
+	}
+}
+
+/* Grain overlay only needs to cover one screen now */
+.background::before {
+	height: 100%;
+}
+
+/* Scroll cue is meaningless without scroll */
+.arrow-down {
+	display: none;
+}
+
+/* --- 3. Mobile: keep the character in frame ----------------- */
+@media (max-width: 767px) {
+	:root {
+		--xmas-focus-x: 14%;
+	}
+	.background {
+		background-image: image-set(
+			url("../img/index/xmas2026/xmas2026_3640.webp") 1x
+		);
+	}
+}
