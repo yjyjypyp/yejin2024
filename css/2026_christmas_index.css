@@ -110,8 +110,8 @@ ul li:hover .hidden-list span {
 
 /* --- 2d. About popup: blue glow -> hover greens ------------- */
 .about-popup {
-	background: radial-gradient(circle, rgba(0, 0, 0, .8) 0%, rgba(47, 168, 102, .2) 70%);
-	box-shadow: 0 0 20px #5FD497, 0 0 50px #1FA866;
+	background: radial-gradient(circle, rgba(0, 0, 0, .8) 0%, rgba(12, 74, 45, .35) 70%);
+	box-shadow: 0 0 20px #1E7A4A, 0 0 50px #0C4A2D;   /* deep greens from the hover glow */
 }
 
 /* --- 3. Mobile: dedicated portrait artwork ----------------- */
