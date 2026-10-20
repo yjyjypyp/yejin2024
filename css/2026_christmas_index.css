@@ -108,6 +108,12 @@ ul li:hover .hidden-list span {
 	text-shadow: var(--xmas-hover-glow);
 }
 
+/* --- 2d. About popup: blue glow -> hover greens ------------- */
+.about-popup {
+	background: radial-gradient(circle, rgba(0, 0, 0, .8) 0%, rgba(47, 168, 102, .2) 70%);
+	box-shadow: 0 0 20px #5FD497, 0 0 50px #1FA866;
+}
+
 /* --- 3. Mobile: dedicated portrait artwork ----------------- */
 /* 1170×2532 = 390×844 @3x. Anchored to the bottom so the character
    and lettering stay put; taller/shorter phones only trim the sky. */
