@@ -4,7 +4,7 @@
 .navigator a:nth-child(6) {
 	font-style: italic;
 	text-decoration: underline;
-	text-shadow: 2px 2px 5px rgba(0, 246, 255, 1); /* 텍스트 그림자 추가 */
+	text-shadow: 2px 2px 5px rgba(158, 13, 0, 1); /* Christmas 2026 (default: rgba(0, 246, 255, 1)) */
 }
 /* 화살표 스타일 */
 .navigator a::before {
@@ -22,7 +22,7 @@
 @media (max-width: 767px) {
 	.navigator a:nth-child(6) {
 		color: rgba(255, 255, 255, 1);
-	text-shadow: 2px 2px 5px rgba(0, 246, 255, 1); /* 텍스트 그림자 추가 */
+	text-shadow: 2px 2px 5px rgba(158, 13, 0, 1); /* Christmas 2026 (default: rgba(0, 246, 255, 1)) */
 		
 	}
 	.navigator a::before {

@@ -54,7 +54,7 @@ body {
     animation: blink 1.5s infinite ease-out;
     width: 100%;
     z-index: 10;
-	text-shadow: 2px 2px 5px rgba(0, 246, 255, 1); /* 텍스트 그림자 추가 */
+	text-shadow: 2px 2px 5px rgba(158, 13, 0, 1); /* Christmas 2026 (default: rgba(0, 246, 255, 1)) */
 }
 
 @keyframes blink {
@@ -71,7 +71,7 @@ body {
 	border-radius: 50%;
 	margin-right: 0.5em;
 	background-color: #000000;
-	box-shadow: 2px 2px 5px rgba(0, 246, 255, 1); /* 텍스트 그림자 추가 */
+	box-shadow: 2px 2px 5px rgba(158, 13, 0, 1); /* Christmas 2026 (default: rgba(0, 246, 255, 1)) */
 }
 .now p {
 	font-family: 'Junction', sans-serif;
