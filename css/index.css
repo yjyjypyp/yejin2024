@@ -709,3 +709,20 @@ button {
         font-size: 0.7rem; /* 글자 크기 조정 */
     }
 }
+/* Colophon on phones: typeface column takes its natural width so
+   each name stays on one line */
+@media (max-width: 767px) {
+	.colophon-body {
+		grid-template-columns: 1fr auto;
+		grid-template-areas:
+			'a b'
+			'c c';
+		column-gap: 6vw;
+	}
+	.colophon-body .left {
+		padding-right: 0;
+	}
+	.colophon-body .right {
+		white-space: nowrap;
+	}
+}
