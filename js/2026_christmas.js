@@ -285,8 +285,11 @@
 		video.setAttribute('playsinline', '');
 		video.setAttribute('aria-hidden', 'true');
 		video.preload = 'auto';
-		[['img/index/xmas2026/xmas2026_loop_1920.webm', 'video/webm'],
-		 ['img/index/xmas2026/xmas2026_loop_1920.mp4', 'video/mp4']].forEach(([src, type]) => {
+		// 2560 for large or retina screens (e.g. MacBook 1440×2), 1920 otherwise
+		const px = Math.max(window.innerWidth, window.innerHeight * 16 / 9) * Math.min(window.devicePixelRatio || 1, 2);
+		const w = px > 2200 ? 2560 : 1920;
+		[[`img/index/xmas2026/xmas2026_loop_${w}.webm`, 'video/webm'],
+		 [`img/index/xmas2026/xmas2026_loop_${w}.mp4`, 'video/mp4']].forEach(([src, type]) => {
 			const s = document.createElement('source');
 			s.src = src; s.type = type;
 			video.appendChild(s);
