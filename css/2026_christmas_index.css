@@ -97,10 +97,10 @@ body {
 
 /* --- 2c. Menu hover: dark green with layered soft glow -------- */
 :root {
-	--xmas-hover: #093B24;
-	/* dark green bleed at the letter edge -> emerald -> mint halo */
-	--xmas-hover-glow: 0 0 2px #093B24, 0 0 4px #0C4A2D, 0 0 7px #146B40,
-	                   0 0 11px #2FA866, 0 0 16px #5FD497, 0 0 24px #9EF0BE;
+	--xmas-hover: #053B2D;
+	/* deep teal-green bleed at the letter edge -> jade -> pale aqua-mint halo */
+	--xmas-hover-glow: 0 0 2px #053B2D, 0 0 4px #084A39, 0 0 7px #0F6650,
+	                   0 0 11px #239E7C, 0 0 16px #4FD1A9, 0 0 24px #9BEFD6;
 }
 ul li:hover .hidden-list,
 ul li:hover .hidden-list span {
@@ -109,10 +109,16 @@ ul li:hover .hidden-list span {
 }
 
 /* --- 2f. Hover text: accent words unified in Savoye LET ----------- */
-/* Savoye's letters are drawn small, so it's set 1.4× the menu size
-   (80px → 112px) to match Helvetica's weight. "ME" joins the plain words. */
+/* Savoye's letters are drawn small, so it's set 1.4× the hover size
+   (80px → 112px) to match Helvetica's weight. "ME" joins the plain words.
+   --xmas-hover-size: 80px on wide screens; below ~1310px it shrinks with
+   the window so the longest hover line (~1273px at 80px) never clips. */
 :root {
 	--xmas-menu-size: 5rem;
+	--xmas-hover-size: min(var(--xmas-menu-size), calc(6.29vw - 3px));
+}
+.hidden-list span {
+	font-size: var(--xmas-hover-size);
 }
 .hidden-list .A,
 .hidden-list .Z,
@@ -124,13 +130,13 @@ ul li:hover .hidden-list span {
 .hidden-list .know {
 	font-family: "Savoye LET", "Snell Roundhand", cursive;
 	font-weight: 400;
-	font-size: calc(var(--xmas-menu-size) * 1.4);
+	font-size: calc(var(--xmas-hover-size) * 1.4);
 	letter-spacing: -2px;
 }
 .hidden-list .me {
 	font-family: 'Helvetica Neue', 'Noto Sans KR', sans-serif;
 	font-weight: 400;
-	font-size: var(--xmas-menu-size);
+	font-size: var(--xmas-hover-size);
 	letter-spacing: -.35rem;
 }
 
