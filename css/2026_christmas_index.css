@@ -219,3 +219,29 @@ ul li:hover .hidden-list span {
 		bottom: max(10px, env(safe-area-inset-bottom));
 	}
 }
+
+/* --- 4. Desktop loop video over the still ------------------- */
+/* The still is always painted first (.background). js/2026_christmas.js
+   adds the <video> only on landscape screens with a decent connection,
+   and fades it in once it can play through. */
+.xmas-video {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: var(--xmas-focus-x) var(--xmas-focus-y);
+	opacity: 0;
+	transition: opacity 1.2s ease;
+	pointer-events: none;
+	z-index: 0;
+}
+.xmas-video.is-ready {
+	opacity: 1;
+}
+.background::before {
+	z-index: 1;   /* grain stays on top of the video */
+}
+@media (orientation: portrait), (max-width: 767px) {
+	.xmas-video { display: none; }
+}

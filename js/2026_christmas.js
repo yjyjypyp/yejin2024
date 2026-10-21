@@ -257,3 +257,65 @@
 		if (popup) makeSnow(popup);
 	});
 })();
+
+// ------------------------------------------------------------------
+// 3. Desktop loop video: the still image shows first; the video is
+//    loaded only on landscape screens (no Save-Data, not 2g/3g, not
+//    reduced motion) and fades in once it can play through. If it
+//    isn't ready within 8 seconds, the still simply stays.
+// ------------------------------------------------------------------
+(function () {
+	const bg = document.querySelector('.background');
+	if (!bg) return;
+	const wide = window.matchMedia('(min-width: 768px) and (orientation: landscape)');
+	const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+	const conn = navigator.connection || {};
+	if (reduce.matches || conn.saveData || /(^|-)2g|3g/.test(conn.effectiveType || '')) return;
+
+	let video = null;
+
+	function start() {
+		if (video || !wide.matches) return;
+		video = document.createElement('video');
+		video.className = 'xmas-video';
+		video.muted = true;
+		video.loop = true;
+		video.playsInline = true;
+		video.setAttribute('muted', '');
+		video.setAttribute('playsinline', '');
+		video.setAttribute('aria-hidden', 'true');
+		video.preload = 'auto';
+		[['img/index/xmas2026/xmas2026_loop_1920.webm', 'video/webm'],
+		 ['img/index/xmas2026/xmas2026_loop_1920.mp4', 'video/mp4']].forEach(([src, type]) => {
+			const s = document.createElement('source');
+			s.src = src; s.type = type;
+			video.appendChild(s);
+		});
+		bg.appendChild(video);
+
+		const giveUp = setTimeout(() => {
+			if (!video.classList.contains('is-ready')) { video.remove(); video = null; }
+		}, 8000);
+
+		video.addEventListener('canplaythrough', () => {
+			video.play().then(() => {
+				clearTimeout(giveUp);
+				video.classList.add('is-ready');
+			}).catch(() => {});
+		}, { once: true });
+	}
+
+	// Pause when switched to portrait / narrow, resume when back
+	wide.addEventListener('change', () => {
+		if (!wide.matches) { if (video) video.pause(); }
+		else if (video) { video.play().catch(() => {}); }
+		else start();
+	});
+	document.addEventListener('visibilitychange', () => {
+		if (!video) return;
+		document.hidden ? video.pause() : (wide.matches && video.play().catch(() => {}));
+	});
+
+	if (document.readyState === 'complete') start();
+	else window.addEventListener('load', start, { once: true });
+})();
