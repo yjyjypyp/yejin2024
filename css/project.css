@@ -134,7 +134,7 @@ body {
 }
 .project:hover .project-title {
 	font-style: italic;
-	background-color: yellowgreen;
+	background-color: #053B2D; /* Christmas 2026 — index hover green (default: yellowgreen) */
 	color: white;
 }
 .navigator {
