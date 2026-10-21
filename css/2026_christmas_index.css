@@ -35,10 +35,10 @@ body {
 	min-height: 0;
 	filter: none;
 	background-color: var(--xmas-bg-fallback);
-	background-image: url("../img/index/xmas2026/xmas2026_1920.jpg");
+	background-image: url("../img/index/xmas2026/xmas2026_1920.jpg?v=20261021-final");
 	background-image: image-set(
-		url("../img/index/xmas2026/xmas2026_1920.webp") 1x,
-		url("../img/index/xmas2026/xmas2026_3640.webp") 2x
+		url("../img/index/xmas2026/xmas2026_1920.webp?v=20261021-final") 1x,
+		url("../img/index/xmas2026/xmas2026_3640.webp?v=20261021-final") 2x
 	);
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -49,7 +49,7 @@ body {
 @media (min-width: 1921px) {
 	.background {
 		background-image: image-set(
-			url("../img/index/xmas2026/xmas2026_3640.webp") 1x
+			url("../img/index/xmas2026/xmas2026_3640.webp?v=20261021-final") 1x
 		);
 	}
 }
@@ -179,9 +179,9 @@ ul li:hover .hidden-list span {
 		--xmas-focus-y: 100%;
 	}
 	.background {
-		background-image: url("../img/index/xmas2026/xmas2026_tablet.jpg");
+		background-image: url("../img/index/xmas2026/xmas2026_tablet.jpg?v=20261021-final");
 		background-image: image-set(
-			url("../img/index/xmas2026/xmas2026_tablet.webp") 1x
+			url("../img/index/xmas2026/xmas2026_tablet.webp?v=20261021-final") 1x
 		);
 	}
 }
@@ -195,9 +195,9 @@ ul li:hover .hidden-list span {
 		--xmas-focus-y: 100%;
 	}
 	.background {
-		background-image: url("../img/index/xmas2026/xmas2026_mobile.jpg");
+		background-image: url("../img/index/xmas2026/xmas2026_mobile.jpg?v=20261021-final");
 		background-image: image-set(
-			url("../img/index/xmas2026/xmas2026_mobile.webp") 1x
+			url("../img/index/xmas2026/xmas2026_mobile.webp?v=20261021-final") 1x
 		);
 	}
 
