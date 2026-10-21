@@ -553,3 +553,12 @@ button:hover, .instagram-btn:hover {
 		box-sizing: border-box;
 	}
 }
+
+/* Hide scrollbars everywhere (scrolling still works: wheel, trackpad, touch) */
+* {
+	scrollbar-width: none;      /* Firefox */
+	-ms-overflow-style: none;   /* old Edge */
+}
+*::-webkit-scrollbar {
+	display: none;              /* Chrome, Safari, Edge */
+}
