@@ -259,67 +259,77 @@
 })();
 
 // ------------------------------------------------------------------
-// 3. Desktop loop video: the still image shows first; the video is
-//    loaded only on landscape screens (no Save-Data, not 2g/3g, not
-//    reduced motion) and fades in once it can play through. If it
-//    isn't ready within 8 seconds, the still simply stays.
+// 3. Loop video over the still: the still image always shows first;
+//    the matching video is loaded after the page and fades in once it
+//    is actually playing. Skipped on Save-Data, 2g/3g and reduced
+//    motion; if it can't play (e.g. iPhone Low Power Mode) or isn't
+//    playing within 8 s, the still simply stays.
+//      desktop / tablet landscape  -> 1920 or 2560 landscape loop
+//      phones (≤ 767px)            -> portrait mobile loop
+//      tablet portrait             -> still image only
 // ------------------------------------------------------------------
 (function () {
 	const bg = document.querySelector('.background');
 	if (!bg) return;
-	const wide = window.matchMedia('(min-width: 768px) and (orientation: landscape)');
 	const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
 	const conn = navigator.connection || {};
 	if (reduce.matches || conn.saveData || /(^|-)2g|3g/.test(conn.effectiveType || '')) return;
 
-	let video = null;
+	// Bump ASSET_VERSION whenever the video files are replaced, so returning
+	// visitors don't keep a cached older loop
+	const ASSET_VERSION = '20261021-v3';
+	const landscape = window.matchMedia('(min-width: 768px) and (orientation: landscape)');
+	const phone = window.matchMedia('(max-width: 767px)');
 
-	function start() {
-		if (video || !wide.matches) return;
-		video = document.createElement('video');
-		video.className = 'xmas-video';
-		video.muted = true;
-		video.loop = true;
-		video.playsInline = true;
-		video.setAttribute('muted', '');
-		video.setAttribute('playsinline', '');
-		video.setAttribute('aria-hidden', 'true');
-		video.preload = 'auto';
-		// 2560 for large or retina screens (e.g. MacBook 1440×2), 1920 otherwise
-		const px = Math.max(window.innerWidth, window.innerHeight * 16 / 9) * Math.min(window.devicePixelRatio || 1, 2);
-		const w = px > 2200 ? 2560 : 1920;
-		// Bump ASSET_VERSION whenever the video files are replaced, so returning
-		// visitors don't keep a cached older loop
-		const ASSET_VERSION = '20261021-v2';
-		[[`img/index/xmas2026/xmas2026_loop_${w}.webm?v=${ASSET_VERSION}`, 'video/webm'],
-		 [`img/index/xmas2026/xmas2026_loop_${w}.mp4?v=${ASSET_VERSION}`, 'video/mp4']].forEach(([src, type]) => {
-			const s = document.createElement('source');
-			s.src = src; s.type = type;
-			video.appendChild(s);
-		});
-		bg.appendChild(video);
+	let video = null, mode = null;
 
-		const giveUp = setTimeout(() => {
-			if (!video.classList.contains('is-ready')) { video.remove(); video = null; }
-		}, 8000);
-
-		video.addEventListener('canplaythrough', () => {
-			video.play().then(() => {
-				clearTimeout(giveUp);
-				video.classList.add('is-ready');
-			}).catch(() => {});
-		}, { once: true });
+	function wantedMode() {
+		if (landscape.matches) {
+			// 2560 for large or retina screens (e.g. MacBook 1440×2), 1920 otherwise
+			const px = Math.max(window.innerWidth, window.innerHeight * 16 / 9) * Math.min(window.devicePixelRatio || 1, 2);
+			return px > 2200 ? '2560' : '1920';
+		}
+		if (phone.matches) return 'mobile';
+		return null;
 	}
 
-	// Pause when switched to portrait / narrow, resume when back
-	wide.addEventListener('change', () => {
-		if (!wide.matches) { if (video) video.pause(); }
-		else if (video) { video.play().catch(() => {}); }
-		else start();
-	});
+	function stop() {
+		if (video) { video.pause(); video.remove(); }
+		video = null; mode = null;
+	}
+
+	function start() {
+		const m = wantedMode();
+		if (m === mode) { if (video && video.paused && !document.hidden) video.play().catch(() => {}); return; }
+		stop();
+		if (!m) return;
+		mode = m;
+		const v = document.createElement('video');
+		v.className = 'xmas-video';
+		v.muted = true; v.loop = true; v.playsInline = true; v.autoplay = true;
+		v.setAttribute('muted', ''); v.setAttribute('playsinline', ''); v.setAttribute('autoplay', '');
+		v.setAttribute('aria-hidden', 'true');
+		v.preload = 'auto';
+		[[`img/index/xmas2026/xmas2026_loop_${m}.webm?v=${ASSET_VERSION}`, 'video/webm'],
+		 [`img/index/xmas2026/xmas2026_loop_${m}.mp4?v=${ASSET_VERSION}`, 'video/mp4']].forEach(([src, type]) => {
+			const s = document.createElement('source');
+			s.src = src; s.type = type;
+			v.appendChild(s);
+		});
+		bg.appendChild(v);
+		video = v;
+
+		const giveUp = setTimeout(() => { if (video === v && !v.classList.contains('is-ready')) stop(); }, 8000);
+		v.addEventListener('playing', () => { clearTimeout(giveUp); v.classList.add('is-ready'); }, { once: true });
+		v.addEventListener('canplay', () => { v.play().catch(() => {}); }, { once: true });
+	}
+
+	landscape.addEventListener('change', start);
+	phone.addEventListener('change', start);
+	window.addEventListener('resize', () => { clearTimeout(window.__xmasRz); window.__xmasRz = setTimeout(start, 300); });
 	document.addEventListener('visibilitychange', () => {
 		if (!video) return;
-		document.hidden ? video.pause() : (wide.matches && video.play().catch(() => {}));
+		document.hidden ? video.pause() : video.play().catch(() => {});
 	});
 
 	if (document.readyState === 'complete') start();
