@@ -169,6 +169,22 @@ ul li:hover .hidden-list span {
 	box-shadow: 0 0 20px #193B2A, 0 0 50px #193B2A;   /* deep green #193B2A */
 }
 
+/* --- 2g. Tablet portrait (iPad upright): dedicated 2:3 artwork --- */
+/* 1640×2360 ≈ iPad 820×1180 @2x. Bottom-anchored like mobile, so the
+   lettering stays put and squarer iPads only trim the sky. */
+@media (min-width: 768px) and (orientation: portrait) {
+	:root {
+		--xmas-focus-x: 50%;
+		--xmas-focus-y: 100%;
+	}
+	.background {
+		background-image: url("../img/index/xmas2026/xmas2026_tablet.jpg");
+		background-image: image-set(
+			url("../img/index/xmas2026/xmas2026_tablet.webp") 1x
+		);
+	}
+}
+
 /* --- 3. Mobile: dedicated portrait artwork ----------------- */
 /* 1170×2532 = 390×844 @3x. Anchored to the bottom so the character
    and lettering stay put; taller/shorter phones only trim the sky. */
