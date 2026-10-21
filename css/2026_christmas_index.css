@@ -7,8 +7,9 @@
 
 :root {
 	--xmas-bg-fallback: #1a0306;
-	--xmas-focus-x: 0%;         /* left-anchored: narrower screens crop from the right,
-	                               so "Season's Greetings" and the character stay whole */
+	--xmas-focus-x: 15%;        /* narrower screens crop mostly from the right, a little from
+	                               the left; 15% keeps "Season's Greetings" whole down to a
+	                               square window (lettering spans ~10–58% of the image width) */
 	--xmas-focus-y: 50%;
 }
 
