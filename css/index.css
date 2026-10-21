@@ -8,6 +8,7 @@ html, body {
 }
 body {
 	overflow: auto;
+	font-variant-emoji: text; /* keep ♥ ❤ ☀ etc. as typeset glyphs, not emoji (pairs with &#xFE0E; in the HTML) */
 }
 body::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Edge */
