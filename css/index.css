@@ -717,11 +717,12 @@ button {
 		grid-template-areas:
 			'a b'
 			'c c';
-		column-gap: 6vw;
+		column-gap: 4vw;
 	}
 	.colophon-body .left {
 		padding-right: 0;
 	}
+	.colophon-body .left,
 	.colophon-body .right {
 		white-space: nowrap;
 	}
