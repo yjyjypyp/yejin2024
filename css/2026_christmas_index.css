@@ -7,7 +7,8 @@
 
 :root {
 	--xmas-bg-fallback: #1a0306;
-	--xmas-focus-x: 50%;        /* horizontal focal point of the image */
+	--xmas-focus-x: 0%;         /* left-anchored: narrower screens crop from the right,
+	                               so "Season's Greetings" and the character stay whole */
 	--xmas-focus-y: 50%;
 }
 
