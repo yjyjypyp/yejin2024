@@ -47,7 +47,7 @@
 
 	const CONFIG = {
 		spawnPerSecond: 2.6,     // per 1000px of popup width
-		speed: [38, 75],         // px per second (slow, "퐁퐁")
+		speed: [46, 90],         // px per second (gentle, "퐁퐁")
 		sway: [8, 26],           // px side-to-side drift
 		pileMax: 0.13,           // drift can reach 13% of the popup height…
 		pileMaxPx: 120,          // …but never more than this
@@ -68,9 +68,19 @@
 		.xmas-snow-layer { position:absolute; inset:0; z-index:-1; pointer-events:none; overflow:hidden; border-radius:inherit; }
 		.xmas-flake { position:absolute; top:0; left:0; pointer-events:none; will-change:transform, opacity;
 			border-radius:50%;
-			background: radial-gradient(circle, rgba(255,255,255,.98) 0 30%, rgba(255,250,248,.6) 52%, rgba(255,255,255,0) 72%); }
-		.xmas-flake.is-crystal { border-radius:0; background:${CRYSTAL} center/contain no-repeat;
-			filter: drop-shadow(0 0 1.5px rgba(255,255,255,.8)); }
+			background: radial-gradient(circle, rgba(255,255,255,1) 0 34%, rgba(255,250,248,.7) 54%, rgba(255,255,255,0) 74%);
+			box-shadow: 0 0 6px 2px rgba(255,255,255,.9), 0 0 15px 4px rgba(255,234,210,.5); }
+		/* twinkling halo: breathes in and out on its own rhythm */
+		.xmas-flake::after { content:''; position:absolute; inset:-90%; border-radius:50%;
+			background: radial-gradient(circle, rgba(255,255,255,.75) 0, rgba(255,232,206,.3) 40%, rgba(255,255,255,0) 68%);
+			animation: xmasTwinkle var(--tw, 2.4s) ease-in-out var(--twd, 0s) infinite alternate; }
+		.xmas-flake.is-glint { box-shadow: 0 0 7px 3px rgba(255,255,255,1), 0 0 22px 7px rgba(255,228,196,.6); }
+		.xmas-flake.is-glint::after { inset:-160%; }
+		.xmas-flake.is-crystal { border-radius:0; background:${CRYSTAL} center/contain no-repeat; box-shadow:none;
+			filter: drop-shadow(0 0 2px rgba(255,255,255,1)) drop-shadow(0 0 6px rgba(255,232,206,.75)); }
+		.xmas-flake.is-far { box-shadow: 0 0 3px 1px rgba(255,255,255,.55); }
+		.xmas-flake.is-far::after { display:none; }
+		@keyframes xmasTwinkle { from { opacity:.2; transform:scale(.75); } to { opacity:1; transform:scale(1.2); } }
 		.xmas-pile { position:absolute; left:0; bottom:0; width:100%; pointer-events:none; }
 	`;
 	document.head.appendChild(style);
@@ -180,10 +190,14 @@
 			const duration = ((targetY + 20) / speed) * 1000;
 
 			const el = document.createElement('div');
-			el.className = 'xmas-flake' + (crystal ? ' is-crystal' : '');
+			const far = depth < 0.25;
+			const glint = !crystal && !far && Math.random() < 0.18;
+			el.className = 'xmas-flake' + (crystal ? ' is-crystal' : '') + (far ? ' is-far' : '') + (glint ? ' is-glint' : '');
 			el.style.width = el.style.height = size + 'px';
-			el.style.opacity = (0.45 + depth * 0.55).toFixed(2);
-			if (depth < 0.25) el.style.filter = 'blur(0.6px)';
+			el.style.opacity = (0.5 + depth * 0.5).toFixed(2);
+			el.style.setProperty('--tw', (glint ? rand(0.7, 1.3) : rand(1.6, 3.2)).toFixed(2) + 's');
+			el.style.setProperty('--twd', (-rand(0, 3)).toFixed(2) + 's');
+			if (far) el.style.filter = 'blur(0.6px)';
 			layer.appendChild(el);
 
 			const steps = 12, frames = [];
