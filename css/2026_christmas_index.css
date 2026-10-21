@@ -108,6 +108,32 @@ ul li:hover .hidden-list span {
 	text-shadow: var(--xmas-hover-glow);
 }
 
+/* --- 2f. Hover text: accent words unified in Savoye LET ----------- */
+/* Savoye's letters are drawn small, so it's set 1.4× the menu size
+   (80px → 112px) to match Helvetica's weight. "ME" joins the plain words. */
+:root {
+	--xmas-menu-size: 5rem;
+}
+.hidden-list .A,
+.hidden-list .Z,
+.hidden-list .see,
+.hidden-list .find,
+.hidden-list .make,
+.hidden-list .credit,
+.hidden-list .credit i,
+.hidden-list .know {
+	font-family: "Savoye LET", "Snell Roundhand", cursive;
+	font-weight: 400;
+	font-size: calc(var(--xmas-menu-size) * 1.4);
+	letter-spacing: -2px;
+}
+.hidden-list .me {
+	font-family: 'Helvetica Neue', 'Noto Sans KR', sans-serif;
+	font-weight: 400;
+	font-size: var(--xmas-menu-size);
+	letter-spacing: -.35rem;
+}
+
 /* --- 2e. Touch screens: no text swap, tap shows the hover green --- */
 /* Phones/tablets can't hover, so a tap used to flash the alternate text.
    Here the label stays as is and turns green while pressed / its popup is open. */
@@ -153,9 +179,12 @@ ul li:hover .hidden-list span {
 
 	/* Menu scales with the screen so it stays in the sky
 	   and YE JIN♥CHOI holds on one line */
+	:root {
+		--xmas-menu-size: min(4.1rem, 13.4vw, 7.2vh);
+	}
 	.content h1,
 	.content span {
-		font-size: min(4.1rem, 13.4vw, 7.2vh);
+		font-size: var(--xmas-menu-size);
 		line-height: 0.92em;
 		letter-spacing: -0.07em;
 	}
