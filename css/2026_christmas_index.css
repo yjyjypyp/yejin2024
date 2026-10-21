@@ -108,6 +108,28 @@ ul li:hover .hidden-list span {
 	text-shadow: var(--xmas-hover-glow);
 }
 
+/* --- 2e. Touch screens: no text swap, tap shows the hover green --- */
+/* Phones/tablets can't hover, so a tap used to flash the alternate text.
+   Here the label stays as is and turns green while pressed / its popup is open. */
+@media (hover: none) {
+	ul li:hover .hidden-list {
+		display: none;
+	}
+	ul li:hover .shown-list {
+		display: block;
+	}
+	/* Classes set by js/2026_christmas.js */
+	ul li.is-pressed .shown-list,
+	ul li.is-pressed .shown-list h1,
+	ul li.is-pressed .shown-list span,
+	ul li.is-open .shown-list,
+	ul li.is-open .shown-list h1,
+	ul li.is-open .shown-list span {
+		color: var(--xmas-hover);
+		text-shadow: var(--xmas-hover-glow);
+	}
+}
+
 /* --- 2d. About popup: blue glow -> hover greens ------------- */
 .about-popup {
 	background: radial-gradient(circle, rgba(0, 0, 0, .8) 0%, rgba(25, 59, 42, .35) 70%);
