@@ -179,9 +179,9 @@ ul li:hover .hidden-list span {
 		--xmas-focus-y: 100%;
 	}
 	.background {
-		background-image: url("../img/index/xmas2026/xmas2026_tablet.jpg?v=20261021-final");
+		background-image: url("../img/index/xmas2026/xmas2026_tablet.jpg?v=20261021-v4");
 		background-image: image-set(
-			url("../img/index/xmas2026/xmas2026_tablet.webp?v=20261021-final") 1x
+			url("../img/index/xmas2026/xmas2026_tablet.webp?v=20261021-v4") 1x
 		);
 	}
 }
@@ -195,9 +195,9 @@ ul li:hover .hidden-list span {
 		--xmas-focus-y: 100%;
 	}
 	.background {
-		background-image: url("../img/index/xmas2026/xmas2026_mobile.jpg?v=20261021-v3");
+		background-image: url("../img/index/xmas2026/xmas2026_mobile.jpg?v=20261021-v4");
 		background-image: image-set(
-			url("../img/index/xmas2026/xmas2026_mobile.webp?v=20261021-v3") 1x
+			url("../img/index/xmas2026/xmas2026_mobile.webp?v=20261021-v4") 1x
 		);
 	}
 
@@ -242,7 +242,4 @@ ul li:hover .hidden-list span {
 .background::before {
 	z-index: 1;   /* grain stays on top of the video */
 }
-/* Tablet portrait uses the still only; phones get their own portrait loop */
-@media (min-width: 768px) and (orientation: portrait) {
-	.xmas-video { display: none; }
-}
+/* Each layout (landscape / tablet portrait / phone) gets its own loop */

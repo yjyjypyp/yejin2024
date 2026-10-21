@@ -266,7 +266,7 @@
 //    playing within 8 s, the still simply stays.
 //      desktop / tablet landscape  -> 1920 or 2560 landscape loop
 //      phones (≤ 767px)            -> portrait mobile loop
-//      tablet portrait             -> still image only
+//      tablet portrait (≥ 768px)   -> portrait tablet loop
 // ------------------------------------------------------------------
 (function () {
 	const bg = document.querySelector('.background');
@@ -277,7 +277,7 @@
 
 	// Bump ASSET_VERSION whenever the video files are replaced, so returning
 	// visitors don't keep a cached older loop
-	const ASSET_VERSION = '20261021-v3';
+	const ASSET_VERSION = '20261021-v4';
 	const landscape = window.matchMedia('(min-width: 768px) and (orientation: landscape)');
 	const phone = window.matchMedia('(max-width: 767px)');
 
@@ -290,7 +290,7 @@
 			return px > 2200 ? '2560' : '1920';
 		}
 		if (phone.matches) return 'mobile';
-		return null;
+		return 'tablet';
 	}
 
 	function stop() {
