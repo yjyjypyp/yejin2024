@@ -6,8 +6,16 @@ const colophonPopup = document.querySelector('.colophon-popup');
 const aboutButton = document.querySelector('.list-about');
 const aboutPopup = document.querySelector('.about-popup');
 
+// 팝업은 한 번에 하나만: 다른 팝업을 열면 기존 팝업은 닫힘
+function closeOtherPopups(keep) {
+    [indexPopup, colophonPopup, aboutPopup].forEach((p) => {
+        if (p && p !== keep) p.style.display = 'none';
+    });
+}
+
 // INDEX 클릭 시 팝업 보이기/숨기기 토글
 indexButton.addEventListener('click', () => {
+    closeOtherPopups(indexPopup);
     if (indexPopup.style.display === 'none' || indexPopup.style.display === '') {
         indexPopup.style.display = 'block'; // 팝업 보이기
         createGlitter(); // 글리터 생성
@@ -23,6 +31,7 @@ indexPopup.addEventListener('click', () => {
 
 // colophon 클릭 시 팝업 보이기/숨기기 토글
 colophonButton.addEventListener('click', () => {
+    closeOtherPopups(colophonPopup);
     if (colophonPopup.style.display === 'none' || colophonPopup.style.display === '') {
         colophonPopup.style.display = 'block'; // 팝업 보이기
     } else {
@@ -37,6 +46,7 @@ colophonPopup.addEventListener('click', () => {
 
 // about 클릭 시 팝업 보이기/숨기기 토글
 aboutButton.addEventListener('click', () => {
+    closeOtherPopups(aboutPopup);
     if (aboutPopup.style.display === 'none' || aboutPopup.style.display === '') {
         aboutPopup.style.display = 'block'; // 팝업 보이기
     } else {
