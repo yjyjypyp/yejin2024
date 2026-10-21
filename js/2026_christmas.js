@@ -290,7 +290,7 @@
 		const w = px > 2200 ? 2560 : 1920;
 		// Bump ASSET_VERSION whenever the video files are replaced, so returning
 		// visitors don't keep a cached older loop
-		const ASSET_VERSION = '20261021-final';
+		const ASSET_VERSION = '20261021-v2';
 		[[`img/index/xmas2026/xmas2026_loop_${w}.webm?v=${ASSET_VERSION}`, 'video/webm'],
 		 [`img/index/xmas2026/xmas2026_loop_${w}.mp4?v=${ASSET_VERSION}`, 'video/mp4']].forEach(([src, type]) => {
 			const s = document.createElement('source');
