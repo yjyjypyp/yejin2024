@@ -243,3 +243,13 @@ ul li:hover .hidden-list span {
 	z-index: 1;   /* grain stays on top of the video */
 }
 /* Each layout (landscape / tablet portrait / phone) gets its own loop */
+
+/* Never show the browser's own play button / controls on the background loop (Safari) */
+.xmas-video::-webkit-media-controls,
+.xmas-video::-webkit-media-controls-panel,
+.xmas-video::-webkit-media-controls-overlay-play-button,
+.xmas-video::-webkit-media-controls-start-playback-button {
+	display: none !important;
+	-webkit-appearance: none;
+	opacity: 0 !important;
+}

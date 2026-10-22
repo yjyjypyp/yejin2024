@@ -277,7 +277,10 @@
 
 	// Bump ASSET_VERSION whenever the video files are replaced, so returning
 	// visitors don't keep a cached older loop
-	const ASSET_VERSION = '20261021-v4';
+	const ASSET_VERSION = '20261022-v5';
+	const ua = navigator.userAgent;
+	const isWebKit = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1) ||
+		(/Safari/.test(ua) && !/Chrome|Chromium|CriOS|Edg|OPR|Firefox|FxiOS|Android/.test(ua));
 	const landscape = window.matchMedia('(min-width: 768px) and (orientation: landscape)');
 	const phone = window.matchMedia('(max-width: 767px)');
 
@@ -309,9 +312,15 @@
 		v.muted = true; v.loop = true; v.playsInline = true; v.autoplay = true;
 		v.setAttribute('muted', ''); v.setAttribute('playsinline', ''); v.setAttribute('autoplay', '');
 		v.setAttribute('aria-hidden', 'true');
+		v.setAttribute('disablepictureinpicture', '');
+		v.setAttribute('disableremoteplayback', '');
+		v.controls = false;
 		v.preload = 'auto';
-		[[`img/index/xmas2026/xmas2026_loop_${m}.webm?v=${ASSET_VERSION}`, 'video/webm'],
-		 [`img/index/xmas2026/xmas2026_loop_${m}.mp4?v=${ASSET_VERSION}`, 'video/mp4']].forEach(([src, type]) => {
+		// Safari / iOS: H.264 MP4 first (hardware-decoded, reliable autoplay);
+		// everything else: smaller VP9 WebM first
+		const mp4 = [`img/index/xmas2026/xmas2026_loop_${m}.mp4?v=${ASSET_VERSION}`, 'video/mp4'];
+		const webm = [`img/index/xmas2026/xmas2026_loop_${m}.webm?v=${ASSET_VERSION}`, 'video/webm'];
+		(isWebKit ? [mp4, webm] : [webm, mp4]).forEach(([src, type]) => {
 			const s = document.createElement('source');
 			s.src = src; s.type = type;
 			v.appendChild(s);
@@ -319,9 +328,28 @@
 		bg.appendChild(v);
 		video = v;
 
+		// Only reveal the video once frames are really advancing; if the
+		// browser blocks or pauses it (Low Power Mode, autoplay policy),
+		// hide it again so the still shows instead of a paused/play-button frame
 		const giveUp = setTimeout(() => { if (video === v && !v.classList.contains('is-ready')) stop(); }, 8000);
-		v.addEventListener('playing', () => { clearTimeout(giveUp); v.classList.add('is-ready'); }, { once: true });
-		v.addEventListener('canplay', () => { v.play().catch(() => {}); }, { once: true });
+		let lastT = -1;
+		v.addEventListener('timeupdate', () => {
+			if (v.currentTime > 0.05 && v.currentTime !== lastT && !v.paused) {
+				clearTimeout(giveUp);
+				v.classList.add('is-ready');
+			}
+			lastT = v.currentTime;
+		});
+		v.addEventListener('pause', () => { if (!document.hidden) v.classList.remove('is-ready'); });
+		// a failing <source> just falls through to the next one; give up only if the last fails
+		const sources = v.querySelectorAll('source');
+		sources[sources.length - 1].addEventListener('error', () => { if (video === v) stop(); });
+		const tryPlay = () => {
+			const pr = v.play();
+			if (pr && pr.catch) pr.catch(() => { if (video === v) stop(); });
+		};
+		v.addEventListener('canplay', tryPlay, { once: true });
+		if (v.readyState >= 2) tryPlay();
 	}
 
 	landscape.addEventListener('change', start);
