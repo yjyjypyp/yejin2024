@@ -455,7 +455,8 @@ button:hover, .instagram-btn:hover {
 		background-color: #000; /* Christmas 2026 (default: hotpink) */
 		height:3vh;
 		min-height: 3vh;
-		padding-top: .4em;
+		padding-top: .6em; /* 폰트가 위로 붙는 편이라 아래로 보정 (박스 높이는 동일) */
+		padding-bottom: .1em;
 		line-height: 1.1em;
 		color:rgba(255, 255, 255, .8);
 		text-decoration: none;
