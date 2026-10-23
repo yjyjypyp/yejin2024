@@ -1,42 +1,60 @@
-// 썸네일 이미지 목록 & 프로젝트명
-    const projects = [
-		 { img: "../img/re_thumbnail/thumb_csmidentity_01.jpg", title: "Central Saint Martins Graduate Show Identity[Finalist]", link: "csmidentity.html",tags: "#Graphic #MotionGraphic #Branding"},
-		 { img: "../img/re_thumbnail/thumb_movement_01.jpg", poster: "../img/re_thumbnail/thumb_movement_01.png", title: "Movement and Non-movement", link: "movement.html",tags: "#Graphic #Motion Graphics #Illustration.Drawing #EverydayPractice"},
-		 { img: "../img/re_thumbnail/thumb_likeapurespirit_03.jpg", title: "Like a Pure Spirit", link: "likeapurespirit.html",tags: "#Graphic #MotionGraphic #Print and Publication"},
-		 { img: "../img/gestures/gestures_screened_gathered.jpg", title: "Gestures", link: "gestures.html",tags: "#Graphic #MotionGraphic"},
-		{ img: "../img/fromthesun/scene_03.jpg", title: "From the Sun", link: "fromthesun.html",tags: "#Graphic #MotionGraphic #Mobile"},
-		{ img: "../img/flowerpig/tail.png", title: "Flower Pig", link: "flowerpig.html",tags: "#Graphic #MotionGraphic"},
-		{ img: "../img/crp/mockup_crp.jpg", title: "CRP(Creative Rocket Platform)", link: "crp.html",tags: "#Graphic #MotionGraphic"},
-		{ img: "../img/loveletter/love_letter_drawing_02.jpg", title: "Love Letter", link: "loveletter.html",tags: "#Graphic #Motion Graphic #Illustration.Drawing"}
-    ];
-const container = document.getElementById("projectContainer");
+// =====================================================================
+// 카테고리 페이지 공통 스크립트
+// 프로젝트 목록은 js/projects-data.js 에서 관리합니다.
+// 각 페이지는 <body data-category="..."> 로 자기 카테고리를 지정합니다.
+// =====================================================================
+(function () {
+    const current = document.body.dataset.category || "all";
 
-projects.forEach((project) => {
-    const projectDiv = document.createElement("a");
-    projectDiv.href = project.link;
-    projectDiv.classList.add("project");
+    // 1) 상단 카테고리 메뉴 생성
+    const nav = document.querySelector(".navigator");
+    if (nav) {
+        nav.innerHTML = "";
+        CATEGORIES.forEach((cat) => {
+            const a = document.createElement("a");
+            a.href = cat.page;
+            a.textContent = cat.label;
+            if (cat.id === current) a.classList.add("active");
+            nav.appendChild(a);
+        });
+    }
 
-    const img = document.createElement("img");
-    img.src = project.img;
-    img.alt = project.title;
+    // 2) 프로젝트 목록 생성
+    const labelOf = {};
+    CATEGORIES.forEach((cat) => { labelOf[cat.id] = cat.label; });
 
-    const textContainer = document.createElement("div");
-    textContainer.classList.add("project-text");
+    const list = PROJECTS.filter((p) =>
+        !p.hidden && (current === "all" || (p.categories || []).includes(current))
+    );
 
-    const title = document.createElement("div");
-    title.classList.add("project-title");
-    title.textContent = project.title;
+    const container = document.getElementById("projectContainer");
+    list.forEach((project) => {
+        const projectDiv = document.createElement("a");
+        projectDiv.href = project.link;
+        projectDiv.classList.add("project");
 
-    const tags = document.createElement("div");
-    tags.classList.add("project-tags");
-    tags.textContent = project.tags;
+        const img = document.createElement("img");
+        img.src = project.img;
+        img.alt = project.title;
 
-    textContainer.appendChild(title);
-    textContainer.appendChild(tags);
-    projectDiv.appendChild(img);
-    projectDiv.appendChild(textContainer);
-    container.appendChild(projectDiv);
-});
+        const textContainer = document.createElement("div");
+        textContainer.classList.add("project-text");
+
+        const title = document.createElement("div");
+        title.classList.add("project-title");
+        title.textContent = project.title;
+
+        const tags = document.createElement("div");
+        tags.classList.add("project-tags");
+        tags.textContent = (project.categories || []).map((id) => "#" + labelOf[id]).join(" ");
+
+        textContainer.appendChild(title);
+        textContainer.appendChild(tags);
+        projectDiv.appendChild(img);
+        projectDiv.appendChild(textContainer);
+        container.appendChild(projectDiv);
+    });
+})();
 
 // 일반 글리터 생성 함수
 function createSingleGlitter() {

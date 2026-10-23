@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* CSS Document */
 /* 첫 번째 버튼: 항상 화살표 보이도록 */
-.navigator a:nth-child(6) {
+.navigator a.active {
 	font-style: italic;
 	text-decoration: underline;
 	text-shadow: 2px 2px 5px rgba(158, 13, 0, 1); /* Christmas 2026 (default: rgba(0, 246, 255, 1)) */
@@ -16,11 +16,11 @@
     opacity: 0; /* 기본적으로 숨김 */
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
-.navigator a:nth-child(6)::before {
+.navigator a.active::before {
     opacity: 1;
 }
 @media (max-width: 767px) {
-	.navigator a:nth-child(6) {
+	.navigator a.active {
 		color: rgba(255, 255, 255, 1);
 	text-shadow: 2px 2px 5px rgba(158, 13, 0, 1); /* Christmas 2026 (default: rgba(0, 246, 255, 1)) */
 		
