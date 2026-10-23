@@ -23,10 +23,7 @@ input[id*="popup"] + label h0 {
 	font-style: normal;
 	text-align: left;
 	margin-top: .2em;
-	color: black; /* 기본 색상 */
-    mix-blend-mode: difference; /* 배경과 반전 효과 */
-	text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.2), 
-             -2px -2px 4px rgba(255, 255, 255, 0.2);
+	color: black; /* 기본 색상 — 어두운 배경에서는 js/auto-tone.js 가 흰색으로 전환 */
 }
 input[id*="popup"] + label h0:hover {
 	/*border: 1px solid purple;*/

@@ -519,3 +519,46 @@ pKOR {
 	height: auto;
 }
 }
+/* ==========================================================
+   Auto tone — js/auto-tone.js 가 배경이 어두운 요소에 .tone-dark 를 붙임
+   ========================================================== */
+input[id*="popup"] + label h0,
+.controls pguide,
+.slidenumber p {
+	transition: color 0.3s ease;
+}
+.close .line-hori,
+.close .line-verti,
+input[id*="popup"] + label .arrow::after {
+	transition: border-color 0.3s ease;
+}
+input[id*="popup"] + label.tone-dark h0,
+.slidenumber.tone-dark p,
+.controls .prev pguide.tone-dark,
+.controls .next pguide.tone-dark,
+.controls .prev:active pguide.tone-dark,
+.controls .next:active pguide.tone-dark {
+	color: #fff;
+}
+.controls .prev:hover pguide.tone-dark,
+.controls .next:hover pguide.tone-dark {
+	color: #CF27FF; /* hover 색은 그대로 */
+}
+input[id*="popup"] + label.tone-dark .arrow::after {
+	border-color: #fff;
+}
+.head .close.tone-dark .line-hori,
+.head .close.tone-dark .line-verti {
+	border-color: #fff;
+}
+.bottom .footnote .footnote-title,
+.homepagelink .btn {
+	transition: color 0.3s ease;
+}
+.bottom .footnote .footnote-title.tone-dark,
+.homepagelink .btn.tone-dark {
+	color: #fff;
+}
+.bottom .footnote .footnote-title.tone-dark .circle {
+	background-color: #fff;
+}
