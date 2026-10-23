@@ -64,7 +64,7 @@ const PROJECTS = [
     { img: "../img/gestures/gestures_screened_gathered.jpg", title: "Gestures", link: "gestures.html",
       categories: ["ai-motion", "illustration"] },
     { img: "../img/fromthesun/scene_03.jpg", title: "From the Sun", link: "fromthesun.html",
-      categories: ["ai-motion", "interactive"] },
+      categories: ["graphic", "ai-motion", "interactive"] },
 
     // ---- 프로젝트 페이지 목록에서는 숨김 (페이지 자체는 남아 있어 index 등에서 링크로 접근 가능) ----
     { hidden: true, title: "Gravity", link: "gravity.html" },
