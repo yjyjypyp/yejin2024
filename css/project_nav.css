@@ -20,10 +20,13 @@
     opacity: 1;
 }
 @media (max-width: 767px) {
+	/* 선택된 카테고리: 박스를 하단 레드로 채움 (기울임·밑줄 없음, 글로우 유지) */
 	.navigator a.active {
 		color: rgba(255, 255, 255, 1);
-	text-shadow: 2px 2px 5px rgba(158, 13, 0, 1); /* Christmas 2026 (default: rgba(0, 246, 255, 1)) */
-		
+		background-color: var(--xmas-red, #9e0d00); /* Christmas 2026 — footer red */
+		font-style: normal;
+		text-decoration: none;
+		text-shadow: 2px 2px 5px rgba(158, 13, 0, 1); /* Christmas 2026 (default: rgba(0, 246, 255, 1)) */
 	}
 	.navigator a::before {
 		display: none;
