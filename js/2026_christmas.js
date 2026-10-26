@@ -328,14 +328,13 @@
 		bg.appendChild(v);
 		video = v;
 
-		// Only reveal the video once frames are really advancing; if the
-		// browser blocks or pauses it (Low Power Mode, autoplay policy),
-		// hide it again so the still shows instead of a paused/play-button frame
-		const giveUp = setTimeout(() => { if (video === v && !v.classList.contains('is-ready')) stop(); }, 8000);
+		// The video stays invisible (opacity 0) until frames are really advancing,
+		// so the still shows meanwhile — however long a slow load takes (no time
+		// limit: Safari waits until it can play through before starting).
+		// If it pauses, it fades out again, so no paused / play-button frame shows.
 		let lastT = -1;
 		v.addEventListener('timeupdate', () => {
 			if (v.currentTime > 0.05 && v.currentTime !== lastT && !v.paused) {
-				clearTimeout(giveUp);
 				v.classList.add('is-ready');
 			}
 			lastT = v.currentTime;
@@ -346,7 +345,9 @@
 		sources[sources.length - 1].addEventListener('error', () => { if (video === v) stop(); });
 		const tryPlay = () => {
 			const pr = v.play();
-			if (pr && pr.catch) pr.catch(() => { if (video === v) stop(); });
+			// give up only when autoplay is actually blocked (e.g. Low Power Mode),
+			// not when the load is merely slow
+			if (pr && pr.catch) pr.catch((e) => { if (video === v && e && e.name === 'NotAllowedError') stop(); });
 		};
 		v.addEventListener('canplay', tryPlay, { once: true });
 		if (v.readyState >= 2) tryPlay();
