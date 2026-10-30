@@ -511,35 +511,6 @@ button:hover, .instagram-btn:hover {
         font-size: 0.7rem; /* 글자 크기 조정 */
     }
 }
-/* ✅ Footer note — "Best viewed in Chrome." + "Last updated"
-   데스크톱: 좌측 하단 두 줄, 우측 방문자 카운터와 대칭 (bottom 1vh / 2.5vw)
-   모바일: Chrome 안내는 숨기고 Last updated만 기존처럼 가운데 */
-.center-content .footer-note p1 {
-	display: block;
-}
-.center-content .footer-note .browser-note {
-	display: none;
-}
-@media (min-width: 768px) {
-	/* 푸터를 화면 아래 기준으로 → Last updated가 빠진 만큼 가운데가 내려와
-	   버튼 줄과 좌측 두 줄의 아랫선이 같은 높이에 맞춰짐 */
-	.bottom {
-		bottom: 0;
-	}
-	.center-content .footer-note {
-		position: absolute;
-		bottom: 15px; /* = .bottom padding → 가운데 마지막 줄과 같은 아랫선 */
-		left: 2.5vw;
-	}
-	.center-content .footer-note p1 {
-		text-align: left;
-		white-space: nowrap;
-	}
-	.center-content .footer-note .browser-note {
-		display: block;
-	}
-}
-
 /* ==========================================================
    Christmas 2026 — remove this block after the season
    ========================================================== */
