@@ -736,3 +736,27 @@ button {
 *::-webkit-scrollbar {
 	display: none;              /* Chrome, Safari, Edge */
 }
+
+/* ✅ Footer note — "Best viewed in Chrome." + "Last updated"
+   데스크톱: 좌측 하단 두 줄, 우측 방문자 카운터와 대칭 (bottom 1vh / 2.5vw)
+   모바일: Chrome 안내는 숨기고 Last updated만 기존처럼 가운데 */
+.center-content .footer-note p1 {
+	display: block;
+}
+.center-content .footer-note .browser-note {
+	display: none;
+}
+@media (min-width: 768px) {
+	.center-content .footer-note {
+		position: absolute;
+		bottom: 1vh;
+		left: 2.5vw;
+	}
+	.center-content .footer-note p1 {
+		text-align: left;
+		white-space: nowrap;
+	}
+	.center-content .footer-note .browser-note {
+		display: block;
+	}
+}
