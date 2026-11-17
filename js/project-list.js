@@ -46,7 +46,9 @@
 
         const tags = document.createElement("div");
         tags.classList.add("project-tags");
-        tags.textContent = (project.categories || []).map((id) => "#" + labelOf[id]).join(" ");
+        // tagLabels가 있으면 해당 카테고리 태그 이름만 바꿔서 표시 (필터 분류는 그대로)
+        const override = project.tagLabels || {};
+        tags.textContent = (project.categories || []).map((id) => "#" + (override[id] || labelOf[id])).join(" ");
 
         textContainer.appendChild(title);
         textContainer.appendChild(tags);

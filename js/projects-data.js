@@ -48,7 +48,7 @@ const PROJECTS = [
     { img: "../img/re_thumbnail/thumb_browsers.jpg", title: "Browsers and Browsers", link: "browsersandbrowsers.html",
       categories: ["print", "interactive"] },
     { img: "../img/re_thumbnail/thumb_csmidentity_01.jpg", title: "Central Saint Martins Graduate Show Identity[Finalist]", link: "csmidentity.html",
-      categories: ["brand", "graphic", "ai-motion"] },
+      categories: ["brand", "graphic", "ai-motion"], tagLabels: { "ai-motion": "Motion" } },
     { img: "../img/re_thumbnail/thumb_dualistic_05.jpg", title: "Dualistic Relationship: Does It Reveal or Conceal? -part 2", link: "dualisticrelationship_part2.html",
       categories: ["print"] },
     { img: "../img/re_thumbnail/thumb_dualistic_04.jpg", title: "Dualistic Relationship: Does It Reveal or Conceal? -part 1", link: "dualisticrelationship_part1.html",
@@ -60,11 +60,11 @@ const PROJECTS = [
     { img: "../img/re_thumbnail/thumb_movement_01.jpg", poster: "../img/re_thumbnail/thumb_movement_01.png", title: "Movement and Non-movement", link: "movement.html",
       categories: ["everyday"] },
     { img: "../img/re_thumbnail/thumb_likeapurespirit_03.jpg", title: "Like a Pure Spirit", link: "likeapurespirit.html",
-      categories: ["ai-motion", "print", "illustration"] },
+      categories: ["ai-motion", "print", "illustration"], tagLabels: { "ai-motion": "Motion" } },
     { img: "../img/gestures/gestures_screened_gathered.jpg", title: "Gestures", link: "gestures.html",
-      categories: ["ai-motion", "illustration"] },
+      categories: ["ai-motion", "illustration"], tagLabels: { "ai-motion": "Motion" } },
     { img: "../img/fromthesun/scene_03.jpg", title: "From the Sun", link: "fromthesun.html",
-      categories: ["graphic", "ai-motion", "interactive"] },
+      categories: ["graphic", "ai-motion", "interactive"], tagLabels: { "ai-motion": "Motion" } },
 
     // ---- 프로젝트 페이지 목록에서는 숨김 (페이지 자체는 남아 있어 index 등에서 링크로 접근 가능) ----
     { hidden: true, title: "Gravity", link: "gravity.html" },
