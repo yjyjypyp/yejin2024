@@ -23,6 +23,10 @@ const CATEGORIES = [
 ];
 
 const PROJECTS = [
+	{ img: "../img/re_thumbnail/thumb_illustrations.jpg", title: "Commissioned Illustration Projects", link: "illustrations.html",
+      categories: ["brand", "illustration", "everyday"], tagLabels: { "everyday": "Commissioned" }  },
+    { img: "../img/re_thumbnail/thumb_a_m_scallop.jpg", title: "Astrid & Miyu Scalloped Collection", link: "astridandmiyu_scallop_collection.html",
+      categories: ["brand", "ai-motion", "everyday"] },
     { img: "../img/re_thumbnail/thumb_2026card.jpg", title: "2026 Greeting Card", link: "2026greetingcard.html",
       categories: ["print", "illustration", "everyday"] },
     { img: "../img/re_thumbnail/thumb_lifeitsbeautiful_02.jpg", title: "lifeitsbeautiful.xyz", link: "lifeitsbeautiful.html",
