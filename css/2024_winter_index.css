@@ -226,3 +226,16 @@ pkor {
 		overflow-y: scroll;
 	}
 }
+/* =====================================================================
+   Index 번호 자동 매기기
+   - 각 줄의 <pbody2 class="indexin indexnumbering"></pbody2> 는 비워두면 됩니다
+   - 위에서부터 순서대로 1, 2, 3 ... 이 자동으로 붙어요
+   - 맨 윗줄 머리글(-)은 indexnumbering-head 라서 번호를 세지 않아요
+   ===================================================================== */
+.indexgrid {
+	counter-reset: indexnum;
+}
+.indexgrid .indexnumbering:not(.indexnumbering-head)::before {
+	counter-increment: indexnum;
+	content: counter(indexnum);
+}
