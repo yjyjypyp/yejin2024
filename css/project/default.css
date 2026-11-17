@@ -562,3 +562,15 @@ input[id*="popup"] + label.tone-dark .arrow::after {
 .bottom .footnote .footnote-title.tone-dark .circle {
 	background-color: #fff;
 }
+.bottom .footnote .footnote-list .footnote-list-one {
+	transition: color 0.3s ease;
+}
+.bottom .footnote .footnote-list .footnote-list-one.tone-dark {
+	color: #fff;
+}
+.bottom .footnote .footnote-list .footnote-list-one.tone-dark .circle {
+	background-color: #fff;
+}
+.bottom .footnote .footnote-list .footnote-list-one.tone-dark p0 {
+	color: #000;
+}

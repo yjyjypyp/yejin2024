@@ -28,6 +28,10 @@
         document.querySelectorAll(".bottom .footnote-title").forEach(function (el) {
             list.push({ el: el, area: el });
         });
+        document.querySelectorAll(".bottom .footnote-list-one").forEach(function (el) {
+            var text = el.querySelector(".text") || el;
+            list.push({ el: el, area: text });
+        });
         document.querySelectorAll(".homepagelink .btn").forEach(function (el) {
             list.push({ el: el, area: el });
         });
@@ -190,6 +194,10 @@
         });
         var popup = document.querySelector('input[id*="popup"]');
         if (popup) popup.addEventListener("change", function () { schedule(450); });
+        // Footnotes를 펼치면 목록 줄도 배경에 맞춰 다시 확인
+        document.querySelectorAll(".footnote-title").forEach(function (b) {
+            b.addEventListener("click", function () { schedule(50); });
+        });
         window.addEventListener("resize", function () { schedule(150); });
         window.addEventListener("scroll", function () { schedule(80); }, { passive: true });
         document.addEventListener("scroll", function () { schedule(80); }, { passive: true, capture: true });
