@@ -23,7 +23,7 @@ const CATEGORIES = [
 ];
 
 const PROJECTS = [
-	{ img: "../img/re_thumbnail/thumb_illustrations.jpg", title: "Commissioned Illustration Projects", link: "illustrations.html",
+	{ img: "../img/re_thumbnail/thumb_illustrations.jpg", title: "Illustration Commissions", link: "illustrations.html",
       categories: ["brand", "illustration", "everyday"], tagLabels: { "everyday": "Commissioned" }  },
     { img: "../img/re_thumbnail/thumb_a_m_scallop.jpg", title: "Astrid & Miyu Scalloped Collection", link: "astridandmiyu_scallop_collection.html",
       categories: ["brand", "ai-motion", "everyday"] },
